@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的网站</title>
+  <meta name="description" content="基于Markdown的静态站点">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="我的网站">
+  <meta property="og:description" content="基于Markdown的静态站点">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="我的网站">
+  <meta property="twitter:description" content="基于Markdown的静态站点">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1>我的网站</h1>
+      <p class="subtitle">基于Markdown的静态站点生成器</p>
+    </header>
+    
+    <main class="main-content">
+      
+        <!-- 搜索和筛选区域 -->
+        <div class="filters-section">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索文章..." class="search-input">
+            <button onclick="searchArticles()" class="search-button">搜索</button>
+          </div>
+          
+          <div class="filter-groups">
+            <div class="filter-group">
+              <label for="categoryFilter">分类:</label>
+              <select id="categoryFilter" onchange="filterArticles()" class="filter-select">
+                <option value="">所有分类</option>
+                
+                  <option value="未分类">未分类</option>
+                
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="tagFilter">标签:</label>
+              <select id="tagFilter" onchange="filterArticles()" class="filter-select">
+                <option value="">所有标签</option>
+                
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="sortOrder">排序:</label>
+              <select id="sortOrder" onchange="sortArticles()" class="filter-select">
+                <option value="date-desc">日期降序</option>
+                <option value="date-asc">日期升序</option>
+                <option value="title-asc">标题A-Z</option>
+                <option value="title-desc">标题Z-A</option>
+              </select>
+            </div>
+            
+            <button onclick="clearFilters()" class="clear-button">清除筛选</button>
+          </div>
+        </div>
+
+        <!-- 文章列表 -->
+        <div id="articlesGrid" class="articles-grid">
+          
+            <article class="article-card" data-title="12121" 
+                     data-description="暂无描述"
+                     data-category="未分类"
+                     data-tags=""
+                     data-date="2025-08-02T21:30:00.080Z">
+              <h2 class="article-title">
+                <a href="12121.html">12121</a>
+              </h2>
+              <p class="article-description">暂无描述</p>
+              <div class="article-meta">
+                <span class="article-author">作者: 作者</span>
+                <span class="article-date">2025/8/3</span>
+                
+              </div>
+              
+            </article>
+          
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+          <h3>没有找到匹配的文章</h3>
+          <p>请尝试调整搜索条件或筛选选项</p>
+        </div>
+      
+    </main>
+    
+    <footer class="site-footer">
+      <p>&copy; 2025 我的网站. 所有权利保留.</p>
+    </footer>
+  </div>
+
+  <script>
+    // 搜索和筛选功能
+    let allArticles = Array.from(document.querySelectorAll('.article-card'));
+
+    function searchArticles() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      filterAndDisplayArticles();
+    }
+
+    function filterArticles() {
+      filterAndDisplayArticles();
+    }
+
+    function sortArticles() {
+      const sortOrder = document.getElementById('sortOrder').value;
+      const articlesGrid = document.getElementById('articlesGrid');
+      const articles = Array.from(articlesGrid.querySelectorAll('.article-card:not([style*="display: none"])'));
+      
+      articles.sort((a, b) => {
+        switch(sortOrder) {
+          case 'date-asc':
+            return new Date(a.dataset.date) - new Date(b.dataset.date);
+          case 'date-desc':
+            return new Date(b.dataset.date) - new Date(a.dataset.date);
+          case 'title-asc':
+            return a.dataset.title.localeCompare(b.dataset.title);
+          case 'title-desc':
+            return b.dataset.title.localeCompare(a.dataset.title);
+          default:
+            return 0;
+        }
+      });
+      
+      articles.forEach(article => articlesGrid.appendChild(article));
+    }
+
+    function filterAndDisplayArticles() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const categoryFilter = document.getElementById('categoryFilter').value;
+      const tagFilter = document.getElementById('tagFilter').value;
+      
+      let visibleCount = 0;
+      
+      allArticles.forEach(article => {
+        const title = article.dataset.title;
+        const description = article.dataset.description;
+        const category = article.dataset.category;
+        const tags = article.dataset.tags;
+        
+        const matchesSearch = !searchTerm || 
+          title.includes(searchTerm) || 
+          description.includes(searchTerm);
+        
+        const matchesCategory = !categoryFilter || category === categoryFilter;
+        const matchesTag = !tagFilter || tags.includes(tagFilter);
+        
+        if (matchesSearch && matchesCategory && matchesTag) {
+          article.style.display = 'block';
+          visibleCount++;
+        } else {
+          article.style.display = 'none';
+        }
+      });
+      
+      document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+      sortArticles();
+    }
+
+    function filterByTag(tag) {
+      document.getElementById('tagFilter').value = tag;
+      filterArticles();
+    }
+
+    function clearFilters() {
+      document.getElementById('searchInput').value = '';
+      document.getElementById('categoryFilter').value = '';
+      document.getElementById('tagFilter').value = '';
+      document.getElementById('sortOrder').value = 'date-desc';
+      filterAndDisplayArticles();
+    }
+
+    // 搜索框回车事件
+    document.getElementById('searchInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        searchArticles();
+      }
+    });
+    
+    // 实时搜索
+    document.getElementById('searchInput').addEventListener('input', function() {
+      filterAndDisplayArticles();
+    });
+  </script>
+</body>
+</html>
