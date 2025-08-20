@@ -14,7 +14,7 @@
   <meta property="og:title" content="我是中国人qq11">
   <meta property="og:description" content="">
   <meta property="og:article:author" content="作者">
-  <meta property="og:article:published_time" content="2025-08-20T05:42:32.869+00:00">
+  <meta property="og:article:published_time" content="2025-08-20T06:51:16.984+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
       "@type": "Person",
       "name": "作者"
     },
-    "datePublished": "2025-08-20T05:42:32.869+00:00",
+    "datePublished": "2025-08-20T06:51:16.984+00:00",
     "keywords": ""
   }
   </script>
@@ -56,12 +56,12 @@
     
     /* 导航栏样式 */
     .navbar {
-      padding: 1.5rem 0;
       transition: all 0.3s ease;
       position:fixed;
       top:0;
       left:0 ;
       z-index: 1000;
+      width:100% ;
     }
     
     .navbar-sticky {
@@ -72,7 +72,6 @@
       background: rgba(124, 77, 255, 0.95);
       backdrop-filter: blur(10px);
       padding: 1rem 0;
-      box-shadow: 0 2px 20px rgba(124, 77, 255, 0.3);
     }
 
     .navbar-content {
@@ -99,7 +98,6 @@
     
     .brand-link:hover {
       color: rgba(255, 255, 255, 0.9);
-      transform: translateY(-1px);
     }
 
     .navbar-links {
@@ -113,33 +111,18 @@
       font-size: 1rem;
       font-weight: 400;
       transition: all 0.3s ease;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
       position: relative;
       overflow: hidden;
     }
     
-    .navbar-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.6s ease;
-    }
+
 
     .navbar-link:hover {
-      color: white;
-      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     
-    .navbar-link:hover::before {
-      left: 100%;
-    }
+   
 
     /* 响应式设计 */
     @media (max-width: 768px) {
@@ -173,7 +156,6 @@
       border-radius: 16px;
       padding: 3rem;
       margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(124, 77, 255, 0.2);
     }
 
     .breadcrumb {
@@ -241,7 +223,6 @@
       border-radius: 16px;
       padding: 3rem;
       margin-bottom: 2rem;
-      box-shadow: 0 10px 30px rgba(124, 77, 255, 0.2);
       line-height: 1.8;
     }
 
@@ -329,12 +310,10 @@
       border-radius: 25px;
       font-weight: 500;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
     }
 
     .back-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
     }
 
     /* 响应式设计 */
@@ -369,9 +348,7 @@
   <!-- 导航栏 -->
   <nav class="navbar" id="navbar">
     <div class="navbar-content">
-      <div class="navbar-brand">
-        <a href="index.html" class="brand-link">徘徊俱乐部</a>
-      </div>
+ 
       <div class="navbar-links">
         <a href="index.html" class="navbar-link">首页</a>
       </div>
