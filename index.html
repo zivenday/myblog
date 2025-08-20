@@ -35,12 +35,12 @@
     
     /* 导航栏样式 */
     .navbar {
-      padding: 1.5rem 0;
       transition: all 0.3s ease;
       position:fixed;
       top:0;
       left:0 ;
       z-index: 1000;
+      width:100% ;
     }
     
     .navbar-sticky {
@@ -51,7 +51,6 @@
       background: rgba(124, 77, 255, 0.95);
       backdrop-filter: blur(10px);
       padding: 1rem 0;
-      box-shadow: 0 2px 20px rgba(124, 77, 255, 0.3);
     }
 
     .navbar-content {
@@ -113,7 +112,6 @@
       color: white;
       background: rgba(255, 255, 255, 0.1);
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     
     .navbar-link:hover::before {
@@ -144,13 +142,13 @@
       text-align: center;
       padding: 5rem 0 6rem 0;
       color: white;
+      background: #7c4dff;
     }
 
     .hero-title {
       font-size: 4rem;
       font-weight: 300;
       margin-bottom: 2rem;
-      font-family: serif;
       letter-spacing: 0.3rem;
     }
 
@@ -168,8 +166,6 @@
       background: #fff;
       min-height: 60vh;
       padding: 3rem 0;
-      border-radius: 40px 40px 0 0;
-      margin-top: -2rem;
     }
 
     .content-grid {
@@ -187,7 +183,6 @@
       backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 2.5rem;
-      box-shadow: 0 10px 40px rgba(124, 77, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -231,7 +226,6 @@
       background: rgba(124, 77, 255, 0.08);
       border-color: rgba(124, 77, 255, 0.2);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.15);
     }
 
     .article-item:last-child {
@@ -258,7 +252,6 @@
       backdrop-filter: blur(20px);
       border-radius: 20px;
       padding: 2.5rem;
-      box-shadow: 0 10px 40px rgba(124, 77, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
       height: fit-content;
     }
@@ -316,7 +309,6 @@
       font-size: 2.5rem;
       color: white;
       font-weight: 300;
-      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.3);
     }
 
     .contact-links {
@@ -337,12 +329,10 @@
       color: white;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
     }
 
     .contact-link:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
     }
 
     /* 空状态 */
@@ -410,9 +400,7 @@
   <!-- 导航栏 -->
   <nav class="navbar" id="navbar">
     <div class="navbar-content">
-      <div class="navbar-brand">
-        <a href="index.html" class="brand-link">徘徊俱乐部</a>
-      </div>
+ 
       <div class="navbar-links">
         <a href="index.html" class="navbar-link">首页</a>
       </div>
@@ -439,8 +427,8 @@
           <ul class="article-list">
             
               <li >
-                <a href="i-am-a-chinese-qq.html" >
-                  我是中国人qq
+                <a href="i-am-a-chinese-qq1.html" >
+                  我是中国人qq1
                 </a>
               </li>
             
