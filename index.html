@@ -37,7 +37,9 @@
     .navbar {
       padding: 1.5rem 0;
       transition: all 0.3s ease;
-      position: relative;
+      position:fixed;
+      top:0;
+      left:0 ;
       z-index: 1000;
     }
     
@@ -417,18 +419,6 @@
     </div>
   </nav>
   
-  <script>
-    // 导航栏吸顶效果
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 100) {
-        navbar.classList.add('navbar-sticky');
-      } else {
-        navbar.classList.remove('navbar-sticky');
-      }
-    });
-  </script>
-  
 
   <!-- 主标题区域 -->
   <header class="hero-section">
@@ -450,7 +440,7 @@
             
               <li >
                 <a href="i-am-a-chinese-qq11.html" >
-                  我是中国人qq11`
+                  我是中国人qq11
                 </a>
               </li>
             
