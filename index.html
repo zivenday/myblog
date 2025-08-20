@@ -352,7 +352,7 @@
 
     .article-link {
       color: #333;
-      text-decoration: none;
+      text-decoration: none !important;
       font-size: 1.1rem;
       line-height: 1.6;
       display: block;
@@ -362,6 +362,16 @@
 
     .article-link:hover {
       color: #7c4dff;
+      text-decoration: none !important;
+    }
+
+    .article-link:visited {
+      text-decoration: none !important;
+    }
+
+    .article-link:focus {
+      text-decoration: none !important;
+      outline: none;
     }
 
     /* 作者介绍侧边栏 */
@@ -535,7 +545,7 @@
     <div class="navbar-content">
       <div class="navbar-brand">
         <a href="index.html" class="brand-link">
-          <img src="icon.jpeg" alt="徘徊俱乐部" class="brand-logo">
+          <img src="logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
         </a>
       </div>
       
@@ -617,8 +627,8 @@
           <ul class="article-list">
             
               <li >
-                <a href="i-am-a-chinese-qq678.html" >
-                  我是中国人qq678
+                <a href="i-am-a-chinese-qq.html" >
+                  我是中国人qq
                 </a>
               </li>
             
