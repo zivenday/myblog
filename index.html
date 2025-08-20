@@ -1,616 +1,604 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徘徊俱乐部</title>
-  <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="徘徊俱乐部">
-  <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="徘徊俱乐部">
-  <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-  <style>
-    /* 基础样式重置 */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>徘徊俱乐部</title>
+    <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验" />
+    <link rel="stylesheet" href="styles.css" />
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: black;
-      min-height: 100vh;
-    }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="徘徊俱乐部" />
+    <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验" />
 
-    
-    /* 导航栏样式 */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: #7c4dff;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      padding: 1rem 0;
-    }
-    
-    .navbar-sticky {
-      background: rgba(124, 77, 255, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 0.8rem 0;
-    }
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="徘徊俱乐部" />
+    <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验" />
 
-    .navbar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    .navbar-brand {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-    
-    .brand-link {
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-    }
-    
-    .brand-logo {
-      height: 40px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      transition: all 0.3s ease;
-    }
-    
-    .brand-link:hover .brand-logo {
-      opacity: 0.8;
-      transform: translateY(-1px);
-    }
+    <style>
+      /* 基础样式重置 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    /* 桌面端导航 */
-    .desktop-nav {
-      display: flex;
-      gap: 2rem;
-    }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: black;
+        min-height: 100vh;
+      }
 
-    .navbar-link {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      position: relative;
-    }
+      /* 导航栏样式 */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #7c4dff;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        padding: 1rem 0;
+      }
 
-    .navbar-link:hover {
-      color: rgba(255, 255, 255, 0.8);
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-1px);
-    }
-    
-    /* 移动端汉堡菜单按钮 */
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    
-    .mobile-menu-btn span {
-      width: 24px;
-      height: 2px;
-      background: white;
-      transition: all 0.3s ease;
-      border-radius: 1px;
-    }
-    
-    .mobile-menu-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    
-    /* 汉堡菜单激活动画 */
-    .mobile-menu-btn-active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-    
-    .mobile-menu-btn-active span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .mobile-menu-btn-active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-    
-    /* 移动端菜单 */
-    .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #7c4dff;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      transform: translateY(-100%);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-    
-    .mobile-menu-active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .mobile-menu-link {
-      display: block;
-      color: white;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-    
-    .mobile-menu-link:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .mobile-menu-link:last-child {
-      border-bottom: none;
-    }
+      .navbar-sticky {
+        background: rgba(124, 77, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 0;
+      }
 
-    /* 响应式设计 */
-    @media (max-width: 768px) {
       .navbar-content {
-        padding: 0 1rem;
-      }
-      
-      .desktop-nav {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
       }
-      
-      .mobile-menu {
-        display: block;
-      }
-      
+
       .navbar-brand {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
       }
-      
+
+      .brand-link {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
       .brand-logo {
-        height: 32px;
+        height: 40px;
+        width: auto;
+        filter: brightness(0) invert(1);
+        transition: all 0.3s ease;
       }
-    }
-    
-    @media (max-width: 480px) {
-      .navbar-content {
-        padding: 0 0.8rem;
+
+      .brand-link:hover .brand-logo {
+        opacity: 0.8;
+        transform: translateY(-1px);
       }
-      
-      .navbar-brand {
-        font-size: 1.2rem;
-      }
-      
-      .brand-logo {
-        height: 28px;
-      }
-    }
-    
-    /* 大屏适配 */
-    @media (min-width: 1200px) {
-      .navbar-content {
-        max-width: 1400px;
-        padding: 0 3rem;
-      }
-      
-      .navbar-link {
-        font-size: 1.1rem;
-        padding: 0.6rem 1.2rem;
-      }
-      
-      .brand-logo {
-        height: 44px;
-      }
-    }
-    
-    @media (min-width: 1600px) {
-      .navbar-content {
-        max-width: 1600px;
-        padding: 0 4rem;
-      }
-      
-      .brand-logo {
-        height: 48px;
-      }
-    }
-  
 
-    /* 主标题区域 */
-    .hero-section {
-      text-align: center;
-      padding: 8rem 0 6rem 0;
-      color: white;
-      background: #7c4dff;
-    }
-
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 300;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* 主要内容区域 */
-    .main-content {
-      background: #fff;
-      min-height: 60vh;
-      padding: 3rem 0;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 最近更新区域 */
-    .updates-section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    /* 文章列表 */
-    .article-list {
-      list-style: none;
-    }
-
-    .article-item {
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      background: rgba(124, 77, 255, 0.03);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .article-item:hover {
-      background: rgba(124, 77, 255, 0.08);
-      border-color: rgba(124, 77, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .article-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .article-link {
-      color: #333;
-      text-decoration: none;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      display: block;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .article-link:hover {
-      color: #7c4dff;
-    }
-
-    /* 作者介绍侧边栏 */
-    .author-sidebar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      height: fit-content;
-    }
-
-    .author-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .author-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    .author-content {
-      text-align: left;
-    }
-
-    .author-description {
-      color: #555;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(124, 77, 255, 0.05);
-      border-radius: 8px;
-      border-left: 3px solid #7c4dff;
-    }
-
-    .avatar-container {
-      margin-bottom: 2rem;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: #7c4dff;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #7c4dff;
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-3px);
-    }
-
-    /* 空状态 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: #666;
-    }
-
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #7c4dff;
-      font-weight: 300;
-    }
-
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
-    }
-
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.2rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .content-grid {
-        grid-template-columns: 1fr;
+      /* 桌面端导航 */
+      .desktop-nav {
+        display: flex;
         gap: 2rem;
-        padding: 0 15px;
       }
-      
-      .updates-section,
+
+      .navbar-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        position: relative;
+      }
+
+      .navbar-link:hover {
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+      }
+
+      /* 移动端汉堡菜单按钮 */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease;
+        border-radius: 1px;
+      }
+
+      .mobile-menu-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* 汉堡菜单激活动画 */
+      .mobile-menu-btn-active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .mobile-menu-btn-active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-btn-active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* 移动端菜单 */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #7c4dff;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .mobile-menu-link {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .mobile-menu-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .mobile-menu-link:last-child {
+        border-bottom: none;
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+        .navbar-content {
+          padding: 0 1rem;
+        }
+
+        .desktop-nav {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: flex;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .navbar-brand {
+          font-size: 1.3rem;
+        }
+
+        .brand-logo {
+          height: 32px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navbar-content {
+          padding: 0 0.8rem;
+        }
+
+        .navbar-brand {
+          font-size: 1.2rem;
+        }
+
+        .brand-logo {
+          height: 28px;
+        }
+      }
+
+      /* 大屏适配 */
+      @media (min-width: 1200px) {
+        .navbar-content {
+          max-width: 1400px;
+          padding: 0 3rem;
+        }
+
+        .navbar-link {
+          font-size: 1.1rem;
+          padding: 0.6rem 1.2rem;
+        }
+
+        .brand-logo {
+          height: 44px;
+        }
+      }
+
+      @media (min-width: 1600px) {
+        .navbar-content {
+          max-width: 1600px;
+          padding: 0 4rem;
+        }
+
+        .brand-logo {
+          height: 48px;
+        }
+      }
+
+      /* 主标题区域 */
+      .hero-section {
+        text-align: center;
+        padding: 8rem 0 6rem 0;
+        color: white;
+        background: #7c4dff;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        letter-spacing: 0.3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 300;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* 主要内容区域 */
+      .main-content {
+        background: #fff;
+        min-height: 60vh;
+        padding: 3rem 0;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* 最近更新区域 */
+      .updates-section {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #2c2c2c;
+        text-align: left;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #7c4dff;
+        border-radius: 2px;
+      }
+
+      /* 文章列表 */
+      .article-list {
+        list-style: none;
+      }
+
+      .article-item {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background: rgba(124, 77, 255, 0.03);
+        border: 1px solid rgba(124, 77, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .article-item:hover {
+        background: rgba(124, 77, 255, 0.08);
+        border-color: rgba(124, 77, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .article-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .article-link {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        display: block;
+        transition: color 0.3s ease;
+        font-weight: 500;
+      }
+
+      .article-link:hover {
+        color: #7c4dff;
+      }
+
+      /* 作者介绍侧边栏 */
       .author-sidebar {
-        padding: 2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        height: fit-content;
       }
-      
+
+      .author-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #2c2c2c;
+        text-align: left;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .author-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: #7c4dff;
+        border-radius: 2px;
+      }
+
+      .author-content {
+        text-align: left;
+      }
+
+      .author-description {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: rgba(124, 77, 255, 0.05);
+        border-radius: 8px;
+        border-left: 3px solid #7c4dff;
+      }
+
+      .avatar-container {
+        margin-bottom: 2rem;
+      }
+
       .avatar {
-        width: 100px;
-        height: 100px;
-        font-size: 2rem;
+        width: 120px;
+        height: 120px;
+        background: #7c4dff;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+        font-weight: 300;
       }
-      
+
       .contact-links {
-        gap: 0.8rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
       }
-      
+
       .contact-link {
-        width: 45px;
-        height: 45px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: #7c4dff;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
       }
-    }
-  </style>
-</head>
-<body>
-  
-  <!-- 导航栏 -->
-  <nav class="navbar" id="navbar">
-    <div class="navbar-content">
-      <div class="navbar-brand">
-        <a href="index.html" class="brand-link">
-          <img src="logo.icon" alt="徘徊俱乐部" class="brand-logo">
-        </a>
-      </div>
-      
-      <!-- 桌面端导航链接 -->
-      <div class="navbar-links desktop-nav">
-        <a href="index.html" class="navbar-link">首页</a>
-      </div>
-      
-      <!-- 移动端汉堡菜单按钮 -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    
-    <!-- 移动端菜单 -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-menu-link">首页</a>
-    </div>
-  </nav>
-  
-  <script>
-    // 导航栏吸顶效果
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('navbar-sticky');
-      } else {
-        navbar.classList.remove('navbar-sticky');
+
+      .contact-link:hover {
+        transform: translateY(-3px);
       }
-    });
-    
-    // 移动端菜单切换
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    mobileMenuBtn?.addEventListener('click', function() {
-      mobileMenu?.classList.toggle('mobile-menu-active');
-      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
-    });
-    
-    // 点击菜单项关闭移动端菜单
-    document.querySelectorAll('.mobile-menu-link').forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenu?.classList.remove('mobile-menu-active');
-        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
-      });
-    });
-  </script>
-  
 
-  <!-- 主标题区域 -->
-  <header class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">徘徊俱乐部</h1>
-      <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
-    </div>
-  </header>
+      /* 空状态 */
+      .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #666;
+      }
 
-  <!-- 主要内容区域 -->
-  <main class="main-content">
-    <div class="content-grid">
-      <!-- 作者介绍侧边栏 -->
-      <aside class="author-sidebar">
-        <h3 class="author-title">作者</h3>
-        <div class="author-content">
-          <p class="author-description">
-            网名：拿着号码牌徘徊。非常优秀的程序员,也是完美的体验家,一生都是学生。
-          </p>
+      .empty-state h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #7c4dff;
+        font-weight: 300;
+      }
+
+      .empty-state p {
+        font-size: 1.1rem;
+        color: #888;
+        line-height: 1.8;
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.8rem;
+          letter-spacing: 0.2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+          padding: 0 1rem;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 0 15px;
+        }
+
+        .updates-section,
+        .author-sidebar {
+          padding: 2rem 1.5rem;
+        }
+
+        .avatar {
+          width: 100px;
+          height: 100px;
+          font-size: 2rem;
+        }
+
+        .contact-links {
+          gap: 0.8rem;
+        }
+
+        .contact-link {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-content">
+        <div class="navbar-brand">
+          <a href="index.html" class="brand-link">
+            <img src="logo.ico" alt="徘徊俱乐部" class="brand-logo" />
+          </a>
         </div>
-      </aside>
-      
-      <!-- 最近更新区域 -->
-      <section class="updates-section">
-        <h2 class="section-title">最近更新</h2>
-        
-        
+
+        <!-- 桌面端导航链接 -->
+        <div class="navbar-links desktop-nav">
+          <a href="index.html" class="navbar-link">首页</a>
+        </div>
+
+        <!-- 移动端汉堡菜单按钮 -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- 移动端菜单 -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-menu-link">首页</a>
+      </div>
+    </nav>
+
+    <script>
+      // 导航栏吸顶效果
+      window.addEventListener('scroll', function () {
+        const navbar = document.getElementById('navbar')
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-sticky')
+        } else {
+          navbar.classList.remove('navbar-sticky')
+        }
+      })
+
+      // 移动端菜单切换
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn')
+      const mobileMenu = document.getElementById('mobileMenu')
+
+      mobileMenuBtn?.addEventListener('click', function () {
+        mobileMenu?.classList.toggle('mobile-menu-active')
+        mobileMenuBtn?.classList.toggle('mobile-menu-btn-active')
+      })
+
+      // 点击菜单项关闭移动端菜单
+      document.querySelectorAll('.mobile-menu-link').forEach((link) => {
+        link.addEventListener('click', function () {
+          mobileMenu?.classList.remove('mobile-menu-active')
+          mobileMenuBtn?.classList.remove('mobile-menu-btn-active')
+        })
+      })
+    </script>
+
+    <!-- 主标题区域 -->
+    <header class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">徘徊俱乐部</h1>
+        <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
+      </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+      <div class="content-grid">
+        <!-- 作者介绍侧边栏 -->
+        <aside class="author-sidebar">
+          <h3 class="author-title">作者</h3>
+          <div class="author-content">
+            <p class="author-description">网名：拿着号码牌徘徊。非常优秀的程序员,也是完美的体验家,一生都是学生。</p>
+          </div>
+        </aside>
+
+        <!-- 最近更新区域 -->
+        <section class="updates-section">
+          <h2 class="section-title">最近更新</h2>
+
           <ul class="article-list">
-            
-              <li >
-                <a href="i-am-a-chinese-qq.html" >
-                  我是中国人qq
-                </a>
-              </li>
-            
+            <li>
+              <a href="i-am-a-chinese-qq.html"> 我是中国人qq </a>
+            </li>
           </ul>
-        
-      </section>
-    </div>
-  </main>
-</body>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
