@@ -14,7 +14,7 @@
   <meta property="og:title" content="我是中国人qq11">
   <meta property="og:description" content="">
   <meta property="og:article:author" content="作者">
-  <meta property="og:article:published_time" content="2025-08-20T06:58:36.184+00:00">
+  <meta property="og:article:published_time" content="2025-08-20T07:36:33.548+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@
       "@type": "Person",
       "name": "作者"
     },
-    "datePublished": "2025-08-20T06:58:36.184+00:00",
+    "datePublished": "2025-08-20T07:36:33.548+00:00",
     "keywords": ""
   }
   </script>
@@ -91,12 +91,18 @@
       color: white;
       text-decoration: none;
       transition: all 0.3s ease;
-      font-family: serif;
-      letter-spacing: 0.1rem;
+      display: flex;
+      align-items: center;
     }
     
-    .brand-link:hover {
-      color: rgba(255, 255, 255, 0.8);
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
       transform: translateY(-1px);
     }
 
@@ -222,6 +228,10 @@
       .navbar-brand {
         font-size: 1.3rem;
       }
+      
+      .brand-logo {
+        height: 32px;
+      }
     }
     
     @media (max-width: 480px) {
@@ -231,6 +241,10 @@
       
       .navbar-brand {
         font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
       }
     }
     
@@ -245,12 +259,20 @@
         font-size: 1.1rem;
         padding: 0.6rem 1.2rem;
       }
+      
+      .brand-logo {
+        height: 44px;
+      }
     }
     
     @media (min-width: 1600px) {
       .navbar-content {
         max-width: 1600px;
         padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
       }
     }
   
@@ -461,7 +483,9 @@
   <nav class="navbar" id="navbar">
     <div class="navbar-content">
       <div class="navbar-brand">
-        <a href="index.html" class="brand-link">徘徊俱乐部</a>
+        <a href="index.html" class="brand-link">
+          <img src="logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
       </div>
       
       <!-- 桌面端导航链接 -->
