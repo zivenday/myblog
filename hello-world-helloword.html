@@ -3,23 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徘徊俱乐部</title>
-  <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <title>你好，世界！Hello,Word! - 徘徊俱乐部</title>
+  <meta name="description" content="">
+  <meta name="author" content="作者">
+  <meta name="keywords" content="">
   <link rel="stylesheet" href="styles.css">
   
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="徘徊俱乐部">
-  <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="你好，世界！Hello,Word!">
+  <meta property="og:description" content="">
+  <meta property="og:article:author" content="作者">
+  <meta property="og:article:published_time" content="2025-08-28T09:55:23.336+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="徘徊俱乐部">
-  <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
-     crossorigin="anonymous"></script>
+  <meta property="twitter:title" content="你好，世界！Hello,Word!">
+  <meta property="twitter:description" content="">
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "你好，世界！Hello,Word!",
+    "description": "",
+    "author": {
+      "@type": "Person",
+      "name": "作者"
+    },
+    "datePublished": "2025-08-28T09:55:23.336+00:00",
+    "keywords": ""
+  }
+  </script>
+  
   <style>
     /* 基础样式重置 */
     * {
@@ -31,7 +51,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      color: black;
+      color: #333;
+      background: white;
       min-height: 100vh;
     }
 
@@ -259,288 +280,181 @@
     }
   
 
-    /* 主标题区域 */
-    .hero-section {
-      text-align: center;
-      padding: 8rem 0 6rem 0;
-      color: white;
-      background: #7c4dff;
-    }
-
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 300;
-      max-width: 700px;
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      line-height: 1.8;
+      padding: 6rem 20px 2rem;
     }
 
-    /* 主要内容区域 */
-    .main-content {
-      background: #fff;
-      min-height: 60vh;
-      padding: 3rem 0;
-      margin-bottom: 0 !important;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 最近文章区域 */
-    .updates-section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
+    /* 文章头部 */
+    .article-header {
+      background: white;
       border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    /* 文章列表 */
-    .article-list {
-      list-style: none;
-      
-    }
-      .article-list-a {
-        text-decoration:none!important
-      }
-
-    .article-item {
+      padding: 3rem;
       margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      background: rgba(124, 77, 255, 0.03);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      transition: all 0.3s ease;
     }
 
-    .article-item:hover {
-      background: rgba(124, 77, 255, 0.08);
-      border-color: rgba(124, 77, 255, 0.2);
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
       transform: translateY(-2px);
     }
 
-    .article-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .article-link {
-      color: #333;
-      text-decoration: none !important;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      display: block;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .article-link:hover {
-      color: #7c4dff;
-      text-decoration: none !important;
-    }
-
-    .article-link:visited {
-      text-decoration: none !important;
-    }
-
-    .article-link:focus {
-      text-decoration: none !important;
-      outline: none;
-    }
-
-    /* 作者介绍侧边栏 */
-    .author-sidebar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      height: fit-content;
-    }
-
-    .author-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .author-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    .author-content {
-      text-align: left;
-    }
-
-    .author-description {
-      color: #555;
+    .article-meta {
       font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(124, 77, 255, 0.05);
-      border-radius: 8px;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
     }
 
-    .avatar-container {
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
       margin-bottom: 2rem;
+      line-height: 1.8;
     }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: #7c4dff;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: #2c2c2c;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
     }
 
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+    .article-content h2 {
+      font-size: 1.8rem;
+      border-left: 4px solid #7c4dff;
+      padding-left: 1rem;
     }
 
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #7c4dff;
-      border-radius: 50%;
-      color: white;
+    .article-content h3 {
+      font-size: 1.5rem;
+      color: #7c4dff;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .article-content a {
+      color: #7c4dff;
       text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
       transition: all 0.3s ease;
     }
 
-    .contact-link:hover {
-      transform: translateY(-3px);
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
     }
 
-    /* 空状态 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
+    .article-content code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #e91e63;
+    }
+
+    .article-content pre {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-left: 4px solid #7c4dff;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
       color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
     }
 
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #7c4dff;
-      font-weight: 300;
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
     }
 
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
     }
 
     /* 响应式设计 */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.2rem;
+      .container {
+        padding: 1rem 15px;
       }
       
-      .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 15px;
-      }
-      
-      .updates-section,
-      .author-sidebar {
+      .article-header,
+      .article-content {
         padding: 2rem 1.5rem;
       }
       
-      /* 移动端标题居中 */
-      .section-title,
-      .author-title {
-        text-align: center;
-      }
-      
-      .section-title::after,
-      .author-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .author-content {
-        text-align: center;
-      }
-      
-      .avatar {
-        width: 100px;
-        height: 100px;
+      .article-title {
         font-size: 2rem;
       }
       
-      .contact-links {
-        gap: 0.8rem;
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
       }
       
-      .contact-link {
-        width: 45px;
-        height: 45px;
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
       }
     }
   </style>
@@ -604,51 +518,26 @@
     });
   </script>
   
-
-  <!-- 主标题区域 -->
-  <header class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">徘徊俱乐部</h1>
-      <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
-    </div>
-  </header>
-
-  <!-- 主要内容区域 -->
-  <main class="main-content">
-    <div class="content-grid">
-      <!-- 作者介绍侧边栏 -->
-      <aside class="author-sidebar">
-        <h3 class="author-title">作者</h3>
-        <div class="author-content">
-           <p class="author-description">
-            全网名《拿着号码牌徘徊》
-          </p>
-          <p class="author-description">
-            非常优秀的程序员,是完美的体验家,一生都是学生。
-          </p>
-           <p class="author-description">
-            请多多指教。
-          </p>
-        </div>
-      </aside>
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">你好，世界！Hello,Word!</h1>
+      <div class="article-meta">
+        <span>📅 2025/8/28</span>
+      </div>
       
-      <!-- 最近文章区域 -->
-      <section class="updates-section">
-        <h2 class="section-title">最近文章</h2>
-        
-        
-          <ul class="article-list">
-            
-              <li >
-                <a href="hello-world.html" class="article-list-a" >
-                  你好，世界！
-                </a>
-              </li>
-            
-          </ul>
-        
-      </section>
-    </div>
-  </main>
+    </header>
+    
+    <main class="article-content">
+      <h1>你好，世界</h1>
+<p>这是自己创建的网站上的我的第一篇博客，我将会在这里分享我的点滴。</p>
+<p>This is my first blog created by myself.I will share my story here.</p>
+
+    </main>
+    
+    <footer class="article-footer">
+      <a href="index.html" class="back-link">← 返回首页</a>
+    </footer>
+  </div>
 </body>
 </html>
