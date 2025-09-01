@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-09-01T11:14:04.520Z</lastBuildDate>
-    <pubDate>2025-09-01T11:14:04.520Z</pubDate>
+    <lastBuildDate>2025-09-01T11:33:04.395Z</lastBuildDate>
+    <pubDate>2025-09-01T11:33:04.395Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -19,12 +19,12 @@
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <item>
-      <title>嗨！</title>
-      <link>https://blog.holding-num.cn/2022-08-19-hi.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-19-hi.html</guid>
-      <pubDate>Mon, 01 Sep 2025 11:14:00 GMT</pubDate>
+      <title>嗨。</title>
+      <link>https://blog.holding-num.cn/2025-08-19-hi.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-08-19-hi.html</guid>
+      <pubDate>Mon, 01 Sep 2025 11:33:01 GMT</pubDate>
       <description>我的第一篇文章</description>
-      <category>全栈开发</category>
+      <category>分享</category>
       <category>最佳实践</category>
       <author>zhongziven@gmail.comå</author>
     </item>
