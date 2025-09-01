@@ -3,14 +3,14 @@
   <channel>
     <title>徘徊俱乐部</title>
     <description>记录我想记录的快乐,分享大家喜欢的技术与体验</description>
-    <link>https://your-domain.com/</link>
-    <atom:link href="https://your-domain.com/rss.xml" rel="self" type="application/rss+xml" />
+    <link>https://blog.holding-num.cn/</link>
+    <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-09-01T06:55:13.943Z</lastBuildDate>
-    <pubDate>2025-09-01T06:55:13.943Z</pubDate>
+    <lastBuildDate>2025-09-01T11:14:04.520Z</lastBuildDate>
+    <pubDate>2025-09-01T11:14:04.520Z</pubDate>
     <ttl>60</ttl>
-    <webMaster>ziven@example.com</webMaster>
-    <managingEditor>ziven@example.com</managingEditor>
+    <webMaster>zhongziven@gmail.com</webMaster>
+    <managingEditor>zhongziven@gmail.comå</managingEditor>
     <copyright>© 2025 徘徊俱乐部. All rights reserved.</copyright>
         <category>技术</category>
     <category>学习</category>
@@ -19,47 +19,47 @@
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <item>
-      <title>嗨！！</title>
-      <link>https://your-domain.com/2022-08-19-hi.html</link>
-      <guid isPermaLink="true">https://your-domain.com/2022-08-19-hi.html</guid>
-      <pubDate>Mon, 01 Sep 2025 06:55:11 GMT</pubDate>
+      <title>嗨！</title>
+      <link>https://blog.holding-num.cn/2022-08-19-hi.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-19-hi.html</guid>
+      <pubDate>Mon, 01 Sep 2025 11:14:00 GMT</pubDate>
       <description>我的第一篇文章</description>
       <category>全栈开发</category>
       <category>最佳实践</category>
-      <author>ziven@example.com</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
-      <link>https://your-domain.com/2022-08-30-front-end-learning-deployment-article-0.html</link>
-      <guid isPermaLink="true">https://your-domain.com/2022-08-30-front-end-learning-deployment-article-0.html</guid>
+      <link>https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</guid>
       <pubDate>Mon, 01 Sep 2025 06:42:00 GMT</pubDate>
       <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
       <category>部署</category>
       <category>最佳实践</category>
-      <author>ziven@example.com</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>王阳明心学系列笔记 - 第2篇</title>
-      <link>https://your-domain.com/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</link>
-      <guid isPermaLink="true">https://your-domain.com/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</guid>
+      <link>https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</guid>
       <pubDate>Sun, 31 Aug 2025 08:33:04 GMT</pubDate>
       <description>王阳明心学系列笔记 - 第2篇</description>
       <category>读书笔记</category>
       <category>王阳明</category>
       <category>心学</category>
-      <author>ziven@example.com</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>王阳明心学系列笔记 - 第1篇</title>
-      <link>https://your-domain.com/on-august-31-2025-wang-yangmings-heart-learning-series.html</link>
-      <guid isPermaLink="true">https://your-domain.com/on-august-31-2025-wang-yangmings-heart-learning-series.html</guid>
+      <link>https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series.html</guid>
       <pubDate>Sun, 31 Aug 2025 08:09:08 GMT</pubDate>
       <description>王阳明读书有感</description>
       <category>读书笔记</category>
       <category>王阳明</category>
       <category>读书笔记</category>
       <category>读书</category>
-      <author>ziven@example.com</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
 </rss>
