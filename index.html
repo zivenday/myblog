@@ -112,6 +112,17 @@
       background: rgba(255, 255, 255, 0.1);
       transform: translateY(-1px);
     }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
     
     /* 移动端汉堡菜单按钮 */
     .mobile-menu-btn {
@@ -185,6 +196,13 @@
     .mobile-menu-link:hover {
       background: rgba(255, 255, 255, 0.1);
       color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
     .mobile-menu-link:last-child {
@@ -512,31 +530,14 @@
       }
 
     .article-item {
-      margin-bottom: 2rem;
       padding: 1.5rem;
-      border-radius: 8px;
-      background: rgba(124, 77, 255, 0.03);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      transition: all 0.3s ease;
     }
 
-    .article-item:hover {
-      background: rgba(124, 77, 255, 0.08);
-      border-color: rgba(124, 77, 255, 0.2);
-      transform: translateY(-2px);
-    }
+  
 
-    .article-item:last-child {
-      margin-bottom: 0;
-    }
+  
 
-    .article-date {
-      font-size: 0.9rem;
-      color: #7c4dff;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      font-family: 'Courier New', monospace;
-    }
+
 
     .article-link {
       color: #333;
@@ -742,6 +743,12 @@
         <a href="directory.html" class="navbar-link">网站导航</a>
         <a href="tags.html" class="navbar-link">标签</a>
         <a href="archive.html" class="navbar-link">归档</a>
+        <a href="rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
       </div>
       
       <!-- 移动端汉堡菜单按钮 -->
@@ -758,6 +765,12 @@
       <a href="directory.html" class="mobile-menu-link">网站导航</a>
       <a href="tags.html" class="mobile-menu-link">标签</a>
       <a href="archive.html" class="mobile-menu-link">归档</a>
+      <a href="rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
     </div>
   </nav>
   
@@ -826,30 +839,26 @@
           <ul class="article-list">
             
               <li class="article-item">
-                <div class="article-date">8/30</div>
-                <a href="2022-08-30-front-end-learning-deployment-article-1.html" class="article-link" >
-                  [ 前端学部署 ]  第一篇： 几块钱部署一个有域名的静态网站
+                <a href="2022-08-30-front-end-learning-deployment-article-0.html" class="article-link" >
+                  8/30 [ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站
                 </a>
               </li>
             
               <li class="article-item">
-                <div class="article-date">8/31</div>
                 <a href="on-august-31-2025-wang-yangmings-heart-learning-series-1.html" class="article-link" >
-                  王阳明心学系列笔记 - 第2篇
+                  8/31 王阳明心学系列笔记 - 第2篇
                 </a>
               </li>
             
               <li class="article-item">
-                <div class="article-date">8/31</div>
                 <a href="on-august-31-2025-wang-yangmings-heart-learning-series.html" class="article-link" >
-                  王阳明心学系列笔记 - 第1篇
+                  8/31 王阳明心学系列笔记 - 第1篇
                 </a>
               </li>
             
               <li class="article-item">
-                <div class="article-date">8/19</div>
                 <a href="2022-08-19-hi.html" class="article-link" >
-                  嗨！
+                  8/19 嗨！
                 </a>
               </li>
             
