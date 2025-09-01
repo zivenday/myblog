@@ -6,8 +6,8 @@
     <link>https://your-domain.com/</link>
     <atom:link href="https://your-domain.com/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-09-01T06:42:03.018Z</lastBuildDate>
-    <pubDate>2025-09-01T06:42:03.018Z</pubDate>
+    <lastBuildDate>2025-09-01T06:55:13.943Z</lastBuildDate>
+    <pubDate>2025-09-01T06:55:13.943Z</pubDate>
     <ttl>60</ttl>
     <webMaster>ziven@example.com</webMaster>
     <managingEditor>ziven@example.com</managingEditor>
@@ -18,6 +18,16 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>嗨！！</title>
+      <link>https://your-domain.com/2022-08-19-hi.html</link>
+      <guid isPermaLink="true">https://your-domain.com/2022-08-19-hi.html</guid>
+      <pubDate>Mon, 01 Sep 2025 06:55:11 GMT</pubDate>
+      <description>我的第一篇文章</description>
+      <category>全栈开发</category>
+      <category>最佳实践</category>
+      <author>ziven@example.com</author>
+    </item>
     <item>
       <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
       <link>https://your-domain.com/2022-08-30-front-end-learning-deployment-article-0.html</link>
@@ -49,16 +59,6 @@
       <category>王阳明</category>
       <category>读书笔记</category>
       <category>读书</category>
-      <author>ziven@example.com</author>
-    </item>
-    <item>
-      <title>嗨！</title>
-      <link>https://your-domain.com/2022-08-19-hi.html</link>
-      <guid isPermaLink="true">https://your-domain.com/2022-08-19-hi.html</guid>
-      <pubDate>Sun, 31 Aug 2025 08:03:12 GMT</pubDate>
-      <description>我的第一篇文章</description>
-      <category>全栈开发</category>
-      <category>最佳实践</category>
       <author>ziven@example.com</author>
     </item>
   </channel>
