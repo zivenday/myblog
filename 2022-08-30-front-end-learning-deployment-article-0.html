@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站 - 徘徊俱乐部</title>
+  <meta name="description" content="很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站">
+  <meta name="author" content="作者">
+  <meta name="keywords" content="最佳实践">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站">
+  <meta property="og:description" content="很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站">
+  <meta property="og:article:author" content="作者">
+  <meta property="og:article:published_time" content="2025-09-01T06:42:00.504+00:00">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站">
+  <meta property="twitter:description" content="很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站",
+    "description": "很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站",
+    "author": {
+      "@type": "Person",
+      "name": "作者"
+    },
+    "datePublished": "2025-09-01T06:42:00.504+00:00",
+    "keywords": "最佳实践"
+  }
+  </script>
+  
+  <style>
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    .article-content code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #e91e63;
+    }
+
+    .article-content pre {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-left: 4px solid #7c4dff;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem 15px;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="index.html" class="brand-link">
+          <img src="logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="index.html" class="navbar-link">首页</a>
+        <a href="directory.html" class="navbar-link">网站导航</a>
+        <a href="tags.html" class="navbar-link">标签</a>
+        <a href="archive.html" class="navbar-link">归档</a>
+        <a href="rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu-link">首页</a>
+      <a href="directory.html" class="mobile-menu-link">网站导航</a>
+      <a href="tags.html" class="mobile-menu-link">标签</a>
+      <a href="archive.html" class="mobile-menu-link">归档</a>
+      <a href="rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</h1>
+      <div class="article-meta">
+        <span>📅 2025/9/1</span>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">最佳实践</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h1>背景和目标</h1>
+<p>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</p>
+<h1>2. 前期准备 - 技术栈、AWS账号、域名等</h1>
+<p>纯静态网站的部署方案，总共算起来有三种：</p>
+<p>1、免费静态托管，一步到位，像Netlify - 支持Git集成，自动部署，CDN加速，Vercel专为前端优化，支持Next.js等框架，GitHub Pages直接从GitHub仓库部署。</p>
+<p>2、云服务器，AWS S3 +Route 53 + CloudFront，腾讯云COS,阿里云OOS</p>
+<p>3、普通服务器，Nginx比较常用 ，还有阿帕奇，VPS/云服务器 - 完全控制权</p>
+<p>今天要实践的是第二种。其实从1到3，是从容易到难得过程</p>
+<p><strong>在真正部署这之前，需要你完成二件事：</strong></p>
+<p>1、注册aws账号。</p>
+<p>2、自己去买个域名。不贵，第一年几块钱。我的域名是 yxl-upload.xyz</p>
+<p><strong>整体的网站访问方式是这样的。</strong></p>
+<p>1、用户请求后，会进行DNS解析，在你提供商里配置域名解析，转到AWS Route53 的解析服务器。</p>
+<p>2、AWS Route53 解析后引导到AWS S3的index.html。</p>
+<p>3、CloudFront 自然有附带的功能，比如cdn,他能对访问网站起到加速作用。</p>
+<p>这样就完成了网站的访问。</p>
+<h1>3. AWS服务配置 - S3和Route 53</h1>
+<h3>S3是什么？</h3>
+<p>S3（Simple Storage Service）是AMS提供的对象存储服务。每个云服务商都有，比如腾讯云有，阿里云也有，名字不一样，但是都是对象存储服务。那什么是对象存储呢？我们知道对象，一个object，有key,有value，所谓对象存储，就是指通过key来访问value的存储形式。我们会把图片，视频这些资源放到这里，通过key去访问资源，这个key就是对应资源的唯一标识。</p>
+<p>今天我们把静态项目放进去。</p>
+<p>好了，我的之前已经创建好一个桶了，效果如下。</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b6fa14993fe6443ea77681bc87452599~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=qzKuy1%2FIC5rN2dtzmuUtbAstCrs%3D" alt="image.png" width="100%">
+
+<h3>注意这里桶的名字必须是你域名的名字，这里我选择用二级域名。桶名字直接用域名这样可以减少一些路由配置。</h3>
+<h3>Route 53 是什么？</h3>
+<p>前一节已经写了Route 53 大概作用，就是他会解析域名引导到S3，S3有我们网站文件，那为什么是53呢？因为dns服务解析默认端口是53。所以就是Route53。像下面的如图创建了Route 53 托管区。</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/a717dadc5fef4c4bbe6e663c36269930~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=wNDtTmmFvtXTbajMu2er3Du2dwc%3D" alt="我新建的Route 53 托管区" width="100%">
+
+<h1>4. 实战部署过程 - 具体操作步骤</h1>
+<h3>第一步：新建S3桶</h3>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/cd86d2e04cd14377be8006542050ac8b~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=mlsk%2FLJtyufabSu4zPxNyybIohw%3D" alt="默认，人在中国，它就是在这个区" width="100%">
+
+<h5>1、阻止所有公开访问</h5>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/f04abe03409f44a7a10394b2d6a5c9c8~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=%2BHFp9%2FJaFGVMFpcipCpvnBC%2BTOU%3D" alt="image.png" width="100%">
+
+<h5>2、开启静态网页托管</h5>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/01d3bd8a84844b5bbbb3fa2881ec3f26~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=6Kg4akaB0M0QjD709axLBZxs0TA%3D" alt="image.png" width="100%">
+
+<h5>2、配置访问策略</h5>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/df65150a06bc4160aff0c4e61b4ac502~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=vljhgOXrRh%2B0K181WCgQroTjS5Y%3D" alt="image.png" width="100%">
+
+<pre><code class="language-js">{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Sid&quot;: &quot;Statement1&quot;,
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Principal&quot;: &quot;*&quot;,
+            &quot;Action&quot;: &quot;s3:GetObject&quot;,
+            &quot;Resource&quot;: &quot;arn:aws:s3:::aws.yxl-upload.xyz/*&quot;
+        }
+    ]
+}
+</code></pre>
+<h5>3、配置公有访问权限</h5>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/a271a22e94e74c9fad9ca17ace8f3007~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=CWzwDAxXoL21QsPD5P3n9UJj4XY%3D" alt="image.png" width="100%">
+
+<h5>4、把静态项目上传，我的vite react 模板项目</h5>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/db00c95dcbf6421382fe3d9bdb348338~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=tDp0NR6zM7iiSto%2FzODJGQoYLjo%3D" alt="image.png" width="100%">
+
+<p>这样呢，我们通过访问<a href="http://aws.yxl-upload.xyz.s3-website-ap-southeast-2.amazonaws.com">http://aws.yxl-upload.xyz.s3-website-ap-southeast-2.amazonaws.com</a> 就可以访问到项目了</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/f0c55b4a5af74e3d9c48298a4b56733e~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=UTSxw4yMhoX%2FTfJwUvilcVjgm8Q%3D" alt="image.png" width="100%">
+
+<p>但是这样呢链接太长了，我们希望通过<a href="http://aws.yxl-upload.xyz">http://aws.yxl-upload.xyz</a> 就能访问到</p>
+<p>这时候就是配置Route 53的时候了,同样创建</p>
+<h5>5、Route 53</h5>
+<p>它会默认有ns 和soa ,ns 就是aws自己dns 解析服务器。</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/c65d19e9ff1744138b2dfabefae60c6c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=FTZ6k1LNTxWLf9RAsjp23jaBQGs%3D" alt="image.png" width="100%">
+
+<p>我们要把aws dns解析配置到域名供应商dns 配置那里，这样可以路由到aws</p>
+<p>我在腾讯云买的域名，自然配置如下</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/f63f606d799e4dfe928b50b0bc4ab337~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=nKp%2Bpqru5JwKphfxE7UASkyLakc%3D" alt="image.png" width="100%">
+
+<p>我们回到AMS Route 53 我们需要添加A记录，A记录是干嘛用的呢，它会把域名直接路由到s3</p>
+<p align="center"><img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/ceaea4948a4c475eabcdeb659ed54de9~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=Y%2BMZEhDSCNN%2BvXZCdzA%2F%2Buhn26g%3D" alt="image.png" width="50%"></p>
+
+<p>好了，现在访问域名就可以了！</p>
+<h5>6、SSL/TSL 证书管理 申请免费的HTTPS证书</h5>
+<p>我们希望更加进一步，让它能更进一步。</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/404b0886ed36419bbda1beb81e9eb4eb~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=suFSYxe8cso%2BXF8p%2BKtVv7As2Ns%3D" alt="image.png" width="100%">
+
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/d6ea4676a8c84f4097d26ac9c7e9092c~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=zwm%2BLbcqh%2BHz0vDgleF3zQwXQJo%3D" alt="image.png" width="100%">
+
+<p>这里的状态要转成已验证是有效的。我们需要把这个正式创建cname记录加到route S3里，没过一会儿他就是已验证了！</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/5c469763e71e429a8d4f6bf002eaea5d~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=02EJ0wIkRs1sudBbATK8UUY7sLU%3D" alt="image.png" width="100%">
+
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/45b01ffc8fdb4003954a9e9365925903~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=fN1cmYUB1189TzkWQdS4CWu%2BlF4%3D" alt="image.png" width="100%">
+
+<h5>接下来加上cloudfront 有cdn 加速</h5>
+<p>这里要注意源的配置一定是要用桶属性最下面那个源</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/494f5f0aa34b4e129c49b430cb1663d2~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=VGhSAlPNSj9dE0Z%2BMJV1ac2rS4U%3D" alt="image.png" width="100%">
+
+<p>好了这样 <a href="https://aws.yxl-upload.xyz/">https://aws.yxl-upload.xyz/</a> 就生效了。</p>
+<h5>最后我们希望改了项目代码后，通过cli能够更新项目</h5>
+<p>AMS账号系统是个很大权限的账号，所以我们喜欢更新项目的权限只限制在运维更新代码这里，为此我们要进入AMS IAM进行配置,添加用户，这个用户只有我们想要给的权限</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/9c0cb263dbee4d5885edd098721ac0fc~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=Tfn5HIaSLwZUsyc6%2F0OOfgJ%2FXKg%3D" alt="image.png" width="100%">
+
+<p>我们给他admin权限，这个admin可以通过指令上传文件，同时生成密钥。</p>
+<img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/a70c0cdb35b148df85d80d4fd083d5d0~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=uWJzINmic6Ac%2FtjWnQHlKmJqH5U%3D" alt="image.png" width="100%">
+
+<p align="center"><img src="https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b3fdb1ddb72e4dda9ef6f52a6d998d49~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5ou_552A5Y-356CB54mM5b6Y5b6K:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMzAzNDMwNzgyMjYzMjY4MCJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1757160104&x-orig-sign=qE0IMX6YsiWxhHwcgVIRRpjJ8p0%3D" alt="image.png" width="30%"></p>
+
+<h5>现在我们尝试用cli上传更新项目</h5>
+<p>我用vite 重新创建一个项目，之前的项目不知道哪里去了。
+这里需要用到aws的指令，所以需要安装aws，安装教程在这里<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html</a></p>
+<pre><code class="language-cli">which aws
+/usr/local/bin/aws
+aws --version
+看看输出的信息对不对
+</code></pre>
+<pre><code class="language-js">项目指令改成这样：
+   &quot;dev&quot;: &quot;vite&quot;,
+    &quot;build&quot;: &quot;vite build&quot;,
+    &quot;lint&quot;: &quot;eslint .&quot;,
+    &quot;preview&quot;: &quot;vite preview&quot;,
+    &quot;ls&quot;: &quot;aws s3 ls s3://aws.yxl-upload.xyz&quot;,
+    &quot;rm&quot;: &quot;aws s3 rm s3://aws.yxl-upload.xyz --recursive --quiet&quot;,
+    &quot;cp&quot;: &quot;aws s3 cp --recursive ./dist s3://aws.yxl-upload.xyz --recursive --quiet&quot;,
+    cp 拷贝复制dist代码到桶里
+    &quot;invalidate&quot;: &quot;aws cloudfront create-invalidation --distribution-id E2OKPVZM16VN32 --paths &#39;/*&#39;&quot;,
+    刷新cdn 缓存
+    &quot;deploy&quot;: &quot;npm run build &amp;&amp; unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy &amp;&amp; npm run cp &amp;&amp; npm run invalidate&quot;
+    
+</code></pre>
+<p>具体的指令查询，可以在这里查到
+<a href="https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html">https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html</a></p>
+<p>至此完结！</p>
+<h1>8. 实用资源 - 参考链接和工具</h1>
+<p>AWS web 服务： <a href="https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&vd_source=d17717b6f370d384f6356af45eaeac45">https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&amp;vd_source=d17717b6f370d384f6356af45eaeac45</a></p>
+
+    </main>
+    
+    <footer class="article-footer">
+      <a href="index.html" class="back-link">← 返回首页</a>
+    </footer>
+  </div>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="directory.html">网站导航</a></li>
+          <li><a href="tags.html">标签</a></li>
+          <li><a href="archive.html">归档</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+</body>
+</html>

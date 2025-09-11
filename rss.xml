@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>徘徊俱乐部</title>
+    <description>记录我想记录的快乐,分享大家喜欢的技术与体验</description>
+    <link>https://blog.holding-num.cn/</link>
+    <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>2025-09-11T09:22:03.181Z</lastBuildDate>
+    <pubDate>2025-09-11T09:22:03.181Z</pubDate>
+    <ttl>60</ttl>
+    <webMaster>zhongziven@gmail.com</webMaster>
+    <managingEditor>zhongziven@gmail.comå</managingEditor>
+    <copyright>© 2025 徘徊俱乐部. All rights reserved.</copyright>
+        <category>技术</category>
+    <category>学习</category>
+    <category>生活</category>
+    <category>思考</category>
+    <generator>徘徊俱乐部博客系统</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>一段时间vibe codeing 感受。</title>
+      <link>https://blog.holding-num.cn/experience-of-vibe-coding-for-a-period-of-time-on-september.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/experience-of-vibe-coding-for-a-period-of-time-on-september.html</guid>
+      <pubDate>Thu, 11 Sep 2025 09:21:57 GMT</pubDate>
+      <description>vibecoding 有感</description>
+      <category>分享</category>
+      <category>vibecode</category>
+      <category>最佳实践</category>
+      <category>实战项目</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>你有冒名顶替综合征吗？</title>
+      <link>https://blog.holding-num.cn/do-you-have-imposter-syndrome-on-september-7-2025.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/do-you-have-imposter-syndrome-on-september-7-2025.html</guid>
+      <pubDate>Thu, 11 Sep 2025 09:06:47 GMT</pubDate>
+      <description>今天聊的话题叫冒名顶替综合征，英文名叫 `impostor syndrome`。他是指总感觉自己很差，但其实还不错的。想聊这个话题来源于看了[Julie Pagano: It&#39;s Dangerous to Go Alone: Battling the Invisible Monsters in Tech - PyCon 2014](https://www.youtube.com/watch?v=1i8ylq4j_EY)。这是11年前的视频，但是其说的话题，今天对刚开始编码的人来说，或者说对总深陷于挣扎与自责的编程人来说，</description>
+      <category>视频笔记</category>
+      <category>王阳明</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <category>impostor syndrome</category>
+      <category>不配得感</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>不善于认得，只擅长于认可。</title>
+      <link>https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</guid>
+      <pubDate>Wed, 10 Sep 2025 09:08:59 GMT</pubDate>
+      <description>今天认识自己的主题有两个：一个是我不擅长于认得，擅长于认可。第二个是命运是命中注定的吗？</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>王阳明心学系列笔记 - 第3篇</title>
+      <link>https://blog.holding-num.cn/september-3-2025-wang-yangmings-heart-learning-series-notes.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/september-3-2025-wang-yangmings-heart-learning-series-notes.html</guid>
+      <pubDate>Wed, 03 Sep 2025 08:52:08 GMT</pubDate>
+      <description>王阳明不仅是一位伟大的哲学家，还是一位心性修养极深的大师。他尝试过许多不同学派的修心方法，在修养身心的过程中，深深懂得了掌控情绪、培养定力、认识自我对一个人的重要性。只有主动去认识自我，磨练出一种“静”气，才能更好地了解自身思想情绪所处的状态，掌握生命活动的规律，在面对外界刺激和干扰时，使自己处于一种主动的、有利的地位。</description>
+      <category>读书笔记</category>
+      <category>王阳明</category>
+      <category>心理学</category>
+      <category>wangyangming</category>
+      <category>心学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>什么是坚持？</title>
+      <link>https://blog.holding-num.cn/what-is-persistence.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/what-is-persistence.html</guid>
+      <pubDate>Mon, 01 Sep 2025 12:06:05 GMT</pubDate>
+      <description>随着年龄的增长，对很多事情看法就会变得很不一样。 早期对于坚持的看法，来源于母亲。它好像具备两个要素：忍和冲！ 凡是要咬住牙关，忍住，往前冲就是了。 今天母亲也是这样影响我。</description>
+      <category>鸡汤</category>
+      <category>心理</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>嗨。</title>
+      <link>https://blog.holding-num.cn/2025-08-19-hi.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-08-19-hi.html</guid>
+      <pubDate>Mon, 01 Sep 2025 11:33:01 GMT</pubDate>
+      <description>我的第一篇文章</description>
+      <category>分享</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
+      <link>https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</guid>
+      <pubDate>Mon, 01 Sep 2025 06:42:00 GMT</pubDate>
+      <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
+      <category>部署</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>王阳明心学系列笔记 - 第2篇</title>
+      <link>https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</guid>
+      <pubDate>Sun, 31 Aug 2025 08:33:04 GMT</pubDate>
+      <description>王阳明心学系列笔记 - 第2篇</description>
+      <category>读书笔记</category>
+      <category>王阳明</category>
+      <category>心学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>王阳明心学系列笔记 - 第1篇</title>
+      <link>https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series.html</guid>
+      <pubDate>Sun, 31 Aug 2025 08:09:08 GMT</pubDate>
+      <description>王阳明读书有感</description>
+      <category>读书笔记</category>
+      <category>王阳明</category>
+      <category>读书笔记</category>
+      <category>读书</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+  </channel>
+</rss>
