@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-09-14T03:21:20.805Z</lastBuildDate>
-    <pubDate>2025-09-14T03:21:20.805Z</pubDate>
+    <lastBuildDate>2025-09-16T15:37:55.076Z</lastBuildDate>
+    <pubDate>2025-09-16T15:37:55.076Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,18 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>学日语第四天，晴天霹雳，JLPT考试，报名没报上！</title>
+      <link>https://blog.holding-num.cn/on-august-31-2025-the-the-fourth-day-of-learning-japanese.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-the-the-fourth-day-of-learning-japanese.html</guid>
+      <pubDate>Tue, 16 Sep 2025 15:37:52 GMT</pubDate>
+      <description>日语学习第四天</description>
+      <category>日记</category>
+      <category>日语</category>
+      <category>三个月挑战n2</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>20250912日语学习第一天</title>
       <link>https://blog.holding-num.cn/2025-09-03-202550912-first-day-of-japanese-language-learning.html</link>
@@ -97,17 +109,6 @@
       <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
       <category>部署</category>
       <category>最佳实践</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>王阳明心学系列笔记 - 第2篇</title>
-      <link>https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-wang-yangmings-heart-learning-series-1.html</guid>
-      <pubDate>Sun, 31 Aug 2025 08:33:04 GMT</pubDate>
-      <description>王阳明心学系列笔记 - 第2篇</description>
-      <category>读书笔记</category>
-      <category>王阳明</category>
-      <category>心学</category>
       <author>zhongziven@gmail.comå</author>
     </item>
     <item>
