@@ -3,23 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徘徊俱乐部</title>
-  <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <title>那些人真的对你重要吗？ - 徘徊俱乐部</title>
+  <meta name="description" content="作为容易内耗的人来说，特别容易被情绪所困是比较常见。我就在想，是啊，不重要，不重要所以就不必在乎，是吧。对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。">
+  <meta name="author" content="zhongziven@gmail.com">
+  <meta name="keywords" content="心理学, 积极心理学, 心理, 心学">
   <link rel="stylesheet" href="styles.css">
   
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="徘徊俱乐部">
-  <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="那些人真的对你重要吗？">
+  <meta property="og:description" content="作为容易内耗的人来说，特别容易被情绪所困是比较常见。我就在想，是啊，不重要，不重要所以就不必在乎，是吧。对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。">
+  <meta property="og:article:author" content="zhongziven@gmail.com">
+  <meta property="og:article:published_time" content="2025-10-11T07:54:00.009957+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="徘徊俱乐部">
-  <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
-     crossorigin="anonymous"></script>
+  <meta property="twitter:title" content="那些人真的对你重要吗？">
+  <meta property="twitter:description" content="作为容易内耗的人来说，特别容易被情绪所困是比较常见。我就在想，是啊，不重要，不重要所以就不必在乎，是吧。对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。">
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "那些人真的对你重要吗？",
+    "description": "作为容易内耗的人来说，特别容易被情绪所困是比较常见。我就在想，是啊，不重要，不重要所以就不必在乎，是吧。对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。",
+    "author": {
+      "@type": "Person",
+      "name": "zhongziven@gmail.com"
+    },
+    "datePublished": "2025-10-11T07:54:00.009957+00:00",
+    "keywords": "心理学, 积极心理学, 心理, 心学"
+  }
+  </script>
+  
   <style>
     /* 基础样式重置 */
     * {
@@ -31,7 +51,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      color: black;
+      color: #333;
+      background: white;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -449,279 +470,179 @@
     }
   
 
-    /* 主标题区域 */
-    .hero-section {
-      text-align: center;
-      padding: 8rem 0 6rem 0;
-      color: white;
-      background: #7c4dff;
-    }
-
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 300;
-      max-width: 700px;
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
       line-height: 1.8;
     }
 
-    /* 主要内容区域 */
-    .main-content {
-      background: #fff;
-      min-height: 60vh;
-      padding: 3rem 0;
-      margin-bottom: 0 !important;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 最近文章区域 */
-    .updates-section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
       font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
       margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    /* 文章列表 */
-    .article-list {
-      list-style: none;
-      
-    }
-      .article-list-a {
-        text-decoration:none!important
-      }
-
-    .article-item {
-      padding: 1rem;
-    }
-
-  
-
-  
-
-
-
-    .article-link {
-      color: #333;
-      text-decoration: none !important;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      display: block;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .article-link:hover {
-      color: #7c4dff;
-      text-decoration: none !important;
-    }
-
-    .article-link:visited {
-      text-decoration: none !important;
-    }
-
-    .article-link:focus {
-      text-decoration: none !important;
-      outline: none;
-    }
-
-    /* 作者介绍侧边栏 */
-    .author-sidebar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      height: fit-content;
-    }
-
-    .author-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .author-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    .author-content {
-      text-align: left;
-    }
-
-    .author-description {
       color: #555;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(124, 77, 255, 0.05);
-      border-radius: 8px;
     }
 
-    .avatar-container {
-      margin-bottom: 2rem;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: #7c4dff;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #7c4dff;
-      border-radius: 50%;
-      color: white;
+    .article-content a {
+      color: #7c4dff;
       text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
       transition: all 0.3s ease;
     }
 
-    .contact-link:hover {
-      transform: translateY(-3px);
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
     }
 
-    /* 空状态 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
+    .article-content code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #e91e63;
+    }
+
+    .article-content pre {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-left: 4px solid #7c4dff;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
       color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
     }
 
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #7c4dff;
-      font-weight: 300;
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
     }
 
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
     }
 
     /* 响应式设计 */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.2rem;
+      .container {
+        padding: 1rem 15px;
       }
       
-      .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 15px;
-      }
-      
-      .updates-section,
-      .author-sidebar {
+      .article-header,
+      .article-content {
         padding: 2rem 1.5rem;
       }
       
-      /* 移动端标题居中 */
-      .section-title,
-      .author-title {
-        text-align: center;
-      }
-      
-      .section-title::after,
-      .author-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .author-content {
-        text-align: center;
-      }
-      
-      .avatar {
-        width: 100px;
-        height: 100px;
+      .article-title {
         font-size: 2rem;
       }
       
-      .contact-links {
-        gap: 0.8rem;
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
       }
       
-      .contact-link {
-        width: 45px;
-        height: 45px;
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
       }
     }
   </style>
@@ -803,118 +724,46 @@
     });
   </script>
   
-
-  <!-- 主标题区域 -->
-  <header class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">徘徊俱乐部</h1>
-      <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
-    </div>
-  </header>
-
-  <!-- 主要内容区域 -->
-  <main class="main-content">
-    <div class="content-grid">
-      <!-- 作者介绍侧边栏 -->
-      <aside class="author-sidebar">
-        <h3 class="author-title">作者</h3>
-        <div class="author-content">
-           <p class="author-description">
-            全网名《拿着号码牌徘徊》
-          </p>
-          <p class="author-description">
-            非常优秀的程序员,是完美的体验家,一生都是学生。
-          </p>
-           <p class="author-description">
-            请多多指教。
-          </p>
-        </div>
-      </aside>
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">那些人真的对你重要吗？</h1>
+      <div class="article-meta">
+        <span>📅 2025/10/11</span>
+      </div>
       
-      <!-- 最近文章区域 -->
-      <section class="updates-section">
-        <h2 class="section-title">最近文章</h2>
-        
-        
-          <ul class="article-list">
-            
-              <li class="article-item">
-                <a href="are-those-people-really-important-to-you-on-october-11-2025.html" class="article-link" >
-                  2025-10-11 那些人真的对你重要吗？
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="2022-10-09-japanese-listening-practice-listen-slowly-first.html" class="article-link" >
-                  2022-10-09 日语听力实践--先慢听，后快听，反复听，熟到能膝盖反应式听懂
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="on-october-8-2025-while-putting-more-pressure-on-oneself.html" class="article-link" >
-                  2025-10-08 给自己多点压力的同时，也要给予自己温暖
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="on-october-4-2025-there-was-a-recurring-negative-feeling.html" class="article-link" >
-                  2025-10-04 有一种反复出现的消极感觉
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="2025-10-02-unconditional-love-for-yourself.html" class="article-link" >
-                  2025-10-02 无条件的爱自己
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="do-you-have-imposter-syndrome-on-september-7-2025.html" class="article-link" >
-                  2025-09-07 你有冒名顶替综合征吗？
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="2025-09-07-not-good-at-recognition-only-good-at-recognition.html" class="article-link" >
-                  2025-09-07 不善于认得，只擅长于认可。
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="2025-09-03-202550912-first-day-of-japanese-language-learning.html" class="article-link" >
-                  2025-09-03 20250912日语学习第一天
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="experience-of-vibe-coding-for-a-period-of-time-on-september.html" class="article-link" >
-                  2025-09-03 一段时间vibe codeing 感受。
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="what-is-persistence.html" class="article-link" >
-                  2025-09-01 什么是坚持？
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="it-seems-that-i-need-to-bathe-my-soul-every-now-and-then.html" class="article-link" >
-                  2025-08-31 看来隔段时间就要给自己的心灵洗澡
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="on-august-31-2025-the-the-fourth-day-of-learning-japanese.html" class="article-link" >
-                  2025-08-31 学日语第四天，晴天霹雳，JLPT考试，报名没报上！
-                </a>
-              </li>
-            
-          </ul>
-        
-      </section>
-    </div>
-  </main>
+      <div class="article-tags">
+        <span class="tag">心理学</span><span class="tag">积极心理学</span><span class="tag">心理</span><span class="tag">心学</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <p>作为容易内耗的人来说，特别容易被情绪所困是比较常见。</p>
+<p>最近看大冰直播的回放，里面谈到他和被访问者直接，其实彼此都不重要的，不要给予直播对话过多的
+依赖，对话彼此互选都对对方不重要。</p>
+<p>我就在想，是啊，不重要，不重要所以就不必在乎，是吧。</p>
+<p>对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。</p>
+<p>说实在的承认自己容易受影响，但是也要承认你也你也有很多王牌。因为你容易受影响，所以你就会
+更主动的远离这些人。你就会更主动的培训自己跑路的能力，你也会更加沉着冷静的面对这种情况。
+你会闭上眼睛，深呼吸，然后拿出自己手中各种工具箱。</p>
+<p>说实在话，工作的每个人都对你不重要，当然如果每天要面对面合作。这种就要另当别论了，其他情况
+远离就可以了，思想远离不在乎。</p>
+<p>还有就是要反复不断的给予自己正能量，反复不断地爱自己，善待自己，让自己呼吸，让自己体会到爱意。
+特别是原生家庭不太重视爱这个东西的情况。因为只有这样你才会把注意力放到自己身上，在面对困难的
+时候不那么难。</p>
+<p>这几天，日本活动三个诺贝尔奖，日本可真厉害啊，今年有三位，真的不可思议。其中一个诺贝尔奖得主。
+我忘记名字了，他提到劲草之心。所谓疾风知劲草，意为强大的风才能发现真正的强大的草。早出自《东观汉记·王霸传》中东汉光武帝刘秀对王霸的赞誉
+注意这个草是坚韧的草，有强风就低头。但是风一过，你就可以站起来。面对凶悍之人
+你可以低头，但是一过，你依然可以站起来。所以不要害怕遇到骂你的人，对你凶悍的人，他们本身就是。。。
+而你以后依然强大。</p>
+
+    </main>
+    
+    <footer class="article-footer">
+      <a href="index.html" class="back-link">← 返回首页</a>
+    </footer>
+  </div>
   
   
   <!-- 页脚 -->
