@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-10-18T09:31:12.075Z</lastBuildDate>
-    <pubDate>2025-10-18T09:31:12.075Z</pubDate>
+    <lastBuildDate>2025-10-19T12:26:31.263Z</lastBuildDate>
+    <pubDate>2025-10-19T12:26:31.263Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>环境怎么样无所谓，能忍的情况下，培养能量里面改变环境</title>
+      <link>https://blog.holding-num.cn/it-doesnt-matter-what-the-environment-is-like-on-october-19.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/it-doesnt-matter-what-the-environment-is-like-on-october-19.html</guid>
+      <pubDate>Sun, 19 Oct 2025 12:26:29 GMT</pubDate>
+      <description>最近看台湾一个国学大师的视频他讲的是一些世俗的道理。他说在人世间有些时候要人前一套，心里要另一套。</description>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>你讨厌生恨的那个人其实是以前的你</title>
       <link>https://blog.holding-num.cn/on-october-18-2025-the-person-you-hate-is-actually-the-old.html</link>
@@ -245,16 +256,6 @@
       <pubDate>Mon, 01 Sep 2025 11:33:01 GMT</pubDate>
       <description>我的第一篇文章</description>
       <category>分享</category>
-      <category>最佳实践</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
-      <link>https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</guid>
-      <pubDate>Mon, 01 Sep 2025 06:42:00 GMT</pubDate>
-      <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
-      <category>部署</category>
       <category>最佳实践</category>
       <author>zhongziven@gmail.comå</author>
     </item>
