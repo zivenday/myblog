@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-10-19T12:26:31.263Z</lastBuildDate>
-    <pubDate>2025-10-19T12:26:31.263Z</pubDate>
+    <lastBuildDate>2025-10-20T18:11:09.129Z</lastBuildDate>
+    <pubDate>2025-10-20T18:11:09.129Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>心理有恐惧，如何坦荡荡</title>
+      <link>https://blog.holding-num.cn/on-october-20-2025-if-you-have-psychological-fear-how-to-be.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-october-20-2025-if-you-have-psychological-fear-how-to-be.html</guid>
+      <pubDate>Mon, 20 Oct 2025 18:11:07 GMT</pubDate>
+      <description>老子不奉陪，滚吧</description>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>环境怎么样无所谓，能忍的情况下，培养能量里面改变环境</title>
       <link>https://blog.holding-num.cn/it-doesnt-matter-what-the-environment-is-like-on-october-19.html</link>
@@ -247,16 +258,6 @@
       <category>鸡汤</category>
       <category>心理</category>
       <category>积极心理学</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>嗨。</title>
-      <link>https://blog.holding-num.cn/2025-08-19-hi.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-08-19-hi.html</guid>
-      <pubDate>Mon, 01 Sep 2025 11:33:01 GMT</pubDate>
-      <description>我的第一篇文章</description>
-      <category>分享</category>
-      <category>最佳实践</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
