@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-10-22T11:50:20.334Z</lastBuildDate>
-    <pubDate>2025-10-22T11:50:20.334Z</pubDate>
+    <lastBuildDate>2025-10-23T15:29:56.454Z</lastBuildDate>
+    <pubDate>2025-10-23T15:29:56.454Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>允许所有发生</title>
+      <link>https://blog.holding-num.cn/2022-10-23-allow-all-occurrences.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-10-23-allow-all-occurrences.html</guid>
+      <pubDate>Thu, 23 Oct 2025 15:29:46 GMT</pubDate>
+      <description>生活里的一天里，都会有很多事情发生。心里会有很多念头，有些念头让我刻在了我的心里。</description>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>允许恐惧跟你走,没关系</title>
       <link>https://blog.holding-num.cn/2025-10-22-allow-fear-to-follow-you-its-okay.html</link>
@@ -246,18 +257,6 @@
       <category>心理学</category>
       <category>impostor syndrome</category>
       <category>不配得感</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>不善于认得，只擅长于认可。</title>
-      <link>https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</guid>
-      <pubDate>Wed, 10 Sep 2025 09:08:59 GMT</pubDate>
-      <description>今天认识自己的主题有两个：一个是我不擅长于认得，擅长于认可。第二个是命运是命中注定的吗？</description>
-      <category>日记</category>
-      <category>心理学</category>
-      <category>日记</category>
-      <category>积极心理学</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
