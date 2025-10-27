@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-10-27T10:56:23.051Z</lastBuildDate>
-    <pubDate>2025-10-27T10:56:23.051Z</pubDate>
+    <lastBuildDate>2025-10-27T18:48:44.933Z</lastBuildDate>
+    <pubDate>2025-10-27T18:48:44.933Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,21 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>日语学习计划变更</title>
+      <link>https://blog.holding-num.cn/2025-10-27-japanese-language-learning-plan-change.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-10-27-japanese-language-learning-plan-change.html</guid>
+      <pubDate>Mon, 27 Oct 2025 18:48:43 GMT</pubDate>
+      <description>这几天感觉，一下午的时间都会花在日语学习。我的心思是觉得应该下午不仅仅只是花在日语学习。</description>
+      <category>日语学习</category>
+      <category>三个月挑战n2</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <category>日语</category>
+      <category>语言学习</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>背单词的心得[日语学习第32天]</title>
       <link>https://blog.holding-num.cn/2022-10-26-reflections-on-vocabulary-learning-day-32-of.html</link>
@@ -249,20 +264,6 @@
       <category>日记</category>
       <category>心理学</category>
       <category>积极心理学</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>无条件的爱自己</title>
-      <link>https://blog.holding-num.cn/2025-10-02-unconditional-love-for-yourself.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-10-02-unconditional-love-for-yourself.html</guid>
-      <pubDate>Thu, 02 Oct 2025 23:16:32 GMT</pubDate>
-      <description>我发现整理自己，心情越好。</description>
-      <category>日记</category>
-      <category>心学</category>
-      <category>日记</category>
-      <category>积极心理学</category>
-      <category>心理学</category>
-      <category>强迫症</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
