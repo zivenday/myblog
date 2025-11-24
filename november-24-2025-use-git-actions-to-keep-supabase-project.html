@@ -14,7 +14,7 @@
   <meta property="og:title" content="使用 Git Actions 给 Supabase 项目做保活">
   <meta property="og:description" content="我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。">
   <meta property="og:article:author" content="zhongziven@gmail.com">
-  <meta property="og:article:published_time" content="2025-11-24T15:46:59.895+00:00">
+  <meta property="og:article:published_time" content="2025-11-24T22:59:27.411+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
       "@type": "Person",
       "name": "zhongziven@gmail.com"
     },
-    "datePublished": "2025-11-24T15:46:59.895+00:00",
+    "datePublished": "2025-11-24T22:59:27.411+00:00",
     "keywords": "日更挑战, 最佳实践, Git Actions, Supabase, Supabase 保活"
   }
   </script>
@@ -731,7 +731,7 @@
     <header class="article-header">
       <h1 class="article-title">使用 Git Actions 给 Supabase 项目做保活</h1>
       <div class="article-meta">
-        <span>📅 2025/11/24</span>
+        <span>📅 2025/11/25</span>
       </div>
       
       <div class="article-tags">
@@ -757,6 +757,7 @@
 <img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/fea3bfce-175c-4d5b-842c-dae3c3e74248.png" alt="image.png"></p>
 <p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/380bf0f2-90cd-435e-9c61-ce8a3a37f559.png" alt="image.png"></p>
 <p>所以要复制pooler这个选项下面这个链接来连。</p>
+<h5>第三步 yml脚本</h5>
 <p>脚本如下：</p>
 <pre><code class="language-yml">name: Keep Supabase Awake
 
