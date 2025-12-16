@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>徘徊俱乐部</title>
+    <description>记录我想记录的快乐,分享大家喜欢的技术与体验</description>
+    <link>https://blog.holding-num.cn/</link>
+    <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>2025-12-16T13:23:54.604Z</lastBuildDate>
+    <pubDate>2025-12-16T13:23:54.604Z</pubDate>
+    <ttl>60</ttl>
+    <webMaster>zhongziven@gmail.com</webMaster>
+    <managingEditor>zhongziven@gmail.comå</managingEditor>
+    <copyright>© 2025 徘徊俱乐部. All rights reserved.</copyright>
+        <category>技术</category>
+    <category>学习</category>
+    <category>生活</category>
+    <category>思考</category>
+    <generator>徘徊俱乐部博客系统</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>使用 Git Actions 给 Supabase 项目做保活</title>
+      <link>https://blog.holding-num.cn/november-24-2025-use-git-actions-to-keep-supabase-project.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/november-24-2025-use-git-actions-to-keep-supabase-project.html</guid>
+      <pubDate>Mon, 24 Nov 2025 23:00:52 GMT</pubDate>
+      <description>我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。</description>
+      <category>技术文章</category>
+      <category>日更挑战</category>
+      <category>最佳实践</category>
+      <category>Git Actions</category>
+      <category>Supabase</category>
+      <category>Supabase 保活</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>怎么在obsidian上随心所欲地记笔记（一）</title>
+      <link>https://blog.holding-num.cn/how-to-take-notes-freely-on-obsidian-on-november-22-2025.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/how-to-take-notes-freely-on-obsidian-on-november-22-2025.html</guid>
+      <pubDate>Sat, 22 Nov 2025 09:22:32 GMT</pubDate>
+      <description>这是一篇结合我实际使用的经验的文章。文章的内容是解决让自己快速记笔记的难题，对我来说，是老大难的题，其痛点在于快速记上笔记，我觉得这比让自己的笔记分层次更重要。因为脑子里瞬间的想法和感受大多数情况下都是有时效的，过了没多久就忘了。忘记让我感到害怕。你可能会说，那为啥不买个小本本快速记上呢？非也，我要的是手机，电脑，甚至是平板三端能同时共享，这样我能够站着记笔记，坐着记笔记，躺着也记笔记，想用什么记笔记都可以，随时随地同步，随时随地的进行记笔记，记笔记成为了我的快乐，我能够全方位无死角记录自己的一切，还要足够便宜甚至免费，真的爽啊。</description>
+      <category>技术文章</category>
+      <category>obsidian</category>
+      <category>image auto upload</category>
+      <category>最佳实践</category>
+      <category>笔记</category>
+      <category>三端同步</category>
+      <category>效率</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>金秋十月，记录一次Coffee Chat</title>
+      <link>https://blog.holding-num.cn/record-a-coffee-chat-on-october-28-2025-golden-autumn.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/record-a-coffee-chat-on-october-28-2025-golden-autumn.html</guid>
+      <pubDate>Tue, 28 Oct 2025 13:21:58 GMT</pubDate>
+      <description>这确实是一次Coffee chat ，因为chat的当下，我真的在咖啡馆里，难怪要叫Coffee chat。咖啡馆来自一家私人品牌，并且是很有品味的咖啡馆。就像chat的两个人都很有品味一样。Max L 和我差不多大，都是35岁左右，看上去他比实际年龄年轻，多年轻呢，大概20多岁吧。和我印象中的台湾人一样，说话比较礼貌，凡事不会说太满。在我和他的交谈中，我感受到他是个情绪比较稳定的人，尽管这是他的第一次这样连线chat。</description>
+      <category>Coffee Chat</category>
+      <category>chat</category>
+      <category>随机对谈</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <category>焦虑症</category>
+      <category>心理</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>有时候是你想要纠结</title>
+      <link>https://blog.holding-num.cn/sometimes-you-want-to-be-indecisive.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/sometimes-you-want-to-be-indecisive.html</guid>
+      <pubDate>Fri, 17 Oct 2025 17:17:07 GMT</pubDate>
+      <description>今天看到一篇文章讲说人确实会因为环境不好，自己长时间受挫。人就会内耗，长久内耗会导致自己心理扭曲。就是说，环境确实会让人不好，遇到不好的环境就不要久呆，要走。</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>拖延症一直没做好</title>
+      <link>https://blog.holding-num.cn/on-october-16-2025-procrastination-has-not-been-well-managed.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-october-16-2025-procrastination-has-not-been-well-managed.html</guid>
+      <pubDate>Thu, 16 Oct 2025 15:51:04 GMT</pubDate>
+      <description>拖延症一直没做好</description>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>都是草台班子，怕什么呢</title>
+      <link>https://blog.holding-num.cn/on-october-15-2025-we-are-all-members-of-the-grass-terrace.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-october-15-2025-we-are-all-members-of-the-grass-terrace.html</guid>
+      <pubDate>Wed, 15 Oct 2025 15:55:08 GMT</pubDate>
+      <description>随着时间的推移好像工作和同事之前的关系，在我内心的投射又出现了反刍，厌烦，压抑的感觉了。我现在都不知道是自己选择了这种感受，还是说真的这种感受让我无法专心。这几天都是一整天都没办法集中精神去学习。</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <category>心学</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>什么时候都要有相信自己</title>
+      <link>https://blog.holding-num.cn/2025-october-14-always-have-faith-in-yourself.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-october-14-always-have-faith-in-yourself.html</guid>
+      <pubDate>Tue, 14 Oct 2025 13:18:37 GMT</pubDate>
+      <description>每当心里难受的时候，都要告诉自己我再想什么，我感受到了什么，为什么难受。</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <category>日记</category>
+      <category>三个月挑战n2</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>脑回路重塑</title>
+      <link>https://blog.holding-num.cn/brain-circuit-remodeling-on-october-13-2025.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/brain-circuit-remodeling-on-october-13-2025.html</guid>
+      <pubDate>Mon, 13 Oct 2025 16:11:22 GMT</pubDate>
+      <description>在这个社会里总会遇到什么的时候，写下来，可能心情就好了。今天看了大冰的直播切片，今天看的几个切片内容都和我很想符合。里面提到一位年轻人控制不了自己，看书学习的时候，总是看手机。这个我也是，就是内心两个在大家。</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>那些人真的对你重要吗？</title>
+      <link>https://blog.holding-num.cn/are-those-people-really-important-to-you-on-october-11-2025.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/are-those-people-really-important-to-you-on-october-11-2025.html</guid>
+      <pubDate>Sat, 11 Oct 2025 07:54:00 GMT</pubDate>
+      <description>作为容易内耗的人来说，特别容易被情绪所困是比较常见。我就在想，是啊，不重要，不重要所以就不必在乎，是吧。对于工作也好，还是亲戚什么的。一旦感觉对方语气不好，或者态度对你不好。就容易自我纠结。</description>
+      <category>鸡汤</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <category>心理</category>
+      <category>心学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>日语听力实践--先慢听，后快听，反复听，熟到能膝盖反应式听懂</title>
+      <link>https://blog.holding-num.cn/2022-10-09-japanese-listening-practice-listen-slowly-first.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-10-09-japanese-listening-practice-listen-slowly-first.html</guid>
+      <pubDate>Thu, 09 Oct 2025 17:57:39 GMT</pubDate>
+      <description>今天已经学到日语第四课了，我学习的教材是《标准日本语》，这本书好像是古早的时候为了基于中日交流所催出来的教科书。</description>
+      <category>日语学习</category>
+      <category>日语</category>
+      <category>三个月挑战n2</category>
+      <category>语言学习</category>
+      <category>听力</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>给自己多点压力的同时，也要给予自己温暖</title>
+      <link>https://blog.holding-num.cn/on-october-8-2025-while-putting-more-pressure-on-oneself.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-october-8-2025-while-putting-more-pressure-on-oneself.html</guid>
+      <pubDate>Wed, 08 Oct 2025 15:39:24 GMT</pubDate>
+      <description>今天学习日语，完整的上完了一课。真是不容易啊。为什么这么说呢？因为最近几年学习，我都是很难坚持学完东西，一晃就是一天没了，稍微学久一点就难受。</description>
+      <category>日记</category>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>无条件的爱自己</title>
+      <link>https://blog.holding-num.cn/2025-10-02-unconditional-love-for-yourself.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-10-02-unconditional-love-for-yourself.html</guid>
+      <pubDate>Thu, 02 Oct 2025 23:16:32 GMT</pubDate>
+      <description>我发现整理自己，心情越好。</description>
+      <category>日记</category>
+      <category>心学</category>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <category>强迫症</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>学日语第四天，晴天霹雳，JLPT考试，报名没报上！</title>
+      <link>https://blog.holding-num.cn/on-august-31-2025-the-the-fourth-day-of-learning-japanese.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/on-august-31-2025-the-the-fourth-day-of-learning-japanese.html</guid>
+      <pubDate>Tue, 16 Sep 2025 15:37:52 GMT</pubDate>
+      <description>日语学习第四天</description>
+      <category>日记</category>
+      <category>日语</category>
+      <category>三个月挑战n2</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>20250912日语学习第一天</title>
+      <link>https://blog.holding-num.cn/2025-09-03-202550912-first-day-of-japanese-language-learning.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-09-03-202550912-first-day-of-japanese-language-learning.html</guid>
+      <pubDate>Sun, 14 Sep 2025 03:21:18 GMT</pubDate>
+      <description>日语学习</description>
+      <category>学习笔记</category>
+      <category>日语</category>
+      <category>日更挑战</category>
+      <category>三个月挑战n2</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>一段时间vibe codeing 感受。</title>
+      <link>https://blog.holding-num.cn/experience-of-vibe-coding-for-a-period-of-time-on-september.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/experience-of-vibe-coding-for-a-period-of-time-on-september.html</guid>
+      <pubDate>Thu, 11 Sep 2025 09:21:57 GMT</pubDate>
+      <description>vibecoding 有感</description>
+      <category>分享</category>
+      <category>vibecode</category>
+      <category>最佳实践</category>
+      <category>实战项目</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>你有冒名顶替综合征吗？</title>
+      <link>https://blog.holding-num.cn/do-you-have-imposter-syndrome-on-september-7-2025.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/do-you-have-imposter-syndrome-on-september-7-2025.html</guid>
+      <pubDate>Thu, 11 Sep 2025 09:06:47 GMT</pubDate>
+      <description>今天聊的话题叫冒名顶替综合征，英文名叫 `impostor syndrome`。他是指总感觉自己很差，但其实还不错的。想聊这个话题来源于看了[Julie Pagano: It&#39;s Dangerous to Go Alone: Battling the Invisible Monsters in Tech - PyCon 2014](https://www.youtube.com/watch?v=1i8ylq4j_EY)。这是11年前的视频，但是其说的话题，今天对刚开始编码的人来说，或者说对总深陷于挣扎与自责的编程人来说，</description>
+      <category>视频笔记</category>
+      <category>王阳明</category>
+      <category>积极心理学</category>
+      <category>心理学</category>
+      <category>impostor syndrome</category>
+      <category>不配得感</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>不善于认得，只擅长于认可。</title>
+      <link>https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-09-07-not-good-at-recognition-only-good-at-recognition.html</guid>
+      <pubDate>Wed, 10 Sep 2025 09:08:59 GMT</pubDate>
+      <description>今天认识自己的主题有两个：一个是我不擅长于认得，擅长于认可。第二个是命运是命中注定的吗？</description>
+      <category>日记</category>
+      <category>心理学</category>
+      <category>日记</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>什么是坚持？</title>
+      <link>https://blog.holding-num.cn/what-is-persistence.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/what-is-persistence.html</guid>
+      <pubDate>Mon, 01 Sep 2025 12:06:05 GMT</pubDate>
+      <description>随着年龄的增长，对很多事情看法就会变得很不一样。 早期对于坚持的看法，来源于母亲。它好像具备两个要素：忍和冲！ 凡是要咬住牙关，忍住，往前冲就是了。 今天母亲也是这样影响我。</description>
+      <category>鸡汤</category>
+      <category>心理</category>
+      <category>积极心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>嗨。</title>
+      <link>https://blog.holding-num.cn/2025-08-19-hi.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-08-19-hi.html</guid>
+      <pubDate>Mon, 01 Sep 2025 11:33:01 GMT</pubDate>
+      <description>我的第一篇文章</description>
+      <category>分享</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+    <item>
+      <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
+      <link>https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2022-08-30-front-end-learning-deployment-article-0.html</guid>
+      <pubDate>Mon, 01 Sep 2025 06:42:00 GMT</pubDate>
+      <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
+      <category>部署</category>
+      <category>最佳实践</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
+  </channel>
+</rss>
