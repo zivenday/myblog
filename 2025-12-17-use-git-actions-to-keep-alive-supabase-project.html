@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>使用 Git Actions 给 Supabase 项目做保活 - 徘徊俱乐部</title>
+  <title>使用 Git Actions 给 Supabase 项目做“保活” - 徘徊俱乐部</title>
   <meta name="description" content="我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。">
   <meta name="author" content="zhongziven@gmail.com">
   <meta name="keywords" content="日更挑战, 最佳实践, Git Actions, Supabase, Supabase 保活">
+  <link rel="icon" href="https://blog.holding-num.cn/favicon.ico">
   <link rel="stylesheet" href="styles.css">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="使用 Git Actions 给 Supabase 项目做保活">
+  <meta property="og:title" content="使用 Git Actions 给 Supabase 项目做“保活”">
   <meta property="og:description" content="我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。">
   <meta property="og:article:author" content="zhongziven@gmail.com">
-  <meta property="og:article:published_time" content="2025-12-17T07:00:00+00:00">
+  <meta property="og:article:published_time" content="2025-12-17T15:00:00+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="使用 Git Actions 给 Supabase 项目做保活">
+  <meta property="twitter:title" content="使用 Git Actions 给 Supabase 项目做“保活”">
   <meta property="twitter:description" content="我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
@@ -29,13 +30,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "使用 Git Actions 给 Supabase 项目做保活",
+    "headline": "使用 Git Actions 给 Supabase 项目做“保活”",
     "description": "我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。",
     "author": {
       "@type": "Person",
       "name": "zhongziven@gmail.com"
     },
-    "datePublished": "2025-12-17T07:00:00+00:00",
+    "datePublished": "2025-12-17T15:00:00+00:00",
     "keywords": "日更挑战, 最佳实践, Git Actions, Supabase, Supabase 保活"
   }
   </script>
@@ -653,19 +654,19 @@
   <nav class="navbar" id="navbar">
     <div class="navbar-content">
       <div class="navbar-brand">
-        <a href="index.html" class="brand-link">
+        <a href="https://holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
           <img src="logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
         </a>
       </div>
       
       <!-- 桌面端导航链接 -->
       <div class="navbar-links desktop-nav">
-        <a href="index.html" class="navbar-link">首页</a>
-        <a href="directory.html" class="navbar-link">网站导航</a>
-        <a href="tags.html" class="navbar-link">标签</a>
-        <a href="archive.html" class="navbar-link">归档</a>
-        <a href="about.html" class="navbar-link">关于</a>
-        <a href="rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
           <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
           </svg>
@@ -683,12 +684,12 @@
     
     <!-- 移动端菜单 -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-menu-link">首页</a>
-      <a href="directory.html" class="mobile-menu-link">网站导航</a>
-      <a href="tags.html" class="mobile-menu-link">标签</a>
-      <a href="archive.html" class="mobile-menu-link">归档</a>
-      <a href="about.html" class="mobile-menu-link">关于</a>
-      <a href="rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
         <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
         </svg>
@@ -729,7 +730,7 @@
   
   <div class="container">
     <header class="article-header">
-      <h1 class="article-title">使用 Git Actions 给 Supabase 项目做保活</h1>
+      <h1 class="article-title">使用 Git Actions 给 Supabase 项目做“保活”</h1>
       <div class="article-meta">
         <span>📅 2025/12/17</span>
       </div>
@@ -895,8 +896,26 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
 
     </main>
     
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+    
     <footer class="article-footer">
-      <a href="index.html" class="back-link">← 返回首页</a>
+      <a href="https://holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
     </footer>
   </div>
   
@@ -914,11 +933,11 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
       <div class="footer-section">
         <h3 class="footer-title">快速链接</h3>
         <ul class="footer-links">
-          <li><a href="index.html">首页</a></li>
-          <li><a href="directory.html">网站导航</a></li>
-          <li><a href="tags.html">标签</a></li>
-          <li><a href="archive.html">归档</a></li>
-          <li><a href="about.html">关于</a></li>
+          <li><a href="https://holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
         </ul>
       </div>
       
@@ -962,5 +981,17 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
   </footer>
   
   
+  <script>
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+  </script>
+
 </body>
 </html>
