@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-12-17T17:45:23.847Z</lastBuildDate>
-    <pubDate>2025-12-17T17:45:23.847Z</pubDate>
+    <lastBuildDate>2025-12-18T10:51:00.663Z</lastBuildDate>
+    <pubDate>2025-12-18T10:51:00.663Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -63,10 +63,10 @@
       <author>zhongziven@gmail.comå</author>
     </item>
     <item>
-      <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站。</title>
-      <link>https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-0-deploy-a-static.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-0-deploy-a-static.html</guid>
-      <pubDate>Mon, 08 Dec 2025 22:42:00 GMT</pubDate>
+      <title>[ 前端学部署 ]  第0篇： 几块人民币部署一个有域名的静态网站</title>
+      <link>https://blog.holding-num.cn/2025-12-09-front-end-learning-deployment-article-0-deploying-a-static.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-09-front-end-learning-deployment-article-0-deploying-a-static.html</guid>
+      <pubDate>Tue, 09 Dec 2025 06:42:00 GMT</pubDate>
       <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
       <category>技术文章</category>
       <category>最佳实践</category>
