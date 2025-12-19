@@ -3,41 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徘徊俱乐部</title>
-  <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <title>留言 - 徘徊俱乐部</title>
+  <meta name="description" content="留言互动">
   <link rel="icon" href="https://blog.holding-num.cn/favicon.ico">
   <link rel="stylesheet" href="styles.css">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="徘徊俱乐部">
-  <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="徘徊俱乐部">
-  <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
-     crossorigin="anonymous"></script>
-
   <style>
-    /* 基础样式重置 */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: black;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #222; min-height: 100vh; display: flex; flex-direction: column; }
     
     /* 导航栏样式 */
     .navbar {
@@ -450,280 +422,20 @@
     }
   
 
-    /* 主标题区域 */
-    .hero-section {
-      text-align: center;
-      padding: 8rem 0 6rem 0;
-      color: white;
-      background: #7c4dff;
-    }
+    .hero { text-align: center; padding: 6rem 0 3rem 0; background: #7c4dff; color: white; }
+    .hero h1 { font-size: 2.6rem; font-weight: 600; letter-spacing: 0.12rem; }
+    .hero p { margin-top: 0.8rem; opacity: 0.9; }
 
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3rem;
-    }
+    .container { max-width: 960px; margin: 0 auto; padding: 2rem; width: 100%; }
+    .card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .card h2 { margin-bottom: 1rem; font-size: 1.4rem; }
+    .card p { margin-bottom: 1.2rem; color: #444; }
 
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 300;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* 主要内容区域 */
-    .main-content {
-      background: #fff;
-      min-height: 60vh;
-      padding: 3rem 0;
-      margin-bottom: 0 !important;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 最近文章区域 */
-    .updates-section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    /* 文章列表 */
-    .article-list {
-      list-style: none;
-      
-    }
-      .article-list-a {
-        text-decoration:none!important
-      }
-
-    .article-item {
-      padding: 1rem;
-    }
-
-  
-
-  
-
-
-
-    .article-link {
-      color: #333;
-      text-decoration: none !important;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      display: block;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .article-link:hover {
-      color: #7c4dff;
-      text-decoration: none !important;
-    }
-
-    .article-link:visited {
-      text-decoration: none !important;
-    }
-
-    .article-link:focus {
-      text-decoration: none !important;
-      outline: none;
-    }
-
-    /* 作者介绍侧边栏 */
-    .author-sidebar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      height: fit-content;
-    }
-
-    .author-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .author-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    .author-content {
-      text-align: left;
-    }
-
-    .author-description {
-      color: #555;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(124, 77, 255, 0.05);
-      border-radius: 8px;
-    }
-
-    .avatar-container {
-      margin-bottom: 2rem;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: #7c4dff;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #7c4dff;
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-3px);
-    }
-
-    /* 空状态 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: #666;
-    }
-
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #7c4dff;
-      font-weight: 300;
-    }
-
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
-    }
-
-    /* 响应式设计 */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.2rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 15px;
-      }
-      
-      .updates-section,
-      .author-sidebar {
-        padding: 2rem 1.5rem;
-      }
-      
-      /* 移动端标题居中 */
-      .section-title,
-      .author-title {
-        text-align: center;
-      }
-      
-      .section-title::after,
-      .author-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .author-content {
-        text-align: center;
-      }
-      
-      .avatar {
-        width: 100px;
-        height: 100px;
-        font-size: 2rem;
-      }
-      
-      .contact-links {
-        gap: 0.8rem;
-      }
-      
-      .contact-link {
-        width: 45px;
-        height: 45px;
-      }
+      .hero { padding: 5rem 0 2.5rem 0; }
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 1.25rem; }
+      .card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -806,71 +518,37 @@
     });
   </script>
   
-
-  <!-- 主标题区域 -->
-  <header class="hero-section">
+  <header class="hero">
     <div class="container">
-      <h1 class="hero-title">徘徊俱乐部</h1>
-      <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
+      <h1>留言板</h1>
+      <p>分享你的想法与反馈</p>
     </div>
   </header>
-
-  <!-- 主要内容区域 -->
-  <main class="main-content">
-    <div class="content-grid">
-      <!-- 作者介绍侧边栏 -->
-      <aside class="author-sidebar">
-        <h3 class="author-title">作者</h3>
-        <div class="author-content">
-           <p class="author-description">
-            全网名《拿着号码牌徘徊》
-          </p>
-          <p class="author-description">
-            非常优秀的程序员,是完美的体验家,一生都是学生。
-          </p>
-           <p class="author-description">
-            请多多指教。
-          </p>
-        </div>
-      </aside>
-      
-      <!-- 最近文章区域 -->
-      <section class="updates-section">
-        <h2 class="section-title">最近文章</h2>
-        
-        
-          <ul class="article-list">
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link" >
-                  2025-12-17 使用 Git Actions 给 Supabase 项目做“保活”
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-14-how-to-take-notes-freely-on-obsidian-part-1.html" class="article-link" >
-                  2025-12-14 怎么在obsidian上随心所欲地记录笔记（一）
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link" >
-                  2025-12-11 和台湾的朋友，记录一次Coffee Chat
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link" >
-                  2025-12-08 [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
-                </a>
-              </li>
-            
-          </ul>
-        
-      </section>
+  <main>
+    <div class="container">
+      <article class="card">
+        <h2>欢迎留言</h2>
+        <p>使用下方评论区分享你的建议、想法或问题。</p>
+        <section class="article-comments" id="comments">
+          <script src="https://giscus.app/client.js"
+            data-repo="zivenday/myblog"
+            data-repo-id="R_kgDOPXso0A"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOPXso0M4Cz7_6"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </section>
+      </article>
     </div>
   </main>
-  
   
   <!-- 页脚 -->
   <footer class="footer">
@@ -932,7 +610,6 @@
     </div>
   </footer>
   
-  
   <script>
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
@@ -944,6 +621,5 @@
       }
     })
   </script>
-
 </body>
 </html>
