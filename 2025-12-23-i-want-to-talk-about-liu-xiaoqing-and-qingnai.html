@@ -3,25 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徘徊俱乐部</title>
-  <meta name="description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <title>想聊聊刘晓庆，庆奶 - 徘徊俱乐部</title>
+  <meta name="description" content="最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。">
+  <meta name="author" content="zhongziven@gmail.com">
+  <meta name="keywords" content="刘晓庆, 一路繁花, 积极心理学, 心理, 心态">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="styles.css">
   
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="徘徊俱乐部">
-  <meta property="og:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="想聊聊刘晓庆，庆奶">
+  <meta property="og:description" content="最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。">
+  <meta property="og:article:author" content="zhongziven@gmail.com">
+  <meta property="og:article:published_time" content="2025-12-23T15:33:58.454981+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="徘徊俱乐部">
-  <meta property="twitter:description" content="记录我想记录的快乐,分享大家喜欢的技术与体验">
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
-     crossorigin="anonymous"></script>
+  <meta property="twitter:title" content="想聊聊刘晓庆，庆奶">
+  <meta property="twitter:description" content="最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。">
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "想聊聊刘晓庆，庆奶",
+    "description": "最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。",
+    "author": {
+      "@type": "Person",
+      "name": "zhongziven@gmail.com"
+    },
+    "datePublished": "2025-12-23T15:33:58.454981+00:00",
+    "keywords": "刘晓庆, 一路繁花, 积极心理学, 心理, 心态"
+  }
+  </script>
+  
   <style>
     /* 基础样式重置 */
     * {
@@ -33,7 +53,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
-      color: black;
+      color: #333;
+      background: white;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -451,291 +472,222 @@
     }
   
 
-    /* 主标题区域 */
-    .hero-section {
-      text-align: center;
-      padding: 8rem 0 6rem 0;
-      color: white;
-      background: #7c4dff;
-    }
-
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 300;
-      margin-bottom: 2rem;
-      letter-spacing: 0.3rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.3rem;
-      color: rgba(255, 255, 255, 0.95);
-      font-weight: 300;
-      max-width: 700px;
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
       line-height: 1.8;
     }
 
-    /* 主要内容区域 */
-    .main-content {
-      background: #fff;
-      min-height: 60vh;
-      padding: 3rem 0;
-      margin-bottom: 0 !important;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* 最近文章区域 */
-    .updates-section {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .section-title {
-      font-size: 1.6rem;
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
       font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
       margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    /* 文章列表 */
-    .article-list {
-      list-style: none;
-      
-    }
-      .article-list-a {
-        text-decoration:none!important
-      }
-
-    .article-item {
-      padding: 1rem;
-    }
-
-  
-
-  
-
-
-
-    .article-link {
-      color: #333;
-      text-decoration: none !important;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      display: block;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .article-link:hover {
-      color: #7c4dff;
-      text-decoration: none !important;
-    }
-
-    .article-link:visited {
-      text-decoration: none !important;
-    }
-
-    .article-link:focus {
-      text-decoration: none !important;
-      outline: none;
-    }
-
-    /* 作者介绍侧边栏 */
-    .author-sidebar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      height: fit-content;
-    }
-
-    .author-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #2c2c2c;
-      text-align: left;
-      position: relative;
-      padding-bottom: 0.8rem;
-    }
-
-    .author-about-link {
-      margin-left: 0.5rem;
-      font-size: 0.85rem;
-      color: #9ca3af;
-      text-decoration: none;
-    }
-
-    .author-about-link:hover {
-      color: #7c4dff;
-      text-decoration: underline;
-    }
-
-    .author-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: #7c4dff;
-      border-radius: 2px;
-    }
-
-    .author-content {
-      text-align: left;
-    }
-
-    .author-description {
       color: #555;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(124, 77, 255, 0.05);
-      border-radius: 8px;
     }
 
-    .avatar-container {
-      margin-bottom: 2rem;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      background: #7c4dff;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: white;
-      font-weight: 300;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: #7c4dff;
-      border-radius: 50%;
-      color: white;
+    .article-content a {
+      color: #7c4dff;
       text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
       transition: all 0.3s ease;
     }
 
-    .contact-link:hover {
-      transform: translateY(-3px);
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
     }
 
-    /* 空状态 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
+    .article-content code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #e91e63;
+    }
+
+    .article-content pre {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-left: 4px solid #7c4dff;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
       color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
     }
 
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
       color: #7c4dff;
-      font-weight: 300;
+      font-size: 0.95rem;
     }
 
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
     /* 响应式设计 */
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.8rem;
-        letter-spacing: 0.2rem;
+      .container {
+        padding: 1rem 15px;
       }
       
-      .hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 15px;
-      }
-      
-      .updates-section,
-      .author-sidebar {
+      .article-header,
+      .article-content {
         padding: 2rem 1.5rem;
       }
       
-      /* 移动端标题居中 */
-      .section-title,
-      .author-title {
-        text-align: center;
-      }
-      
-      .section-title::after,
-      .author-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .author-content {
-        text-align: center;
-      }
-      
-      .avatar {
-        width: 100px;
-        height: 100px;
+      .article-title {
         font-size: 2rem;
       }
       
-      .contact-links {
-        gap: 0.8rem;
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
       }
       
-      .contact-link {
-        width: 45px;
-        height: 45px;
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
       }
     }
   </style>
@@ -821,82 +773,88 @@
     });
   </script>
   
-
-  <!-- 主标题区域 -->
-  <header class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">徘徊俱乐部</h1>
-      <p class="hero-subtitle">记录我想记录的快乐,分享大家喜欢的技术与体验</p>
-    </div>
-  </header>
-
-  <!-- 主要内容区域 -->
-  <main class="main-content">
-    <div class="content-grid">
-      <!-- 作者介绍侧边栏 -->
-      <aside class="author-sidebar">
-        <h3 class="author-title">作者 <a href="https://blog.holding-num.cn/about.html" class="author-about-link" target="_blank" rel="noopener noreferrer">更多》</a></h3>
-        <div class="author-content">
-           <p class="author-description">
-            全网名《拿着号码牌徘徊》
-          </p>
-          <p class="author-description">
-            非常优秀的程序员,是完美的体验家,一生都是学生。
-          </p>
-           <p class="author-description">
-            请多多指教。
-          </p>
-        </div>
-      </aside>
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">想聊聊刘晓庆，庆奶</h1>
+      <div class="article-meta">
+        <span>📅 2025/12/23</span>
+        <span>✍️ 字数：2062</span>
+      </div>
       
-      <!-- 最近文章区域 -->
-      <section class="updates-section">
-        <h2 class="section-title">最近文章</h2>
-        
-        
-          <ul class="article-list">
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link" >
-                  2025-12-23 想聊聊刘晓庆，庆奶
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link" >
-                  2025-12-20 怎么在obsidian上随心所欲地记笔记（二）
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link" >
-                  2025-12-17 使用 Git Actions 给 Supabase 项目做“保活”
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-14-how-to-take-notes-freely-on-obsidian-part-1.html" class="article-link" >
-                  2025-12-14 怎么在obsidian上随心所欲地记录笔记（一）
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link" >
-                  2025-12-11 和台湾的朋友，记录一次Coffee Chat
-                </a>
-              </li>
-            
-              <li class="article-item">
-                <a href="https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link" >
-                  2025-12-08 [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
-                </a>
-              </li>
-            
-          </ul>
-        
-      </section>
-    </div>
-  </main>
+      <div class="article-tags">
+        <span class="tag">刘晓庆</span><span class="tag">一路繁花</span><span class="tag">积极心理学</span><span class="tag">心理</span><span class="tag">心态</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h4>前言</h4>
+<p>最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。她对人生的态度，对自己的观感，对世界的理解，都与普罗大众有很大不同。可以说，看这个节目，时不时都会给我带来有感而发的感触。所以就想说些什么。结合她说的金句，和一些名场面。</p>
+<h4>只要活着就有希望</h4>
+<p>这是《一路繁花1》开头的时候，刘晓庆出发的时候，在路上蹦出的一句话。我听到这句话的时候，感到满满的正能量的。可能当时正处于低能量状态，所以这就话就像一个肾上腺素包给了我一大补。庆奶迈着大步，自信的模样。我觉得我也应该如此嘛。</p>
+<p>刘晓庆其实还在其他采访里，说过这样的话。其信念就是要活着，才能拥有美好。</p>
+<p>我想，她能大起大落的人生中成功活下来就是因为这中信念吧，尤其在改革开放初期，大家都懵懂未开。</p>
+<p>在2000开头几年，她的公司因为逃税，导致她被关押。但是法院最后做了不起诉的判决。应该是认为她只是是过失管理公司的责任，没有主观有目的的去犯法。她的公司管理很大程度是在她家人的手里。</p>
+<p>走入监狱之前的一小段安静的时光，应该就是她人生最难的时候。之前的名和利，有多么风光，现在就有多么痛苦，因为她知道自己即将要进入监狱了，即将失去绝大部分财富和之前的所有名誉。</p>
+<p>但是刘晓庆选择了积极面对，她想在监狱里学英语，锻炼身体，她终于有时间静下来去看书了，她想着看她之前很想看的书都看一遍。她还坚持洗冷水澡，把体魄锻炼好，防止自己堕落。</p>
+<p>我想，这个信念就是她撑下去的原因。她知道自己还有什么东西，没有失去，并以此再次崛起。</p>
+<h4>年龄是不是演员职场生涯的障碍</h4>
+<p>庆奶对老字，是反感的。她多次说老和她无关。</p>
+<p>这样的理解，在其他人那里都是很难共鸣的，甚至有点讨厌。大家看到的是，她的脸其实已经老态，她岁数已经到那里了。为什么她还不承认这一点。承认又会怎么样呢？</p>
+<p>印象比较深刻的场面，是《繁花2》关于大龄或者说中老年演员越来越没有市场的讨论。年龄到底有没有限制演员的表演能力。只有刘晓庆觉得，年龄没有，从年轻到老都能演下去，她依然可以去演小年轻。旁边的何赛飞，似乎听不下去了。急切的告诉她，表示，大电影肯定不行，大特写更加不行，怼着脸拍，皱纹都看得见。</p>
+<p>我想何赛飞是对的，是客观的，是目前现状的事实。但是我支持刘晓庆。因为哪天科技到了一天能让人换头换皮肤的时候，皱纹是不是就不是问题呢。我支持刘晓庆的心力。就是不认老。不让这个信念跑在我的前面。因为认了，其实人就会慢慢退下去，人就会慢慢的心累，不自信，我支持这个精神，我们应该向往自信的表达自己。</p>
+<p>在第九集，何赛飞和刘晓庆因为年龄的讨论，似乎有些动气了。因为多次，他们都因为这个观念的差别而不认同彼此的观点。</p>
+<p>我在想一个与一群人不同认同的人，但是又要和不认同的人生活在一起，其实是很难的。</p>
+<p>节目里，大家的不认同多多少少会在语言上轻蔑庆奶，说轻蔑可能严重了，就是会说一下轻佻的话，开玩笑的话。这样的话，放在我身上是不舒服的。我想很多人也同样不舒服，庆奶我看表情也有些不舒服。她足够理智，迅速调整自己，又觉得就那样吧的感觉。在那个瞬间，她是有些觉得被孤立的，潜意识，要在群体里生存，人又会先放下内心的分歧，迎合团队。</p>
+<p>我又在想，人生要遇到同频的人，何其难。电视上这些大明星是如此，我们小人物也是如此。大部分，我们遇到的都是不一样的人，甚至是相反的。当遇到不同的人的时候，要学会尊重，但是不要委屈自己，有时候，外在要支持别人，但同时一定不要失去自己，更要告诉自己，我只是演一场戏，我更加认同自己。</p>
+<h4>其他姐姐</h4>
+<p>里面几个姐姐，五个吧，和两个年轻的男生组成团队一起去旅行。</p>
+<p>五个姐姐，个性真的完全不同：</p>
+<p>刘嘉玲：她很会交际，遇到不同立场的人，不会否定对方。但是别人看不出来其实她有些不认同，这是个本事。她有一种气场，可能这种气场来自于，她的说话方式和内容有种逼人的感觉营造出来的。这种气场让大家都不太敢冒犯她。她说话，别人更倾向于认同。</p>
+<p>和她一样，宁静，也有一种不想被冒犯的气场。但是宁静不喜欢交际，她心力没有那么足。她比刘嘉玲更加敏感一些。我觉得总体上我更加像宁静的性格。其实，无所谓的，人生就是一场体验而已。就是一场戏，我需要敏感什么。</p>
+<p>何赛飞，相对了来说是比较传统的，她与社会的规则已经不太想有太多冲突，并且某种程度有认同的了规则，以至于变成规则和刘晓庆吵了起来。我们这些吃瓜的人，有些人觉得她是很现实的人，有些人就觉得她太传统，不需要老是逼人认同她自己。我是后者。不同的人有不同的观点吧，只能说。</p>
+<p>张柏芝,在团体面前，她还是很小心，很害怕得罪人。外面的人看没必要这么小心。我能共情这种感觉。往往这种人，心里其实已经有了一套。不认同别人，不敢说。没有对错吧。</p>
+<h4>最后</h4>
+<p>我的能量，不知道为什么，总是很容易慢慢的，慢慢的，流失掉。以至于滑到谷底。我特别喜欢庆奶的，而且我认为她是吾辈楷模。所以我觉得，她如太阳般的积极，让我感觉她就是太阳，她哪来像永动机一样。如此难得。</p>
+
+    </main>
+
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>怎么在obsidian上随心所欲地记笔记（二）</p>
+      </a>
+    
+      <div></div>
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
   
   
   <!-- 页脚 -->
