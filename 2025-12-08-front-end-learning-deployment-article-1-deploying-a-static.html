@@ -622,6 +622,45 @@
       transform: translateY(-2px);
     }
 
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
+      color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
     /* 响应式设计 */
     @media (max-width: 768px) {
       .container {
@@ -640,6 +679,10 @@
       .article-meta {
         flex-direction: column;
         gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
       }
       
       .tag {
@@ -857,6 +900,18 @@ aws --version
 <p>AWS web 服务： <a href="https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&vd_source=d17717b6f370d384f6356af45eaeac45">https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&amp;vd_source=d17717b6f370d384f6356af45eaeac45</a></p>
 
     </main>
+
+    
+    <section class="article-nav">
+      <div></div>
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" target="_blank" rel="noopener noreferrer">
+        <span>→ 下一篇</span>
+        <p>和台湾的朋友，记录一次Coffee Chat</p>
+      </a>
+    
+    </section>
+    
     
     <footer class="article-footer">
       <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
