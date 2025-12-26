@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2025-12-25T15:55:37.515Z</lastBuildDate>
-    <pubDate>2025-12-25T15:55:37.515Z</pubDate>
+    <lastBuildDate>2025-12-26T09:23:13.216Z</lastBuildDate>
+    <pubDate>2025-12-26T09:23:13.216Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,23 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>解决小程序端的图表实现的实践</title>
+      <link>https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</guid>
+      <pubDate>Fri, 26 Dec 2025 09:23:11 GMT</pubDate>
+      <description>写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。</description>
+      <category>技术文章</category>
+      <category>相亲小程序</category>
+      <category>小程序</category>
+      <category>人脉图</category>
+      <category>Vue</category>
+      <category>TypeScript</category>
+      <category>Taro</category>
+      <category>echarts</category>
+      <category>vibecode</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>想聊聊刘晓庆，庆奶</title>
       <link>https://blog.holding-num.cn/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html</link>
