@@ -571,22 +571,57 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Inline code */
     .article-content code {
-      background: #f8f9fa;
-      padding: 0.2rem 0.5rem;
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
       border-radius: 4px;
-      font-family: 'Consolas', 'Monaco', monospace;
-      color: #e91e63;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
     }
 
-    .article-content pre {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border-left: 4px solid #7c4dff;
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
     .article-content blockquote {
       border-left: 4px solid #7c4dff;
@@ -817,7 +852,6 @@
 <p>张柏芝,在团体面前，她还是很小心，很害怕得罪人。外面的人看没必要这么小心。我能共情这种感觉。往往这种人，心里其实已经有了一套。不认同别人，不敢说。没有对错吧。</p>
 <h4>最后</h4>
 <p>我的能量，不知道为什么，总是很容易慢慢的，慢慢的，流失掉。以至于滑到谷底。我特别喜欢庆奶的，而且我认为她是吾辈楷模。所以我觉得，她如太阳般的积极，让我感觉她就是太阳，她哪来像永动机一样。如此难得。</p>
-
     </main>
 
     
@@ -828,7 +862,12 @@
         <p>怎么在obsidian上随心所欲地记笔记（二）</p>
       </a>
     
-      <div></div>
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" target="_blank" rel="noopener noreferrer">
+        <span>→ 下一篇</span>
+        <p>解决小程序端的图表实现的实践</p>
+      </a>
+    
     </section>
     
     
@@ -919,6 +958,7 @@
   
   
   <script>
+    // Enhance external links
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
       if (href.startsWith('#')) return
@@ -928,6 +968,20 @@
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 
 </body>

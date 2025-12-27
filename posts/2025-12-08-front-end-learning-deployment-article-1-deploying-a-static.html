@@ -571,22 +571,57 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Inline code */
     .article-content code {
-      background: #f8f9fa;
-      padding: 0.2rem 0.5rem;
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
       border-radius: 4px;
-      font-family: 'Consolas', 'Monaco', monospace;
-      color: #e91e63;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
     }
 
-    .article-content pre {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border-left: 4px solid #7c4dff;
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
     .article-content blockquote {
       border-left: 4px solid #7c4dff;
@@ -779,7 +814,7 @@
       <h1 class="article-title">[ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站</h1>
       <div class="article-meta">
         <span>📅 2025/12/8</span>
-        <span>✍️ 字数：2986</span>
+        <span>✍️ 字数：3050</span>
       </div>
       
       <div class="article-tags">
@@ -824,19 +859,18 @@
 <p><img src="https://image.holding-num.cn/images/1765993111076-image.png" alt="image.png"></p>
 <h5>2、配置访问策略</h5>
 <p><img src="https://image.holding-num.cn/images/1765993131413-image.png" alt="image.png"></p>
-<pre><code class="language-js">{
-    &quot;Version&quot;: &quot;2012-10-17&quot;,
-    &quot;Statement&quot;: [
-        {
-            &quot;Sid&quot;: &quot;Statement1&quot;,
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Principal&quot;: &quot;*&quot;,
-            &quot;Action&quot;: &quot;s3:GetObject&quot;,
-            &quot;Resource&quot;: &quot;arn:aws:s3:::aws.yxl-upload.xyz/*&quot;
-        }
-    ]
-}
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="js" data-theme="github-light github-dark"><code data-language="js" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "Version"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2012-10-17"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "Statement"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        {</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Sid"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Statement1"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Effect"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Allow"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Principal"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"*"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Action"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"s3:GetObject"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">            "Resource"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"arn:aws:s3:::aws.yxl-upload.xyz/*"</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ]</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre></figure>
 <h5>3、配置公有访问权限</h5>
 <p><img src="https://image.holding-num.cn/images/1765993157382-image.png" alt="image.png"></p>
 <h5>4、把静态项目上传，我的vite react 模板项目</h5>
@@ -874,31 +908,28 @@
 <h5>现在我们尝试用cli上传更新项目</h5>
 <p>我用vite 重新创建一个项目，之前的项目不知道哪里去了。
 这里需要用到aws的指令，所以需要安装aws，安装教程在这里<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html</a></p>
-<pre><code class="language-cli">which aws
-/usr/local/bin/aws
-aws --version
-看看输出的信息对不对
-</code></pre>
-<pre><code class="language-js">项目指令改成这样：
-   &quot;dev&quot;: &quot;vite&quot;,
-    &quot;build&quot;: &quot;vite build&quot;,
-    &quot;lint&quot;: &quot;eslint .&quot;,
-    &quot;preview&quot;: &quot;vite preview&quot;,
-    &quot;ls&quot;: &quot;aws s3 ls s3://aws.yxl-upload.xyz&quot;,
-    &quot;rm&quot;: &quot;aws s3 rm s3://aws.yxl-upload.xyz --recursive --quiet&quot;,
-    &quot;cp&quot;: &quot;aws s3 cp --recursive ./dist s3://aws.yxl-upload.xyz --recursive --quiet&quot;,
-    cp 拷贝复制dist代码到桶里
-    &quot;invalidate&quot;: &quot;aws cloudfront create-invalidation --distribution-id E2OKPVZM16VN32 --paths &#39;/*&#39;&quot;,
-    刷新cdn 缓存
-    &quot;deploy&quot;: &quot;npm run build &amp;&amp; unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy &amp;&amp; npm run cp &amp;&amp; npm run invalidate&quot;
-    
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="cli" data-theme="github-light github-dark"><code data-language="cli" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span>which aws</span></span>
+<span data-line=""><span>/usr/local/bin/aws</span></span>
+<span data-line=""><span>aws --version</span></span>
+<span data-line=""><span>看看输出的信息对不对</span></span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="js" data-theme="github-light github-dark"><code data-language="js" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">项目指令改成这样：</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">   "dev"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"vite"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "build"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"vite build"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "lint"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"eslint ."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "preview"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"vite preview"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "ls"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"aws s3 ls s3://aws.yxl-upload.xyz"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "rm"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"aws s3 rm s3://aws.yxl-upload.xyz --recursive --quiet"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "cp"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"aws s3 cp --recursive ./dist s3://aws.yxl-upload.xyz --recursive --quiet"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    cp 拷贝复制dist代码到桶里</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "invalidate"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"aws cloudfront create-invalidation --distribution-id E2OKPVZM16VN32 --paths '/*'"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    刷新cdn 缓存</span></span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "deploy"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"npm run build &#x26;&#x26; unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy &#x26;&#x26; npm run cp &#x26;&#x26; npm run invalidate"</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    </span></span></code></pre></figure>
 <p>具体的指令查询，可以在这里查到
 <a href="https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html">https://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html</a></p>
 <p>至此完结！</p>
 <h1>8. 实用资源 - 参考链接和工具</h1>
-<p>AWS web 服务： <a href="https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&vd_source=d17717b6f370d384f6356af45eaeac45">https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&amp;vd_source=d17717b6f370d384f6356af45eaeac45</a></p>
-
+<p>AWS web 服务： <a href="https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&#x26;vd_source=d17717b6f370d384f6356af45eaeac45">https://www.bilibili.com/video/BV19s4y1w7VT?spm_id_from=333.788.player.switch&#x26;vd_source=d17717b6f370d384f6356af45eaeac45</a></p>
     </main>
 
     
@@ -1000,6 +1031,7 @@ aws --version
   
   
   <script>
+    // Enhance external links
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
       if (href.startsWith('#')) return
@@ -1009,6 +1041,20 @@ aws --version
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 
 </body>

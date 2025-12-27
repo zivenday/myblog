@@ -571,22 +571,57 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Inline code */
     .article-content code {
-      background: #f8f9fa;
-      padding: 0.2rem 0.5rem;
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
       border-radius: 4px;
-      font-family: 'Consolas', 'Monaco', monospace;
-      color: #e91e63;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
     }
 
-    .article-content pre {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border-left: 4px solid #7c4dff;
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
     .article-content blockquote {
       border-left: 4px solid #7c4dff;
@@ -779,7 +814,7 @@
       <h1 class="article-title">使用 Git Actions 给 Supabase 项目做“保活”</h1>
       <div class="article-meta">
         <span>📅 2025/12/17</span>
-        <span>✍️ 字数：2460</span>
+        <span>✍️ 字数：2517</span>
       </div>
       
       <div class="article-tags">
@@ -807,128 +842,127 @@
 <p>所以要复制pooler这个选项下面这个链接来连。</p>
 <h5>第三步 yml脚本</h5>
 <p>脚本如下：</p>
-<pre><code class="language-yml">name: Keep Supabase Awake
-
-
-on:
-
-schedule:
-
-# Every hour at minute 0 (UTC)
-
-- cron: &#39;0 * * * *&#39;
-
-# Allow manual runs for testing
-
-workflow_dispatch: {}
-
-  
-
-concurrency:
-
-group: keep-supabase-awake
-
-cancel-in-progress: false
-
-  
-
-jobs:
-
-ping-db:
-
-runs-on: ubuntu-latest
-
-timeout-minutes: 5
-
-env:
-
-# Avoid long waits on failed connections
-
-PGCONNECT_TIMEOUT: &#39;30&#39;
-
-steps:
-
-- name: Install psql client
-
-run: |
-
-sudo apt-get update -y
-
-sudo apt-get install -y postgresql-client
-
-  
-
-- name: Run lightweight SQL (pooler via URI)
-
-env:
-
-DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
-run: |
-
-if [ -z &quot;$DATABASE_URL&quot; ]; then
-
-echo &quot;Missing DATABASE_URL secret.&quot; &gt;&amp;2
-
-exit 1
-
-fi
-
-  
-# Ensure sslmode=require present
-
-URL=&quot;$DATABASE_URL&quot;
-
-case &quot;$URL&quot; in
-
-*&quot;sslmode=&quot;*) URL_WITH_SSL=&quot;$URL&quot; ;;
-
-*&quot;?&quot;*) URL_WITH_SSL=&quot;${URL}&amp;sslmode=require&quot; ;;
-
-*) URL_WITH_SSL=&quot;${URL}?sslmode=require&quot; ;;
-
-esac
-
-  
-
-# Try up to 3 times via pooler URI (query keep-alive table)
-
-for i in 1 2 3; do
-
-echo &quot;Attempt $i via pooler URI: SELECT count(*) FROM \&quot;keep-alive\&quot;;&quot;
-
-psql &quot;$URL_WITH_SSL&quot; -v &quot;ON_ERROR_STOP=1&quot; -c &quot;SET application_name=&#39;gha-keepalive&#39;; SELECT count(*) FROM \&quot;keep-alive\&quot;;&quot; &amp;&amp; exit 0
-
-echo &quot;Attempt $i failed. Sleeping 10s...&quot;
-
-sleep 10
-
-done
-
-echo &quot;All attempts failed.&quot; &gt;&amp;2
-
-exit 1
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="yml" data-theme="github-light github-dark"><code data-language="yml" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">Keep Supabase Awake</span></span>
+<span data-line=""> </span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">on</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">schedule</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Every hour at minute 0 (UTC)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">- </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">cron</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'0 * * * *'</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Allow manual runs for testing</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">workflow_dispatch</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">concurrency</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">group</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">keep-supabase-awake</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">cancel-in-progress</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">false</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">jobs</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ping-db</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">runs-on</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">ubuntu-latest</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">timeout-minutes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">5</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">env</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Avoid long waits on failed connections</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">PGCONNECT_TIMEOUT</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'30'</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">steps</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">- </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">Install psql client</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">run</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">|</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">sudo apt-get update -y</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">sudo apt-get install -y postgresql-client</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">- </span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">Run lightweight SQL (pooler via URI)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">env</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">DATABASE_URL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">${{ secrets.DATABASE_URL }}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">run</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">|</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">if [ -z "$DATABASE_URL" ]; then</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">echo "Missing DATABASE_URL secret." >&#x26;2</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">exit 1</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">fi</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Ensure sslmode=require present</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">URL="$DATABASE_URL"</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">case "$URL" in</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">"sslmode="*) </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">URL_WITH_SSL="$URL" ;;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">"?"*) </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">URL_WITH_SSL="${URL}&#x26;sslmode=require" ;;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">URL_WITH_SSL="${URL}?sslmode=require" ;;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">esac</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D"># Try up to 3 times via pooler URI (query keep-alive table)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">for i in 1 2 3; do</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">echo "Attempt $i via pooler URI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">SELECT count(*) FROM \"keep-alive\";"</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">psql "$URL_WITH_SSL" -v "ON_ERROR_STOP=1" -c "SET application_name='gha-keepalive'; SELECT count(*) FROM \"keep-alive\";" &#x26;&#x26; exit 0</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">echo "Attempt $i failed. Sleeping 10s..."</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">sleep 10</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">done</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">echo "All attempts failed." >&#x26;2</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">exit 1</span></span></code></pre></figure>
 <p>里面的DATABASE_URL就是刚刚说的链接，并且要在GitHub Actions 里创建这个参数保存
 <img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/783743f6-f06f-4d96-929b-7b94df41704c.png" alt="image.png"></p>
 <h5>第四步</h5>
 <p>创建keepAlive 数据库，作为保护的数据库查询</p>
-<pre><code class="language-sql">CREATE TABLE &quot;keep-alive&quot; (
-
-id BIGINT generated BY DEFAULT AS IDENTITY,
-
-name text NULL,
-
-created_at timestamptz DEFAULT now(),
-
-CONSTRAINT &quot;keep-alive_pkey&quot; PRIMARY KEY (id)
-
-);
-
-  
-
-INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="sql" data-theme="github-light github-dark"><code data-language="sql" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">CREATE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> TABLE</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "keep-alive"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">id </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">BIGINT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> generated</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> BY</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> DEFAULT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> AS</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> IDENTITY</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">name</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> text</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> NULL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">created_at </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">timestamptz</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> DEFAULT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> now</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(),</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">CONSTRAINT</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "keep-alive_pkey"</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> PRIMARY KEY</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (id)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">INSERT INTO</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "keep-alive"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">VALUES</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ping'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span data-line=""> </span></code></pre></figure>
 <p>接下来就可以直接去跑了</p>
 <p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/6b8c4415-832d-4772-81e7-0b2e7641c5b2.png" alt="image.png"></p>
 <p>那么能在supabase看到是否跑成功了呢？</p>
@@ -940,7 +974,6 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
 <h4>参考链接</h4>
 <p><a href="https://linux.do/t/topic/1017687">Supabase 如何保活</a></p>
 <p><a href="https://linux.do/t/topic/925701">Supabase 保活[Cloudflare Workers部署]</a></p>
-
     </main>
 
     
@@ -1047,6 +1080,7 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
   
   
   <script>
+    // Enhance external links
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
       if (href.startsWith('#')) return
@@ -1056,6 +1090,20 @@ INSERT INTO &quot;keep-alive&quot; (name) VALUES (&#39;ping&#39;);
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 
 </body>

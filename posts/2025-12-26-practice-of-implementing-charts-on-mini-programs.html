@@ -571,22 +571,57 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Inline code */
     .article-content code {
-      background: #f8f9fa;
-      padding: 0.2rem 0.5rem;
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
       border-radius: 4px;
-      font-family: 'Consolas', 'Monaco', monospace;
-      color: #e91e63;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
     }
 
-    .article-content pre {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border-left: 4px solid #7c4dff;
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
     .article-content blockquote {
       border-left: 4px solid #7c4dff;
@@ -779,7 +814,7 @@
       <h1 class="article-title">解决小程序端的图表实现的实践</h1>
       <div class="article-meta">
         <span>📅 2025/12/26</span>
-        <span>✍️ 字数：2105</span>
+        <span>✍️ 字数：2240</span>
       </div>
       
       <div class="article-tags">
@@ -794,54 +829,53 @@
 <p>最近在开发一款婚恋小程序，需要展示人际关系。前个版本使用的<a href="https://github.com/ecomfe/echarts-for-weixin">echarts的wx版本</a>。但是调试下来发现有不少显示问题，或者说兼容问题。</p>
 <h5>1、首次渲染会出现渲染不出来的情况。</h5>
 <p>这个问题有点膈应死我了。按照官方的写法是这样</p>
-<pre><code class="language-vue">&lt;template&gt;
-&lt;div class=&quot;p-4&quot;&gt;
-&lt;div class=&quot;text-gray-700 mb-3&quot;&gt;三度人脉示例&lt;/div&gt;
-&lt;view class=&quot;echarts&quot; style=&quot;width: 360px; height: 360px;&quot;&gt;
-&lt;ec-canvas id=&quot;bar-chart&quot; canvas-id=&quot;bar-chart&quot; :ec=&quot;ec&quot; /&gt;
-&lt;/view&gt;
-&lt;/div&gt;
-&lt;/template&gt;
-&lt;script setup lang=&quot;ts&quot;&gt;
-
-import { reactive } from &#39;vue&#39;
-
-// 说明：components/ec-canvas/echarts.js 为 UMD 构建，不包含 ES 模块导出，使用 require 引入以避免 TS “不是模块”报错
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-
-const echarts: any = require(&#39;../../../components/ec-canvas/echarts&#39;)
-
-// 通过 ec-canvas 的 onInit 回调初始化图表
-
-const ec = reactive({
-
-onInit: initChart,
-
-})
-
-function initChart(canvas: any, width: number, height: number, dpr: number) {
-
-const chart = echarts.init(canvas, null, { width, height })
-
-canvas.setChart(chart)
-
-const option = {
-    data: []
-};
-
-chart.setOption(option);
-
-return chart;
-
-}
-&lt;/script&gt;
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="vue" data-theme="github-light github-dark"><code data-language="vue" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"p-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"text-gray-700 mb-3"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>三度人脉示例&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">view</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"echarts"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> style</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">360</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">px</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">; </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">360</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">px</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ec-canvas</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"bar-chart"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> canvas-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"bar-chart"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> :</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ec</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">ec</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">view</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> setup</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { reactive } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'vue'</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 说明：components/ec-canvas/echarts.js 为 UMD 构建，不包含 ES 模块导出，使用 require 引入以避免 TS “不是模块”报错</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// eslint-disable-next-line @typescript-eslint/no-var-requires</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> echarts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> require</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'../../../components/ec-canvas/echarts'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 通过 ec-canvas 的 onInit 回调初始化图表</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ec</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> reactive</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">onInit: initChart,</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> initChart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">canvas</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">width</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">height</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">dpr</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> chart</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> echarts.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">init</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(canvas, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, { width, height })</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">canvas.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setChart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(chart)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> option</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    data: []</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">chart.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setOption</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(option);</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> chart;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span></code></pre></figure>
 <p>初始化死活ec为null会出现的警告</p>
-<pre><code class="language-text">&#39;组件需绑定 ec 变量，例：&lt;ec-canvas id=&quot;mychart-dom-bar&quot; &#39;
-
-&#39;canvas-id=&quot;mychart-bar&quot; ec=&quot;{{ ec }}&quot;&gt;&lt;/ec-canvas&gt;&#39;
-</code></pre>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span>'组件需绑定 ec 变量，例：&#x3C;ec-canvas id="mychart-dom-bar" '</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>'canvas-id="mychart-bar" ec="{{ ec }}">&#x3C;/ec-canvas>'</span></span></code></pre></figure>
 <p>我想应该是初始化过快的原因？</p>
 <p>后来尝试通过属性监听ec的方式或者通过taro拿实例的方式去拿ec，居然也拿不到。这就有点麻烦了。</p>
 <p>github,issues有这个问题，但是没解决。这个插件503个问题，问题真的不少。</p>
@@ -850,7 +884,7 @@ return chart;
 <h5>2、echarts渲染的图层是顶级，所以会遮盖住这个页面的一些位置重叠的操作。或者说其他一切位置重叠的元素都会被遮住。</h5>
 <p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png"></p>
 <p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png"></p>
-<p><a href="https://echarts.apache.org/handbook/zh/how-to/cross-platform/wechat-app/">官方</a>的推荐是使用cover-image ,cover-view 来超越canvas的的一些操作。配合force-use-old-canvas=&quot;true&quot;的设置。</p>
+<p><a href="https://echarts.apache.org/handbook/zh/how-to/cross-platform/wechat-app/">官方</a>的推荐是使用cover-image ,cover-view 来超越canvas的的一些操作。配合force-use-old-canvas="true"的设置。</p>
 <p>但是新的问题来了，像简单的元素可以通过cover-view 来改造。那弹框，对话框这些岂不是统统遇到图表都要改造一番。</p>
 <p>这里还有一个特别难受的点，开发工具一切调试下来，样式，内容没问题，在真机上其实有差异。</p>
 <p>所以做到这里。echarts其实已经是不能再用了。</p>
@@ -862,7 +896,6 @@ return chart;
 <p>下一篇将讲述如果做一个人际关系组件，通用版。</p>
 <h4>写在最后</h4>
 <p>现在市面上类似echarts的插件很多，但是用在小程序上，会少。 结合各种技术栈的也有，这里不一一举例子了。wx-echarts 目前在小程序上的支持还有很多问题。考量用在生产环境是很不好。技术人员在开发过程中，总会遇到各种疑难杂症，这时候还是不能乱阵脚，要给自己打气，冷静思考你现在的方案有哪些，有哪些方式方法可以使用的。最好写出来。会不会更一目了然呢？</p>
-
     </main>
 
     
@@ -964,6 +997,7 @@ return chart;
   
   
   <script>
+    // Enhance external links
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
       if (href.startsWith('#')) return
@@ -973,6 +1007,20 @@ return chart;
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 
 </body>

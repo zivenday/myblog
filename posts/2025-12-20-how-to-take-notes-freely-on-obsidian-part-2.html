@@ -571,22 +571,57 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Inline code */
     .article-content code {
-      background: #f8f9fa;
-      padding: 0.2rem 0.5rem;
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
       border-radius: 4px;
-      font-family: 'Consolas', 'Monaco', monospace;
-      color: #e91e63;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
     }
 
-    .article-content pre {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 1.5rem 0;
-      border-left: 4px solid #7c4dff;
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
     .article-content blockquote {
       border-left: 4px solid #7c4dff;
@@ -799,7 +834,7 @@
 <p>因为我在学习nestjs，所以用到的技术栈是nestjs+multer来实现上传。当然啦，上传到cloudfare 桶里是需要的信息是通过响应头里带参数传过去。上篇文章有提到过哪些信息。</p>
 <p><img src="https://blog-image.holding-num.cn/20251119234407479.png" alt="image.png"></p>
 <p>服务当然也可以直接部署到vercal.com了。它是免费的。</p>
-<p>部署成功后，它会给出域名信息 </p>
+<p>部署成功后，它会给出域名信息</p>
 <p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/e57e9b13-193e-4743-8bae-4c542fbd2d05.png" alt="image.png"></p>
 <p>图片中第一个地址可以作为上传服务器地址来用。</p>
 <p>在没有做好obsidian插件的条件下，用postman去调试。</p>
@@ -825,7 +860,6 @@
 <p>下一篇将会讲述如何把插件提交到obsidian市场。</p>
 <h4>写在最后</h4>
 <p>这篇文章主要是阐述了如果实现在obsidian实现图片黏贴自动上传，生成mardown图片链接的过程。没有贴出具体的代码，因为相对简单，在辅助编程的情况下，基本上没什么问题。其实特别提到了两端如何进行方便的调试。以此完成需求。最后提到了下一篇将会阐述如何把自己的插件发布到obsidian插件市场</p>
-
     </main>
 
     
@@ -932,6 +966,7 @@
   
   
   <script>
+    // Enhance external links
     document.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href') || ''
       if (href.startsWith('#')) return
@@ -941,6 +976,20 @@
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 
 </body>
