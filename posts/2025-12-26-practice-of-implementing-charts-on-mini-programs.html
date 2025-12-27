@@ -16,7 +16,7 @@
   <meta property="og:title" content="解决小程序端的图表实现的实践">
   <meta property="og:description" content="写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。">
   <meta property="og:article:author" content="zhongziven@gmail.com">
-  <meta property="og:article:published_time" content="2025-12-26T09:23:11.826751+00:00">
+  <meta property="og:article:published_time" content="2025-12-26T09:23:00+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
       "@type": "Person",
       "name": "zhongziven@gmail.com"
     },
-    "datePublished": "2025-12-26T09:23:11.826751+00:00",
+    "datePublished": "2025-12-26T09:23:00+00:00",
     "keywords": "相亲小程序, 小程序, 人脉图, Vue, TypeScript, Taro, echarts, vibecode"
   }
   </script>
@@ -826,7 +826,7 @@
       <h1 class="article-title">解决小程序端的图表实现的实践</h1>
       <div class="article-meta">
         <span>📅 2025/12/26</span>
-        <span>✍️ 字数：2259</span>
+        <span>✍️ 字数：2251</span>
       </div>
       
       <div class="article-tags">
@@ -841,6 +841,9 @@
 <p>最近在开发一款婚恋小程序，需要展示人际关系。前个版本使用的<a href="https://github.com/ecomfe/echarts-for-weixin">echarts的wx版本</a>。但是调试下来发现有不少显示问题，或者说兼容问题。</p>
 <h5>1、首次渲染会出现渲染不出来的情况。</h5>
 <p>这个问题有点膈应死我了。按照官方的写法是这样</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="ts" data-theme="github-light github-dark"><code data-language="ts" data-theme="github-light github-dark" style="display: grid;"><span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>&#x3C;/</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span></code></pre></figure>
 <figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="vue" data-theme="github-light github-dark"><code data-language="vue" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"p-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
 <span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"text-gray-700 mb-3"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>三度人脉示例&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
@@ -891,11 +894,11 @@
 <p>我想应该是初始化过快的原因？</p>
 <p>后来尝试通过属性监听ec的方式或者通过taro拿实例的方式去拿ec，居然也拿不到。这就有点麻烦了。</p>
 <p>github,issues有这个问题，但是没解决。这个插件503个问题，问题真的不少。</p>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/f3a48f49-ab82-4f58-838c-596a8f8d94a7.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/f3a48f49-ab82-4f58-838c-596a8f8d94a7.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>其实就这个问题，已经花费了不少时间，有两个下午的时间。这是一个兼职，用爱发电的项目，花费太多时间，真的有点绷不住啊。</p>
 <h5>2、echarts渲染的图层是顶级，所以会遮盖住这个页面的一些位置重叠的操作。或者说其他一切位置重叠的元素都会被遮住。</h5>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p><a href="https://echarts.apache.org/handbook/zh/how-to/cross-platform/wechat-app/">官方</a>的推荐是使用cover-image ,cover-view 来超越canvas的的一些操作。配合force-use-old-canvas="true"的设置。</p>
 <p>但是新的问题来了，像简单的元素可以通过cover-view 来改造。那弹框，对话框这些岂不是统统遇到图表都要改造一番。</p>
 <p>这里还有一个特别难受的点，开发工具一切调试下来，样式，内容没问题，在真机上其实有差异。</p>
