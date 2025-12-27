@@ -795,9 +795,8 @@
         }
         empty.style.display = 'none';
         meta.textContent = items.length + ' 个结果';
-        var base = "https://blog.holding-num.cn";
         list.innerHTML = items.map(function(d) {
-          var link = base.replace(//$/, '') + '/' + d.href.replace(/^//, '');
+          var link = '/' + String(d.href || '').replace(/^/+/, '');
           var dateStr = (d.date ? new Date(d.date) : new Date()).toLocaleDateString('zh-CN');
           return (
             '<li class="result-item">' +
