@@ -571,6 +571,11 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
     /* Inline code */
     .article-content code {
       background: #f4f4f4;
@@ -821,7 +826,7 @@
       <h1 class="article-title">[ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站</h1>
       <div class="article-meta">
         <span>📅 2025/12/8</span>
-        <span>✍️ 字数：3050</span>
+        <span>✍️ 字数：3250</span>
       </div>
       
       <div class="article-tags">
@@ -852,20 +857,20 @@
 <p>S3（Simple Storage Service）是AMS提供的对象存储服务。每个云服务商都有，比如腾讯云有，阿里云也有，名字不一样，但是都是对象存储服务。那什么是对象存储呢？我们知道对象，一个object，有key,有value，所谓对象存储，就是指通过key来访问value的存储形式。我们会把图片，视频这些资源放到这里，通过key去访问资源，这个key就是对应资源的唯一标识。</p>
 <p>今天我们把静态项目放进去。</p>
 <p>好了，我的之前已经创建好一个桶了，效果如下。</p>
-<p><img src="https://image.holding-num.cn/images/1765992944136-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765992944136-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h3>注意这里桶的名字必须是你域名的名字，这里我选择用二级域名。桶名字直接用域名这样可以减少一些路由配置。</h3>
 <h3>Route 53 是什么？</h3>
 <p>前一节已经写了Route 53 大概作用，就是他会解析域名引导到S3，S3有我们网站文件，那为什么是53呢？因为dns服务解析默认端口是53。所以就是Route53。像下面的如图创建了Route 53 托管区。</p>
-<p><img src="https://image.holding-num.cn/images/1765992989379-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765992989379-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h1>4. 实战部署过程 - 具体操作步骤</h1>
 <h3>第一步：新建S3桶</h3>
-<p><img src="https://image.holding-num.cn/images/1765993071001-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993071001-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>1、阻止所有公开访问</h5>
-<p><img src="https://image.holding-num.cn/images/1765993089229-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993089229-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>2、开启静态网页托管</h5>
-<p><img src="https://image.holding-num.cn/images/1765993111076-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993111076-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>2、配置访问策略</h5>
-<p><img src="https://image.holding-num.cn/images/1765993131413-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993131413-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="js" data-theme="github-light github-dark"><code data-language="js" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span>
 <span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "Version"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"2012-10-17"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "Statement"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
@@ -879,39 +884,39 @@
 <span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ]</span></span>
 <span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre></figure>
 <h5>3、配置公有访问权限</h5>
-<p><img src="https://image.holding-num.cn/images/1765993157382-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993157382-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>4、把静态项目上传，我的vite react 模板项目</h5>
-<p><img src="https://image.holding-num.cn/images/1765993186573-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993186573-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>这样呢，我们通过访问<a href="http://aws.yxl-upload.xyz.s3-website-ap-southeast-2.amazonaws.com">http://aws.yxl-upload.xyz.s3-website-ap-southeast-2.amazonaws.com</a> 就可以访问到项目了</p>
-<p><img src="https://image.holding-num.cn/images/1765993203449-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993203449-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>但是这样呢链接太长了，我们希望通过<a href="http://aws.yxl-upload.xyz">http://aws.yxl-upload.xyz</a> 就能访问到</p>
 <p>这时候就是配置Route 53的时候了,同样创建</p>
 <h5>5、Route 53</h5>
 <p>它会默认有ns 和soa ,ns 就是aws自己dns 解析服务器。</p>
-<p><img src="https://image.holding-num.cn/images/1765993219943-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993219943-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>我们要把aws dns解析配置到域名供应商dns 配置那里，这样可以路由到aws</p>
 <p>我在腾讯云买的域名，自然配置如下</p>
-<p><img src="https://image.holding-num.cn/images/1765993244025-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993244025-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>我们回到AMS Route 53 我们需要添加A记录，A记录是干嘛用的呢，它会把域名直接路由到s3</p>
-<p><img src="https://image.holding-num.cn/images/1765993270391-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993270391-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>好了，现在访问域名就可以了！</p>
 <h5>6、SSL/TSL 证书管理 申请免费的HTTPS证书</h5>
 <p>我们希望更加进一步，让它能更进一步。</p>
-<p><img src="https://image.holding-num.cn/images/1765993290861-image.png" alt="image.png">
-<img src="https://image.holding-num.cn/images/1765993319301-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993290861-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure>
+<figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993319301-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>这里的状态要转成已验证是有效的。我们需要把这个正式创建cname记录加到route S3里，没过一会儿他就是已验证了！</p>
-<p><img src="https://image.holding-num.cn/images/1765993363078-image.png" alt="image.png"></p>
-<p><img src="https://image.holding-num.cn/images/1765993378062-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993363078-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993378062-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>接下来加上cloudfront 有cdn 加速</h5>
 <p>这里要注意源的配置一定是要用桶属性最下面那个源</p>
-<p><img src="https://image.holding-num.cn/images/1765993395287-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993395287-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>好了这样 <a href="https://aws.yxl-upload.xyz/">https://aws.yxl-upload.xyz/</a> 就生效了。</p>
 <h5>最后我们希望改了项目代码后，通过cli能够更新项目</h5>
 <p>AMS账号系统是个很大权限的账号，所以我们喜欢更新项目的权限只限制在运维更新代码这里，为此我们要进入AMS IAM进行配置,添加用户，这个用户只有我们想要给的权限</p>
-<p><img src="https://image.holding-num.cn/images/1765993411446-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993411446-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>我们给他admin权限，这个admin可以通过指令上传文件，同时生成密钥。</p>
-<p><img src="https://image.holding-num.cn/images/1765993427601-image.png" alt="image.png"></p>
-<p><img src="https://image.holding-num.cn/images/1765993443987-image.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993427601-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://image.holding-num.cn/images/1765993443987-image.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>现在我们尝试用cli上传更新项目</h5>
 <p>我用vite 重新创建一个项目，之前的项目不知道哪里去了。
 这里需要用到aws的指令，所以需要安装aws，安装教程在这里<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html</a></p>

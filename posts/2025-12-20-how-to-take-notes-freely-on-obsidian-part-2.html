@@ -571,6 +571,11 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
     /* Inline code */
     .article-content code {
       background: #f4f4f4;
@@ -821,7 +826,7 @@
       <h1 class="article-title">怎么在obsidian上随心所欲地记笔记（二）</h1>
       <div class="article-meta">
         <span>📅 2025/12/20</span>
-        <span>✍️ 字数：1981</span>
+        <span>✍️ 字数：2058</span>
       </div>
       
       <div class="article-tags">
@@ -839,10 +844,10 @@
 <p>在上一篇文章也提到，我之所以会自己做服务，不使用cloudflare自己的api上传图片，是因为cloudflare api上传图片到桶是要收费的，需要使用cloudflare images服务，这个服务还可以通过添加参数来改变图片的大小。</p>
 <p>关于它要不要收费的，一开始我以为不收费，官方的免费计划里，包含了这项服务。你看和<a href="https://www.reddit.com/r/CloudFlare/comments/1dxe9rl/cloudflare_images_and_r2_together/?tl=zh-hans">我一样困扰的人</a>也有。在上一篇文章我解释了这个问题。</p>
 <p>因为我在学习nestjs，所以用到的技术栈是nestjs+multer来实现上传。当然啦，上传到cloudfare 桶里是需要的信息是通过响应头里带参数传过去。上篇文章有提到过哪些信息。</p>
-<p><img src="https://blog-image.holding-num.cn/20251119234407479.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119234407479.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>服务当然也可以直接部署到vercal.com了。它是免费的。</p>
 <p>部署成功后，它会给出域名信息</p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/e57e9b13-193e-4743-8bae-4c542fbd2d05.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/e57e9b13-193e-4743-8bae-4c542fbd2d05.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>图片中第一个地址可以作为上传服务器地址来用。</p>
 <p>在没有做好obsidian插件的条件下，用postman去调试。</p>
 <h5>自动上传插件的开发</h5>
@@ -852,17 +857,17 @@
 <p>像我的项目有个专门的文件夹。但是插件的运行是在.obsidian\plugins文件夹。所以最好是写个脚本能把编译的代码拷贝到obsidian\plugins\ 你的插件名词文件夹之下。这样你改了什么能及时同步到插件底下。</p>
 <p>需要拷贝三个插件文件 main.js、manifest.json、styles.css。插件运行的obsidian本身会生成一个data.json放在同一个目录之下。这三个文件对obsidian插件来说十分关键。如果你的插件很复杂，相关依赖文件应该也是要带上的。</p>
 <p>Cmd + Opt + I  Mac快捷键打开控制台，可以看到插件的报错。</p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/c0e43b57-a7e5-4511-b709-5ae53a7cef4e.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/c0e43b57-a7e5-4511-b709-5ae53a7cef4e.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <h5>手机端插件调试</h5>
 <p>其实不管是电脑还是手机，obsidian 插件运行原理都是一样的。</p>
 <p>插件安装在obsidian Vault 底下 有一个 .obsidian\plugins文件夹，这个文件夹存放着你安装过的所有插件。</p>
 <p>这里麻烦的是IPhone会隐藏.obsidian文件夹，苹果好像会隐藏这种带有开发模式的才能看到的文件。这时候需要下载第三方的应用去解决。我用的ES文件浏览器。这里很特别，打开这个应用依然看不到.obsidian，但是可以搜索栏搜到！</p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/a60382c8-1874-44a7-ac65-153bcdf61411.jpg" alt="4620934bc2c9118822e519df5c83be30.jpg"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/a60382c8-1874-44a7-ac65-153bcdf61411.jpg" alt="4620934bc2c9118822e519df5c83be30.jpg" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">4620934bc2c9118822e519df5c83be30.jpg</figcaption></figure></p>
 <p>找到了对应文件夹，就可以把main.js、manifest.json、styles.css，放进去了，另外，data.json也可以放进去，里面放了之前存的账号密码之类。然后再重新打开obsidian。</p>
 <p>我到这里，插件死活启用不起来，报错。我仔细检查各个文件名字有没有写错等等，还是没用。</p>
 <p>这时候就要用到obsidian另外一个插件了。BRAT，转上他，把插件上传到github , BRAT通过github上你的插件链接同步到obsidian。非常好用</p>
 <p>这时候手机上就可以测试啦！</p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/f4a9c8e9-73df-48f5-88ec-dce4978acca9.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/04/f4a9c8e9-73df-48f5-88ec-dce4978acca9.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>到这里，本地，电脑端，手机端已经实现了图片自动上传的功能啦。已经是满足我的需求了。</p>
 <p>下一篇将会讲述如何把插件提交到obsidian市场。</p>
 <h4>写在最后</h4>

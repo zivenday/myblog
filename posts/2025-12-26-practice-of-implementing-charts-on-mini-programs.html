@@ -571,6 +571,11 @@
       border-bottom-color: #5e35b1;
     }
 
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
     /* Inline code */
     .article-content code {
       background: #f4f4f4;
@@ -821,7 +826,7 @@
       <h1 class="article-title">解决小程序端的图表实现的实践</h1>
       <div class="article-meta">
         <span>📅 2025/12/26</span>
-        <span>✍️ 字数：2229</span>
+        <span>✍️ 字数：2259</span>
       </div>
       
       <div class="article-tags">
@@ -886,11 +891,11 @@
 <p>我想应该是初始化过快的原因？</p>
 <p>后来尝试通过属性监听ec的方式或者通过taro拿实例的方式去拿ec，居然也拿不到。这就有点麻烦了。</p>
 <p>github,issues有这个问题，但是没解决。这个插件503个问题，问题真的不少。</p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/f3a48f49-ab82-4f58-838c-596a8f8d94a7.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/f3a48f49-ab82-4f58-838c-596a8f8d94a7.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p>其实就这个问题，已经花费了不少时间，有两个下午的时间。这是一个兼职，用爱发电的项目，花费太多时间，真的有点绷不住啊。</p>
 <h5>2、echarts渲染的图层是顶级，所以会遮盖住这个页面的一些位置重叠的操作。或者说其他一切位置重叠的元素都会被遮住。</h5>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png"></p>
-<p><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png"></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
 <p><a href="https://echarts.apache.org/handbook/zh/how-to/cross-platform/wechat-app/">官方</a>的推荐是使用cover-image ,cover-view 来超越canvas的的一些操作。配合force-use-old-canvas="true"的设置。</p>
 <p>但是新的问题来了，像简单的元素可以通过cover-view 来改造。那弹框，对话框这些岂不是统统遇到图表都要改造一番。</p>
 <p>这里还有一个特别难受的点，开发工具一切调试下来，样式，内容没问题，在真机上其实有差异。</p>
