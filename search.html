@@ -468,7 +468,7 @@
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       margin: 2rem auto 4rem;
-      max-width: 1000px;
+      max-width: 1100px;
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       overflow: hidden;
@@ -479,16 +479,22 @@
       display: flex;
       gap: 1rem;
       margin: 0 auto 1.5rem;
-      max-width: 700px;
+      max-width: 900px;
+      width: 100%;
     }
 
     .search-input {
       flex: 1;
-      padding: 0.9rem 1rem;
+      padding: 1.1rem 1.25rem;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 12px;
+      font-size: 1.125rem; /* 18px */
       transition: border-color 0.2s ease;
+    }
+
+    .search-input::placeholder {
+      font-size: 1rem;
+      color: #999;
     }
 
     .search-input:focus {
@@ -498,12 +504,12 @@
     }
 
     .search-button {
-      padding: 0.9rem 1.2rem;
+      padding: 1.1rem 1.4rem;
       background: #7c4dff;
       color: white;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: background-color 0.2s ease;
     }
@@ -584,8 +590,9 @@
     @media (max-width: 768px) {
       .page-title { font-size: 2.2rem; }
       .search-content { padding: 1.2rem; margin: 1rem; }
-      .search-box { gap: 0.6rem; }
-      .search-button { padding: 0.8rem 1rem; }
+      .search-box { gap: 0.6rem; max-width: 100%; }
+      .search-input { font-size: 1rem; padding: 0.9rem 1rem; }
+      .search-button { padding: 0.95rem 1.1rem; font-size: 1rem; }
     }
   </style>
 </head>
@@ -834,8 +841,23 @@
 
       // 拉取索引
       fetch('/search-index.v1.json', { cache: 'no-store' })
-        .then(function(res){ return res.json(); })
-        .then(function(json){ docs = (json && json.docs) || []; loaded = true; meta.textContent = '索引已加载，开始输入进行搜索'; })
+        .then(function(res){ return res.text(); })
+        .then(function(text){
+          var json = null;
+          try {
+            json = JSON.parse(text);
+          } catch (e) {
+            // 兼容 JSONP: var xxx = {...};
+            var first = text.indexOf('{');
+            var last = text.lastIndexOf('}');
+            if (first >= 0 && last > first) {
+              try { json = JSON.parse(text.slice(first, last + 1)); } catch (_) {}
+            }
+          }
+          docs = (json && json.docs) || [];
+          loaded = true;
+          meta.textContent = docs.length ? ('索引已加载，可搜索（共 ' + docs.length + ' 篇）') : '索引已加载';
+        })
         .catch(function(){ loaded = true; meta.textContent = '索引加载失败'; });
     })();
   </script>
