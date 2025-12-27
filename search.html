@@ -796,7 +796,9 @@
         empty.style.display = 'none';
         meta.textContent = items.length + ' 个结果';
         list.innerHTML = items.map(function(d) {
-          var link = '/' + String(d.href || '').replace(/^/+/, '');
+          var p = String(d.href || '');
+          while (p.length && p.charAt(0) === '/') p = p.slice(1);
+          var link = '/' + p;
           var dateStr = (d.date ? new Date(d.date) : new Date()).toLocaleDateString('zh-CN');
           return (
             '<li class="result-item">' +
