@@ -826,7 +826,7 @@
       <h1 class="article-title">使用 Git Actions 给 Supabase 项目做“保活”</h1>
       <div class="article-meta">
         <span>📅 2025/12/17</span>
-        <span>✍️ 字数：2587</span>
+        <span>✍️ 字数：2517</span>
       </div>
       
       <div class="article-tags">
@@ -844,13 +844,13 @@
 <h4>结合Github Actions WorkFlow</h4>
 <h5>第一步</h5>
 <p>我们使用定义keep-supabase-awake.yml脚本放到.github/workflows文件夹之下，让git Action去调用这个脚本，每小时，或者每天去调用数据库查询。git action 也可以手动操作调用脚本。</p>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/cb5b90a8-bfee-4d34-a287-5753c517e671.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/cb5b90a8-bfee-4d34-a287-5753c517e671.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <h5>第二步</h5>
 <p>可以看到supabase 这里 有个直连方式
-<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/ed948641-fb76-44c4-b886-f6ef8b81bc65.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/ed948641-fb76-44c4-b886-f6ef8b81bc65.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>直连方式，后面折叠的内容却有提示像Github Actions ipv4-only 是不适合直连的，要用pooler
-<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/fea3bfce-175c-4d5b-842c-dae3c3e74248.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/380bf0f2-90cd-435e-9c61-ce8a3a37f559.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/fea3bfce-175c-4d5b-842c-dae3c3e74248.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/380bf0f2-90cd-435e-9c61-ce8a3a37f559.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>所以要复制pooler这个选项下面这个链接来连。</p>
 <h5>第三步 yml脚本</h5>
 <p>脚本如下：</p>
@@ -956,7 +956,7 @@
 <span data-line=""> </span>
 <span data-line=""><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">exit 1</span></span></code></pre></figure>
 <p>里面的DATABASE_URL就是刚刚说的链接，并且要在GitHub Actions 里创建这个参数保存
-<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/783743f6-f06f-4d96-929b-7b94df41704c.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/783743f6-f06f-4d96-929b-7b94df41704c.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <h5>第四步</h5>
 <p>创建keepAlive 数据库，作为保护的数据库查询</p>
 <figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="sql" data-theme="github-light github-dark"><code data-language="sql" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">CREATE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> TABLE</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "keep-alive"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span></span>
@@ -976,10 +976,10 @@
 <span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">INSERT INTO</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "keep-alive"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">VALUES</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'ping'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
 <span data-line=""> </span></code></pre></figure>
 <p>接下来就可以直接去跑了</p>
-<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/6b8c4415-832d-4772-81e7-0b2e7641c5b2.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/6b8c4415-832d-4772-81e7-0b2e7641c5b2.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>那么能在supabase看到是否跑成功了呢？</p>
 <p>在性能观察这里其实可以侧面证实，已经跑成功了
-<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/92484ab4-0fd5-4d45-b4e5-d88c591edee5.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/11/24/92484ab4-0fd5-4d45-b4e5-d88c591edee5.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>接下来，就看看，你的项目会不会保活成功了。因为很多都是未知数，还是要看实践，还有可能跟项目本身有关。</p>
 <h4>总结</h4>
 <p>Supabase 免费版在项目长期处于静默状态时，可能会回收资源甚至永久删除项目。为了确保数据库的持续活跃，以上提出了一种低成本、自动化的方案，结合 <strong>GitHub Actions</strong> 和 <strong>Supabase 连接池</strong>，通过定时执行轻量级数据库查询来维持项目活跃状态。当然这一切还与项目本身特性有关，但是万变不如其中。</p>

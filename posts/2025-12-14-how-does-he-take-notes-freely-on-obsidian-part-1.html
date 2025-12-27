@@ -834,7 +834,7 @@
       <h1 class="article-title">他怎么在obsidian上随心所欲地记录笔记（一）</h1>
       <div class="article-meta">
         <span>📅 2025/12/14</span>
-        <span>✍️ 字数：1895</span>
+        <span>✍️ 字数：1795</span>
       </div>
       
       <div class="article-tags">
@@ -851,31 +851,31 @@
 <p>我一开始的三端同步的方案是Remotely Save插件 + OneDrive ，但是这种方案，不太容易连上OneDrive，一开始连接两次才连上。过期后，再次鉴权就一直卡在鉴权里了。详细的配置教程我会在文章最后把链接贴出来，网上教程是有的。</p>
 <p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119192951429.png" alt="OneDrive经常连不上" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">OneDrive经常连不上</figcaption></figure></p>
 <p>所以我把oneDrive 改用成 cloudeflare R2，R2的免费额度有10GB存储空间，操作费也有免费额度。看上去是很给力的。</p>
-<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119232924059.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119232924059.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>接下来就是怎么在Remotely Save里配置 cloudeflare ,配置之前需要去cloudflare开一个存储桶,Remotely Save 里远程服务设置成S3兼容服务
-<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119233132204.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
-<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119234407479.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119233132204.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251119234407479.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>创建好桶后，创建好相关的令牌，会返回Access Key ID，Secret Access Key
-<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120012656661.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120012656661.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>服务地址endpoint 就是S3 API这里自动生成的地址，注意endpoint后缀不要多了个桶的名字否则会报错。</p>
 <p>Remote Save 区域和位置这里是不一样的。底部有一行字，写成us-east-1就可以了。
-<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120012910274.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
-<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120013215656.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
-<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121180429478.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120012910274.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251120013215656.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121180429478.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>三端都可以这样设置，分别点击检查，这样就大功告成了，你就可以看到cloudflare是不是已经同步到文件了。手机同步电脑，电脑同步手机，三端都测试下。</p>
 <h5>图片自动上传</h5>
 <p>三端同步，同步的是文档，但是还有个不好的体验，复制一个图片到文档里，obsidian会在另一个地方保存图片，如图所示，这是很大的困扰。如果图片能自动上传到图床，生成链接就好了。
-<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121194450449.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121194450449.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>而且，我希望三端都能复制图片，自动上传到图床</p>
 <p>电脑端，现在网上的方法就有了很多技术方案，主流的是使用picgo，安装这个app，并且结合 image auto upload插件， obsidian能够在复制图片后，把图片交给picgo上传。同样的配合cloudflare相关的方法，在参考链接里已经列出来了，可以说是手把手了。</p>
 <p>我再配置的时候，遇到一个奇怪的问题，就是使用三端同步的哪个r2桶的参数给picgo，死活上传图片不成功，发现没有权限。后来重新又申请了一个桶，按照教程来走。总算可以了。可是我之前设置的桶的权限应该都有读写权限吧。是个谜。</p>
-<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121200444503.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251121200444503.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>但是这种方式只是电脑端，手机端和平板端不行。因为picgo至少在手机端没有吧。</p>
 <p>所以我就在想能不能自己写个上传图床服务替代picgo服务，自己写个obsidian插件替代image auto upload 插件，来实现三端都可以贴图片自动上传。</p>
 <p>有的朋友可能会说，不对啊，桶不是是有upload api 吗？一个请求不就可以上传吗？</p>
 <p>的确是这样的，但是一开始我就疑问，这属于cloudflare免费的范畴里吗？后来我查了一些资料，我发现，确实是有人和我一样的疑问，我在<a href="https://community.cloudflare.com/t/free-images/789107">论坛说明</a>看到，直接使用官方api是要收费的。</p>
 <p>实际上，我用官方api实操了下，确实也是收费的。返回结果要我升级套餐
-<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251122171607365.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">image.png</figcaption></figure></p>
+<figure class="image-figure"><img src="https://blog-image.holding-num.cn/20251122171607365.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
 <p>所以做自己的api服务确实是要的。如果要自己来做的话。</p>
 <h5>总结</h5>
 <p>这篇文章探讨了如何进行三端同步博客文章。并且如何在电脑端实现图片自动上传。文章阐述了电脑端的实现，同时提到这还是不够，因为至少手机端不能图片自动上传。作者的目标是三端可以同时图片自动上传。文章还在最后进行预告，如何自己写插件，写服务实现三端的图片上传。</p>
