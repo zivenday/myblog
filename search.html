@@ -840,10 +840,20 @@
       qInput.addEventListener('input', function(){ if (loaded) doSearch(); });
       btn.addEventListener('click', doSearch);
 
-      // 拉取索引
-      fetch('/search-index.v1.json', { cache: 'no-store' })
-        .then(function(res){ return res.text(); })
-        .then(function(text){
+      // 拉取索引（根路径失败则尝试 /pages 路径）
+      function fetchIndex() {
+        var urls = ['/search-index.v1.json', '/pages/search-index.v1.json'];
+        var next = function(i) {
+          if (i >= urls.length) return Promise.reject(new Error('index not found'));
+          return fetch(urls[i], { cache: 'no-store' }).then(function(res){
+            if (!res.ok) return next(i + 1);
+            return res.text();
+          }).catch(function(){ return next(i + 1); });
+        };
+        return next(0);
+      }
+
+      fetchIndex().then(function(text){
           var json = null;
           try {
             json = JSON.parse(text);
@@ -858,8 +868,7 @@
           docs = (json && json.docs) || [];
           loaded = true;
           meta.textContent = docs.length ? ('索引已加载，可搜索（共 ' + docs.length + ' 篇）') : '索引已加载';
-        })
-        .catch(function(){ loaded = true; meta.textContent = '索引加载失败'; });
+        }).catch(function(){ loaded = true; meta.textContent = '索引加载失败'; });
     })();
   </script>
 </body>
