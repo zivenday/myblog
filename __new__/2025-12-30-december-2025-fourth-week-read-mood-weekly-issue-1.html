@@ -3,26 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文章归档 - 徘徊俱乐部</title>
-  <meta name="description" content="徘徊俱乐部博客文章归档，按时间查看所有文章">
+  <title>2025-12-第四周-看心情周刊【第一期】 - 徘徊俱乐部</title>
+  <meta name="description" content="似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。">
+  <meta name="author" content="zhongziven@gmail.com">
+  <meta name="keywords" content="积极心理学, 日记">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="stylesheet" href="styles.css">
-  
-  <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
-     crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles.css">
   
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="文章归档 - 徘徊俱乐部">
-  <meta property="og:description" content="徘徊俱乐部博客文章归档，按时间查看所有文章">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="2025-12-第四周-看心情周刊【第一期】">
+  <meta property="og:description" content="似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。">
+  <meta property="og:article:author" content="zhongziven@gmail.com">
+  <meta property="og:article:published_time" content="2025-12-30T13:37:43.359999+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="文章归档 - 徘徊俱乐部">
-  <meta property="twitter:description" content="徘徊俱乐部博客文章归档，按时间查看所有文章">
+  <meta property="twitter:title" content="2025-12-第四周-看心情周刊【第一期】">
+  <meta property="twitter:description" content="似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。">
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2025-12-第四周-看心情周刊【第一期】",
+    "description": "似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。",
+    "author": {
+      "@type": "Person",
+      "name": "zhongziven@gmail.com"
+    },
+    "datePublished": "2025-12-30T13:37:43.359999+00:00",
+    "keywords": "积极心理学, 日记"
+  }
+  </script>
+  
   <style>
     /* 基础样式重置 */
     * {
@@ -35,7 +54,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
       color: #333;
-      background: #7c4dff;
+      background: white;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -457,282 +476,270 @@
     }
   
 
-    /* 页面标题区域 */
-    .page-header {
-      text-align: center;
-      padding: 8rem 0 4rem 0;
-      color: white;
-      background: transparent;
-    }
-
-    .page-title {
-      font-size: 3.5rem;
-      font-weight: 300;
-      margin-bottom: 1rem;
-      letter-spacing: 0.2rem;
-    }
-
-    .page-subtitle {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 300;
-      max-width: 600px;
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
       line-height: 1.8;
     }
 
-    /* 主要内容区域 */
-    .archive-content {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      margin: 2rem auto 4rem;
-      max-width: 1200px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
+    /* Inline code */
+    .article-content code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
+    }
+
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
       overflow: hidden;
-      padding: 3rem;
     }
-
-    /* 统计信息 */
-    .stats-section {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(124, 77, 255, 0.1);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .stat-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(124, 77, 255, 0.15);
-      border-color: rgba(124, 77, 255, 0.3);
-    }
-
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #7c4dff;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: #666;
-      font-weight: 500;
-    }
-
-    /* 时间归档样式 */
-    .archive-list {
-      list-style: none;
-    }
-
-    .archive-year {
-      margin-bottom: 3rem;
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .archive-year:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(124, 77, 255, 0.15);
-      border-color: rgba(124, 77, 255, 0.3);
-    }
-
-    .archive-year:last-child {
-      margin-bottom: 0;
-    }
-
-    .year-title {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #7c4dff;
-      margin-bottom: 0.5rem;
+    .article-content [data-rehype-pretty-code-title] {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
     }
-
-    .year-count {
-      font-size: 1rem;
-      color: #888;
-      font-weight: normal;
-      background: rgba(124, 77, 255, 0.1);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
     }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    /* Also support figure container */
+    .article-content [data-rehype-pretty-code-figure] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .article-content [data-rehype-pretty-code-figure] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background: transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code','Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 13px; line-height: 1.6; }
+    .article-content [data-rehype-pretty-code-figure] code { color: var(--shiki-foreground); }
+    /* Substring theme tokens mapping */
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme*='light'] code span[style*='--shiki-light'],
+    .article-content [data-rehype-pretty-code-figure]   pre[data-theme*='light'] code span[style*='--shiki-light'] { color: var(--shiki-light); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
 
-    .year-articles {
-      margin-top: 2rem;
-    }
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
 
-    .year-article-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid #f0f0f0;
-      transition: all 0.3s ease;
-    }
-
-    .year-article-item:hover {
-      background: rgba(124, 77, 255, 0.02);
-      margin: 0 -1rem;
-      padding: 1rem;
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
       border-radius: 8px;
     }
 
-    .year-article-item:last-child {
-      border-bottom: none;
-    }
-
-    .article-date {
-      font-size: 0.85rem;
-      color: #888;
-      min-width: 80px;
-      font-family: 'Courier New', monospace;
-      background: rgba(124, 77, 255, 0.05);
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
+    /* 文章底部 */
+    .article-footer {
       text-align: center;
+      padding: 2rem 0;
     }
 
-    .article-title-link {
-      color: #333;
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
       text-decoration: none;
-      font-size: 1rem;
-      line-height: 1.5;
-      transition: color 0.3s ease;
-      flex: 1;
-    }
-
-    .article-title-link:hover {
-      color: #7c4dff;
-    }
-
-    /* 快速导航 */
-    .quick-nav {
-      position: sticky;
-      top: 100px;
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(124, 77, 255, 0.1);
-      margin-bottom: 2rem;
-      max-height: fit-content;
-    }
-
-    .quick-nav-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #7c4dff;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .quick-nav-list {
-      list-style: none;
-    }
-
-    .quick-nav-item {
-      margin-bottom: 0.5rem;
-    }
-
-    .quick-nav-link {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      display: block;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
       transition: all 0.3s ease;
     }
 
-    .quick-nav-link:hover {
-      background: rgba(124, 77, 255, 0.1);
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
       color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
     /* 响应式设计 */
     @media (max-width: 768px) {
-      .page-title {
-        font-size: 2.5rem;
-        letter-spacing: 0.1rem;
+      .container {
+        padding: 1rem 15px;
       }
       
-      .page-subtitle {
-        font-size: 1.1rem;
-        padding: 0 1rem;
-      }
-      
-      .archive-content {
-        margin: 1rem;
-        border-radius: 15px;
+      .article-header,
+      .article-content {
         padding: 2rem 1.5rem;
       }
       
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+      .article-title {
+        font-size: 2rem;
       }
       
-      .year-title {
-        font-size: 1.6rem;
-      }
-      
-      .year-article-item {
+      .article-meta {
         flex-direction: column;
         gap: 0.5rem;
-        align-items: flex-start;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
       }
       
-      .article-date {
-        min-width: auto;
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
       }
-      
-      .quick-nav {
-        position: static;
-        margin-bottom: 2rem;
-      }
-    }
-
-    /* 空状态样式 */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: #666;
-    }
-
-    .empty-state h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #7c4dff;
-      font-weight: 300;
-    }
-
-    .empty-state p {
-      font-size: 1.1rem;
-      color: #888;
-      line-height: 1.8;
     }
   </style>
 </head>
@@ -823,116 +830,88 @@
     });
   </script>
   
-
-  <!-- 页面标题区域 -->
-  <header class="page-header">
-    <div class="container">
-      <h1 class="page-title">📚 文章归档</h1>
-      <p class="page-subtitle">按时间线浏览所有文章，记录每一次思考与分享</p>
-    </div>
-  </header>
-
-    <!-- 主要内容区域 -->
-  <main class="archive-content">
   
-    <!-- 时间归档 -->
-    <div class="archive-list">
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">2025-12-第四周-看心情周刊【第一期】</h1>
+      <div class="article-meta">
+        <span>📅 2025/12/30</span>
+        <span>✍️ 字数：1883</span>
+      </div>
       
-          <div class="archive-year" id="year-2025">
-            <h3 class="year-title">
-              2025 年
-              <span class="year-count">8 篇</span>
-            </h3>
-            <div class="year-articles">
-              
-                  <div class="year-article-item">
-                    <span class="article-date">12/30</span>
-                    <a href="https://blog.holding-num.cn/__new__/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html" class="article-title-link">
-                      2025-12-第四周-看心情周刊【第一期】
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/26</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-title-link">
-                      解决小程序端的图表实现的实践
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/23</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-title-link">
-                      想聊聊刘晓庆，庆奶
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/20</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-title-link">
-                      怎么在obsidian上随心所欲地记笔记（二）
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/17</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-title-link">
-                      使用 Git Actions 给 Supabase 项目做“保活”
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/14</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-title-link">
-                      他怎么在obsidian上随心所欲地记录笔记（一）
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/12</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-title-link">
-                      和台湾的朋友，记录一次Coffee Chat
-                    </a>
-                  </div>
-                
-                  <div class="year-article-item">
-                    <span class="article-date">12/8</span>
-                    <a href="https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-title-link">
-                      [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
-                    </a>
-                  </div>
-                
-            </div>
-          </div>
-        
-    </div>
-  </main>
+      <div class="article-tags">
+        <span class="tag">积极心理学</span><span class="tag">日记</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h2>程序员</h2>
+<p>似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。</p>
+<p>未来ai时代，生成式代码越来越发达，代码看来越来越容易写出来，以前我几天才能搞出来，AI几分钟把代码写出来了，而且我自己来写还写的不完善。一些普遍性能在网上找到的代码模块编写，api的使用。对程序员来说，其实不需要太大关心。对于普通程序员来说，更多的是系统设计，代码审核能力。结合AI的代码审核能力就牵扯到代码风格，代码健壮性的审核能力，应该就是刚需。要成为资深程序员，就是对系统设计，代码审核能力的实际经历有更丰富更全面的程度。</p>
+<p>我觉得现在AI基本上要达到资深程序员的程度了。但是还是有硬伤，当代码越来越多，ai好像会越来越难以掌控项目整体的组织一样。出现代码重复，量上去后，上下文的解析，AI还差一些。
+还有一些网上找不到答案的bug，深层次的bug，AI也可能解决不了，要么本身bug是没解决方案，要么，非常绕弯，AI绕不过来也可能。</p>
+<p>我对程序员这个身份，我想了想，我还是有动力继续的。因为之前的职业生涯，我的职业在于前端开发。一亩三分地的感觉。我先展开。到这个软件开发甚至是产品开发。整个生产链上下游都去做一做。</p>
+<p>还有个关键点，我不想为了做而做，我要结合自己的喜好去做。我做这个事情，还是要有内生的动力结合实际需要来做。主要是为了内心的需要。如果这个没有，其实就没必要在做了。</p>
+<p>但是，不可否认的时候，这么多年画这么多时间做IT，常常给我一种在死水里游泳的感觉，一种负能量。这种负能量是一种警示，就是你没必要吊死在一个行业里，或者说一种技能，它无法满足人看到生命的全貌。然而，我还没有想到其他哪些职业，特别是实体的，或者不同于IT的行业，我比较喜欢。</p>
+<p>既然还没有其他行业我喜欢，就慢慢骑驴找马吧。稳扎稳打比较是我的节奏，不能盲目进入其他行业。</p>
+<p>说实在的，感觉什么事情都很普通，做什么行业都那样，并为此感到烦恼，也许是某种意义上的自恋。因为总觉得要做出一番成绩，这一趟人生才算是圆满。但是，实际上是吗？</p>
+<h2>比较心态</h2>
+<p>接着上一个话题的尾部。我又想起了一个感受，一个场景。</p>
+<p>当看到别人好的时候，别人成功的时候，特别是那些和我一样的低谷时期的人，成功了或者说，走出来的时候。心里面油然而生出嫉妒之感。</p>
+<p>问了问gpt，为什么会有这种感觉，这种感觉从何而来，它说这事比较心态。</p>
+<p>心里确实有些咯噔一下。因为这种感觉常常从通过和我妈说话时候，我对我妈的感觉是这样。我妈极其容易被外界影响。她一辈子都在说别人怎么样。她一辈子都特别努力，特别卑微希望对外界证明什么。</p>
+<p>所以我才知道，我也有这种心态。</p>
+<p>回到第一个话题，就是我总觉得我要在程序员行业做到很大的成就其实是缘木求鱼。是自己逼自己进入了死胡同。我想放下这种执念，跟着感觉走，成不成交给老天就可以了。程序员这个身份，我希望它是我能感觉到生活快乐的一个工具，当我用起它的时候，我能尽情挥洒我的热情。</p>
+<h2>Coffee Talk 小故事</h2>
+<p>最近一次和陌生的网页Coffee talk，对方主动的挂掉了连线。他说他要带孩子。我的内心判断是他聊不下去了。我当下的感受有点挫败感，并且努力陷入自责模式。</p>
+<p>我现在觉得可能我提问态度消极的问题。比如，你有什么不太满意，不太喜欢的事情？你目标达不到做不到怎么办？会内耗吗？等等。对方也许也是个敏感的人。他没办法忍受和价值观不同的人的假装畅聊。</p>
+<p>当然，更关键的还是我自己怎么想这个问题。我不能定义这次连线是翻车，我不知道对方是怎么想的。即使是翻车，我也没必要自责。因为我不是主观上想让他难受，不是故意的。所以我可以做些实验，下次多活络活络气氛。问下，人家最成功，最骄傲的事情。提升情绪价值。</p>
+<p>还有一个点，我在观察，我是不是有一种潜藏在底层的意识。我不喜欢去赞美自己，我对现状总是觉得紧张，所以我不会去赞美别人。</p>
+<p>我觉得确实是。</p>
+<p>如果觉得想要一个积极的一生，那就要特意练习这一块。无时无刻的告诉自己，我认可自己，我对自己很满意，我无时无刻可以迎接挑战，我相信自己，我为自己感到骄傲，我现在所处的环境很好，我已经得到很多了，我应该感谢，感恩。没有危险，也不用去紧张。我可以应付的了。我的内心来自于上帝，所以自始至终都有宇宙的指引，没有必要去焦虑得不到，找不到的情况。因为最终会得到。</p>
+<h2>广州一日游</h2>
+<p>前几天回广州一趟，之前买的车一直停在路边，交警开罚单了，所以要移走。当天去当天回。</p>
+<p>当时坐了一趟广州APM先，它是广州中轴线的一条地铁线。无人开车。坐在里面感觉时光穿梭。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/25/d1fd3484-7466-4727-b8ea-414fe481020d.jpg" alt="广州APM线地铁" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">广州APM线地铁</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/25/4c4d8d73-015d-49d7-8275-6e0cdbd13078.jpg" alt="广州图书馆的展览《制造强国十年》" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">广州图书馆的展览《制造强国十年》</figcaption></figure></p>
+    </main>
 
-  <script>
-    // 平滑滚动到锚点
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
-  <script>
-    document.querySelectorAll('a[href]').forEach(a => {
-      const href = a.getAttribute('href') || ''
-      if (href.startsWith('#')) return
-      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
-      const rel = a.getAttribute('rel') || ''
-      if (!rel.includes('noopener')) {
-        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
-      }
-    })
-  </script>
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>解决小程序端的图表实现的实践</p>
+      </a>
+    
+      <div></div>
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
   
   
   <!-- 页脚 -->
@@ -996,5 +975,32 @@
   </footer>
   
   
+  <script>
+    // Enhance external links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+
 </body>
 </html>
