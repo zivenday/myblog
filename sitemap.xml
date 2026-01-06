@@ -26,8 +26,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</loc>
+    <lastmod>2026-01-06T11:45:56.478Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</loc>
-    <lastmod>2026-01-02T11:30:10.368Z</lastmod>
+    <lastmod>2026-01-02T11:30:46.740Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
