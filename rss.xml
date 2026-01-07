@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-01-07T18:10:24.930Z</lastBuildDate>
-    <pubDate>2026-01-07T18:10:24.930Z</pubDate>
+    <lastBuildDate>2026-01-07T18:33:33.944Z</lastBuildDate>
+    <pubDate>2026-01-07T18:33:33.944Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -36,7 +36,7 @@
       <title>小程序自定义画人际关系图表</title>
       <link>https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</link>
       <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</guid>
-      <pubDate>Fri, 02 Jan 2026 11:30:10 GMT</pubDate>
+      <pubDate>Fri, 02 Jan 2026 11:30:00 GMT</pubDate>
       <description>讲述了如何一步步走到自己来画人际关系组件的。所以这篇文章将详细阐述这个组件的实现，最终的目的是一个通用的人际关系组件。这个通用是相对的，类似相同需求的可以套一套，不能说万事皆可用。当然如果你觉得这个组件值得去扩展，可以评论区告诉我。</description>
       <category>技术文章</category>
       <category>最佳实践</category>
