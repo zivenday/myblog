@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-01-06T11:45:58.618Z</lastBuildDate>
-    <pubDate>2026-01-06T11:45:58.618Z</pubDate>
+    <lastBuildDate>2026-01-07T18:10:24.930Z</lastBuildDate>
+    <pubDate>2026-01-07T18:10:24.930Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -22,7 +22,7 @@
       <title>小程序端实现一个通用的人际关系图表</title>
       <link>https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</link>
       <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</guid>
-      <pubDate>Tue, 06 Jan 2026 11:45:56 GMT</pubDate>
+      <pubDate>Tue, 06 Jan 2026 11:45:00 GMT</pubDate>
       <description>前面两篇文章是这篇文章的前置内容。详细说了，小程序端，如何从echarts转到原生cavans实现一个人际关系图表。但是这不太够，现在的图表组件，不能复用，所以这节就对它进行改造下，让它。</description>
       <category>技术文章</category>
       <category>echarts</category>
