@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-01-07T18:33:33.944Z</lastBuildDate>
-    <pubDate>2026-01-07T18:33:33.944Z</pubDate>
+    <lastBuildDate>2026-01-09T15:02:23.902Z</lastBuildDate>
+    <pubDate>2026-01-09T15:02:23.902Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>2026-1-第一周-看心情周刊【第二期】</title>
+      <link>https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</guid>
+      <pubDate>Fri, 09 Jan 2026 15:02:13 GMT</pubDate>
+      <description>最近看到篇文章，中文版可以在这里看到，主人公是名技术人员，我读了之后，感觉主人公的一些看法和我不谋而合，当然，这并不重要，只是我自己有一种被认可的感觉（我是多没被认可呀！？）。</description>
+      <category>分享</category>
+      <category>积极心理学</category>
+      <category>周刊</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>小程序端实现一个通用的人际关系图表</title>
       <link>https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</link>
