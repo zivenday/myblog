@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-01-12T14:47:35.091Z</lastBuildDate>
-    <pubDate>2026-01-12T14:47:35.091Z</pubDate>
+    <lastBuildDate>2026-01-12T17:18:11.886Z</lastBuildDate>
+    <pubDate>2026-01-12T17:18:11.886Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -22,7 +22,7 @@
       <title>我对博客折腾了一波</title>
       <link>https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</link>
       <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</guid>
-      <pubDate>Mon, 12 Jan 2026 14:47:32 GMT</pubDate>
+      <pubDate>Mon, 12 Jan 2026 14:47:00 GMT</pubDate>
       <description>博客自从建立起来后，除了主要的功能，主流程完成后。怎么用的顺手是个很大的问题。如果用的顺，用的爽。潜意识写文章动力会更多一些。为此做了不少优化和bug修复。罗列了一些主要优化清单，可以让博客发布过程，用的爽一些。</description>
       <category>技术文章</category>
       <category>博客</category>
