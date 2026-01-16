@@ -26,6 +26,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/posts/2026-01-16-use-of-uni-app-positioning-plugin.html</loc>
+    <lastmod>2026-01-16T15:58:43.099Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</loc>
     <lastmod>2026-01-12T17:18:28.197Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -33,7 +39,7 @@
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</loc>
-    <lastmod>2026-01-12T17:19:13.348Z</lastmod>
+    <lastmod>2026-01-12T17:19:28.227Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
