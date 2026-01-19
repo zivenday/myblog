@@ -26,8 +26,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/__new__/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html</loc>
+    <lastmod>2026-01-19T16:09:45.770Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-16-use-of-uni-app-positioning-plugin.html</loc>
-    <lastmod>2026-01-16T15:58:43.099Z</lastmod>
+    <lastmod>2026-01-16T15:59:24.157Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
