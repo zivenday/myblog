@@ -97,6 +97,10 @@
     .rss-icon {
       fill: currentColor;
     }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
     
     /* 移动端汉堡菜单按钮 */
     .mobile-menu-btn {
@@ -432,9 +436,31 @@
     .content p { margin: 1rem 0; color: #444; }
     .content a { color: #7c4dff; text-decoration: none; }
     .content a:hover { text-decoration: underline; }
-    .content pre { background: #0b1021; color: #eaeaea; padding: 1rem; border-radius: 8px; overflow-x: auto; }
-    .content code { background: rgba(124,77,255,0.1); padding: 0.1rem 0.3rem; border-radius: 4px; }
-    .content img { max-width: 100%; border-radius: 8px; }
+    /* Inline code */
+    .content code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 0.92em; }
+    /* Pretty Code (Shiki) */
+    .content [data-rehype-pretty-code-fragment] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .content [data-rehype-pretty-code-title] { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); font-size:12px; color:#6b7280; font-weight:600; letter-spacing:.04em; }
+    .content [data-rehype-pretty-code-fragment] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background:transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size:13px; line-height:1.6; }
+    .content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .content [data-rehype-pretty-code-fragment] .line { display:block; min-height:1.25rem; }
+    .content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Toolbar */
+    .content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .content .code-copy:hover { background:#f3f4f6; }
+    /* Line numbers */
+    .content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+    /* Images */
+    .content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+    .content img { display: block; margin: 1rem auto; max-width: 100%; border-radius: 8px; height: auto; }
 
     @media (max-width: 768px) {
       .hero { padding: 6rem 0 3rem 0; }
@@ -451,7 +477,7 @@
     <div class="navbar-content">
       <div class="navbar-brand">
         <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
-          <img src="logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
         </a>
       </div>
       
@@ -469,6 +495,11 @@
           </svg>
           RSS
         </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
       </div>
       
       <!-- 移动端汉堡菜单按钮 -->
@@ -482,6 +513,7 @@
     <!-- 移动端菜单 -->
     <div class="mobile-menu" id="mobileMenu">
       <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
       <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
       <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
       <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
@@ -550,8 +582,8 @@
 <p>看心情周刊会记录，一周以来我遇到心态上的问题，可能也不叫问题吧，可以说是感悟吧，我看到什么风景，遇到什么故事等等，一些琐碎的事情，整理成册。</p>
 <h4>5、语言学习</h4>
 <p>分享语言学习心得，不是说我会很多语言，我觉得能说很多语言和别人沟通不是很爽吗，我学其他语言的时候 我都在感觉学这个国家或者的地区的历史，通过历史我能更能掌握这门对应的语言。说到历史，是我感兴趣的。也会总结一些语言学习的知识，忘记了，我也可以马上捡起来。</p>
-<h6>当然也会有其他的内容，交给以后吧。</h6>
-</article>
+<p>如果你对我有什么建议，想对我说点什么可以在<a href="https://blog.holding-num.cn/guestbook.html">这里留言</a>。</p>
+<h3>当然也会有其他的内容，交给以后吧。</h3></article>
     </div>
   </main>
   
@@ -625,6 +657,19 @@
         a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
       }
     })
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click',function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
   </script>
 </body>
 </html>
