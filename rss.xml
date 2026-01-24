@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-01-23T16:36:28.695Z</lastBuildDate>
-    <pubDate>2026-01-23T16:36:28.695Z</pubDate>
+    <lastBuildDate>2026-01-24T11:49:06.592Z</lastBuildDate>
+    <pubDate>2026-01-24T11:49:06.592Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -22,7 +22,7 @@
       <title>小程序的AI功能开发实践</title>
       <link>https://blog.holding-num.cn/2026-01-23-practice-of-ai-function-development-for-mini-programs.html</link>
       <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-23-practice-of-ai-function-development-for-mini-programs.html</guid>
-      <pubDate>Fri, 23 Jan 2026 16:36:24 GMT</pubDate>
+      <pubDate>Thu, 22 Jan 2026 16:36:00 GMT</pubDate>
       <description>现在大家都在用AI，让我感觉它无处不在。2024年，也就是去年，11月30日，中国互联网络信息中心（CNNIC）对外发布《生成式人工智能应用发展报告（2024）》。这份《报告》显示，截至今年也就是2024年6月，中国生成式人工智能产品的用户规模达2.3亿人，占整体人口的16.4%。我看了欧美国家媒体的报道他们的情况，他们差不多也是这个数，多的也应该是到了20%。 这还是有点出乎意料的，我感觉至少要来个50%吧。</description>
       <category>技术文章</category>
       <category>最佳实践</category>
