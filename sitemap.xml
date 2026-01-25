@@ -26,8 +26,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html</loc>
+    <lastmod>2026-01-25T23:06:38.746Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html</loc>
-    <lastmod>2026-01-24T11:49:03.046Z</lastmod>
+    <lastmod>2026-01-24T11:49:19.150Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
