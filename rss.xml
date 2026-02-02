@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-02-02T15:19:28.916Z</lastBuildDate>
-    <pubDate>2026-02-02T15:19:28.916Z</pubDate>
+    <lastBuildDate>2026-02-02T15:21:15.545Z</lastBuildDate>
+    <pubDate>2026-02-02T15:21:15.545Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -22,7 +22,7 @@
       <title>说到Nestjs，递归式的回答，你会因为它想到什么?</title>
       <link>https://blog.holding-num.cn/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html</link>
       <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html</guid>
-      <pubDate>Mon, 02 Feb 2026 15:19:08 GMT</pubDate>
+      <pubDate>Mon, 02 Feb 2026 15:19:00 GMT</pubDate>
       <description>前阵子拼劲消失，也许是有目标，但是目标不反感也没太大激情去冲。是大部分的中年人的自然规律。脑子就是这么运作的。就像瓜熟了，自然果肉就会变甜一样。我问AI,为什么人这种状态怎么办。AI回答说，首先要允许这种状态，你就是想停下来摆着的状态，就是会这样。第二就是完全靠感觉，不要太重视目标的唯一性。好像没有了准确的目标就会死一样。太重视就陷入了焦虑，有时候这种焦虑还是慢性的，不注意一直在想为什么。所谓感觉，就是做点什么，看看哪些是自己能莫名其妙的专注，哪些能莫名其妙的热情，哪些能莫名其妙的干下去。</description>
       <category>技术文章</category>
       <category>nestjs</category>
