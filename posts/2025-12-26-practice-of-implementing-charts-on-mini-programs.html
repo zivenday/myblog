@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>解决小程序端的图表实现的实践 - 徘徊俱乐部</title>
+  <meta name="description" content="写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。">
+  <meta name="author" content="zhongziven@gmail.com">
+  <meta name="keywords" content="相亲小程序, 小程序, 人脉图, Vue, TypeScript, Taro, echarts, vibecode">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="解决小程序端的图表实现的实践">
+  <meta property="og:description" content="写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。">
+  <meta property="og:article:author" content="zhongziven@gmail.com">
+  <meta property="og:article:published_time" content="2025-12-26T09:23:00+00:00">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="解决小程序端的图表实现的实践">
+  <meta property="twitter:description" content="写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "解决小程序端的图表实现的实践",
+    "description": "写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。",
+    "author": {
+      "@type": "Person",
+      "name": "zhongziven@gmail.com"
+    },
+    "datePublished": "2025-12-26T09:23:00+00:00",
+    "keywords": "相亲小程序, 小程序, 人脉图, Vue, TypeScript, Taro, echarts, vibecode"
+  }
+  </script>
+  
+  <style>
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
+    /* Inline code */
+    .article-content code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
+    }
+
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    /* Also support figure container */
+    .article-content [data-rehype-pretty-code-figure] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .article-content [data-rehype-pretty-code-figure] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background: transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code','Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 13px; line-height: 1.6; }
+    .article-content [data-rehype-pretty-code-figure] code { color: var(--shiki-foreground); }
+    /* Substring theme tokens mapping */
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme*='light'] code span[style*='--shiki-light'],
+    .article-content [data-rehype-pretty-code-figure]   pre[data-theme*='light'] code span[style*='--shiki-light'] { color: var(--shiki-light); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
+      color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem 15px;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+      
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">解决小程序端的图表实现的实践</h1>
+      <div class="article-meta">
+        <span>📅 2025/12/26</span>
+        <span>✍️ 字数：2262</span>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">相亲小程序</span><span class="tag">小程序</span><span class="tag">人脉图</span><span class="tag">Vue</span><span class="tag">TypeScript</span><span class="tag">Taro</span><span class="tag">echarts</span><span class="tag">vibecode</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h4>前言</h4>
+<p>写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。</p>
+<p>最近在开发一款婚恋小程序，需要展示人际关系。前个版本使用的<a href="https://github.com/ecomfe/echarts-for-weixin">echarts的wx版本</a>。但是调试下来发现有不少显示问题，或者说兼容问题。</p>
+<h5>1、首次渲染会出现渲染不出来的情况。</h5>
+<p>这个问题有点膈应死我了。按照官方的写法是这样</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="ts" data-theme="github-light github-dark"><code data-language="ts" data-theme="github-light github-dark" style="display: grid;"><span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>&#x3C;/</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="vue" data-theme="github-light github-dark"><code data-language="vue" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"p-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"text-gray-700 mb-3"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>三度人脉示例&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">view</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"echarts"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> style</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">width</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">360</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">px</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">; </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">height</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">360</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">px</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">ec-canvas</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"bar-chart"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> canvas-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"bar-chart"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> :</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ec</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">ec</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">view</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> setup</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { reactive } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'vue'</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 说明：components/ec-canvas/echarts.js 为 UMD 构建，不包含 ES 模块导出，使用 require 引入以避免 TS “不是模块”报错</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// eslint-disable-next-line @typescript-eslint/no-var-requires</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> echarts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> require</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'../../../components/ec-canvas/echarts'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 通过 ec-canvas 的 onInit 回调初始化图表</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> ec</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> reactive</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">onInit: initChart,</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> initChart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">canvas</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">width</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">height</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">dpr</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> chart</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> echarts.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">init</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(canvas, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, { width, height })</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">canvas.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setChart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(chart)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> option</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    data: []</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">chart.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setOption</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(option);</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> chart;</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span data-line=""> </span></code></pre></figure>
+<p>初始化死活ec为null会出现的警告</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-light github-dark"><code data-language="text" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span>'组件需绑定 ec 变量，例：&#x3C;ec-canvas id="mychart-dom-bar" '</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>'canvas-id="mychart-bar" ec="{{ ec }}">&#x3C;/ec-canvas>'</span></span></code></pre></figure>
+<p>我想应该是初始化过快的原因？</p>
+<p>后来尝试通过属性监听ec的方式或者通过taro拿实例的方式去拿ec，居然也拿不到。这就有点麻烦了。</p>
+<p>github,issues有这个问题，但是没解决。这个插件503个问题，问题真的不少。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/f3a48f49-ab82-4f58-838c-596a8f8d94a7.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p>其实就这个问题，已经花费了不少时间，有两个下午的时间。这是一个兼职，用爱发电的项目，花费太多时间，真的有点绷不住啊。</p>
+<h5>2、echarts渲染的图层是顶级，所以会遮盖住这个页面的一些位置重叠的操作。或者说其他一切位置重叠的元素都会被遮住。</h5>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/0f45d971-d55e-42d2-9b7b-9b2f25314543.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/02/54009e7c-c9f9-4a77-8f4a-326a5b77de33.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<p><a href="https://echarts.apache.org/handbook/zh/how-to/cross-platform/wechat-app/">官方</a>的推荐是使用cover-image ,cover-view 来超越canvas的的一些操作。配合force-use-old-canvas="true"的设置。</p>
+<p>但是新的问题来了，像简单的元素可以通过cover-view 来改造。那弹框，对话框这些岂不是统统遇到图表都要改造一番。</p>
+<p>这里还有一个特别难受的点，开发工具一切调试下来，样式，内容没问题，在真机上其实有差异。</p>
+<p>所以做到这里。echarts其实已经是不能再用了。</p>
+<p>以前还全职程序员的时候，常常就这一个问题，研究好几天，死脑筋，但是没有啥方案，但是问题不是在我，我得花大量实践去找替代方案。此时此刻，我还没有放弃这个echarts插件。但是所以潜意识已经觉得走在歧路上了。</p>
+<p>此时心想的方案，首次渲染不出来就渲染不出来吧，二次编译可以渲染出来，可以解决。几个操作图层错误的问题，也可以解决。如果弹框，其他元素都有问题，就不好办了。</p>
+<p>网上其他插件也可以用，但是针对taro+vue的插件又收窄了返回。</p>
+<p>结合ai给的方案。就是使用原生cavans，一笔一笔自己来画。</p>
+<p>原本我以为会很难，但是其实人际关系图，就是彼此之间的连线而已。</p>
+<p>下一篇将讲述如果做一个人际关系组件，通用版。</p>
+<h4>写在最后</h4>
+<p>现在市面上类似echarts的插件很多，但是用在小程序上，会少。 结合各种技术栈的也有，这里不一一举例子了。wx-echarts 目前在小程序上的支持还有很多问题。考量用在生产环境是很不好。技术人员在开发过程中，总会遇到各种疑难杂症，这时候还是不能乱阵脚，要给自己打气，冷静思考你现在的方案有哪些，有哪些方式方法可以使用的。最好写出来。会不会更一目了然呢？</p>
+    </main>
+
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>想聊聊刘晓庆，庆奶</p>
+      </a>
+    
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/weekly-mood/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html" target="_blank" rel="noopener noreferrer">
+        <span>→ 下一篇</span>
+        <p>2025-12-第四周-看心情周刊【第一期】</p>
+      </a>
+    
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script>
+    // Enhance external links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+
+</body>
+</html>
