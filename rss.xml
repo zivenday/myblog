@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-02-06T16:39:52.300Z</lastBuildDate>
-    <pubDate>2026-02-06T16:39:52.300Z</pubDate>
+    <lastBuildDate>2026-02-09T13:44:43.398Z</lastBuildDate>
+    <pubDate>2026-02-09T13:44:43.398Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,20 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>AI  编程开发中的一些小感悟</title>
+      <link>https://blog.holding-num.cn/2026-02-09-some-small-insights-in-ai-programming-development.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-09-some-small-insights-in-ai-programming-development.html</guid>
+      <pubDate>Mon, 09 Feb 2026 13:44:40 GMT</pubDate>
+      <description>使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。</description>
+      <category>技术文章</category>
+      <category>AI</category>
+      <category>codex</category>
+      <category>claude code</category>
+      <category>google</category>
+      <category>agent</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>rbac系统的设计理念与实现</title>
       <link>https://blog.holding-num.cn/2026-02-06-design-concept-and-implementation-of-rbac-system.html</link>

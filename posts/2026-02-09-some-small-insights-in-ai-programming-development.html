@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI  编程开发中的一些小感悟 - 徘徊俱乐部</title>
+  <meta name="description" content="使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。">
+  <meta name="author" content="zhongziven@gmail.com">
+  <meta name="keywords" content="AI, codex, claude code, google, agent">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AI  编程开发中的一些小感悟">
+  <meta property="og:description" content="使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。">
+  <meta property="og:article:author" content="zhongziven@gmail.com">
+  <meta property="og:article:published_time" content="2026-02-09T13:44:40.404078+00:00">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="AI  编程开发中的一些小感悟">
+  <meta property="twitter:description" content="使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI  编程开发中的一些小感悟",
+    "description": "使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。",
+    "author": {
+      "@type": "Person",
+      "name": "zhongziven@gmail.com"
+    },
+    "datePublished": "2026-02-09T13:44:40.404078+00:00",
+    "keywords": "AI, codex, claude code, google, agent"
+  }
+  </script>
+  
+  <style>
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
+    /* Inline code */
+    .article-content code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
+    }
+
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    /* Also support figure container */
+    .article-content [data-rehype-pretty-code-figure] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .article-content [data-rehype-pretty-code-figure] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background: transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code','Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 13px; line-height: 1.6; }
+    .article-content [data-rehype-pretty-code-figure] code { color: var(--shiki-foreground); }
+    /* Substring theme tokens mapping */
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme*='light'] code span[style*='--shiki-light'],
+    .article-content [data-rehype-pretty-code-figure]   pre[data-theme*='light'] code span[style*='--shiki-light'] { color: var(--shiki-light); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
+      color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem 15px;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+      
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">AI  编程开发中的一些小感悟</h1>
+      <div class="article-meta">
+        <span>📅 2026/2/9</span>
+        <span>✍️ 字数：1865</span>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">AI</span><span class="tag">codex</span><span class="tag">claude code</span><span class="tag">google</span><span class="tag">agent</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h3>前言</h3>
+<p>使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。</p>
+<p>IT达人们很喜欢的这三家模型，就是所谓的"御三家"。谷歌公司、OpenAI、Anthropic。他们对应的模型是gemini,codex,claudecode。</p>
+<p>除此之外，通过AI 生成需求文档和技术文档的能力，也经常在用，因为要生成好的项目，这些文档尽量要准备的完善一些。实际上，要开发一个app的时候，只是一个概念，很多细节都需要和AI沟通才会得以确认。</p>
+<h3>代码生成能力</h3>
+<p>在最新一次实践当中，是要做的是一个记录日语词根的小程序。它的主要功能有两个：记录词根，还有就是复习词根。</p>
+<h5>需求、技术文档的生成</h5>
+<p>在生成需求文档方面，我用的chatgpt ,用的 gpt5.2 pro模型。 我的感觉是，我要的应用，AI很多地方是考虑不太全的。而且人可能也不知道哪里需要更全点，甚至不知道自己的需求细节是什么。所以在和AI沟通的时候，最好要让AI给你提问题，了解你的需求是什么。这个过程才是能够做好需求的好方式。所有简单通过skills生成的需求文档大概率不能满足你。</p>
+<h5>交叉检查</h5>
+<p>需求文档生成后，在人确认最终版本后，最好还要通过两个或者以上模型交叉检查的方式，看下哪里有补充，我发现这个方式很有效，AI总能给出不少待提高且适合我要的点。这种交叉检查可以使用到任何地方，比如代码的生成后的检查也同样可以。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/02/610a0ac9-934d-467c-b8c3-e8a6866ca51a.png" alt="codex检查别的模型生成的前端代码" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">codex检查别的模型生成的前端代码</figcaption></figure></p>
+<h5>需求以外</h5>
+<p>有了确定后的需求文档，对我来说，感觉还是不够，在我眼里，不够具现化，所以我会让AI生成流程图和原型。流程图是mmd文件，可以嵌进去需求文档md格式，vscode有相关的插件可以支持，装一下就行。原型图，喜欢做个html，有交互。这里必须夸下codex，它生成的原型图经验达到我，可以看下面的图。当然也可以做成支持figma的格式。拷贝到figma。如果在chatgpt里通过聊天做出来的原型并没有codex这么好。只能说术业有专攻吧！</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/02/3f662fef-e397-4095-92c0-afddf1f28948.png" alt="codex做出来的原型" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">codex做出来的原型</figcaption></figure></p>
+<p>有了这三样东西，ai做出来的东西就可以稳点了，心里有点东西，可以继续往下推技术文档。以同样问答的方式把文档输出，交叉检查，最后再决定。</p>
+<h4>前端代码生成</h4>
+<p>很多开发者都是Antigravity很适合用来做前端，我这次也下了一个。不过安装起来需要Google账号，所以必须要科学上网，此外。Google对你的账号也有要求，账号的地点归属必需要它允许的那几个国家。在中国，它不让。改的方式就是要去申诉改地址。教程网上也有。即使科学上网了，也要使用tun模式，才能用上Antigravity。</p>
+<p>Antigravity有免费大模型额度可以用。它自家的模型，和ClaudeCode。我生成完整个小程序，就用完了免费额度。Google AI也一种每个月100多块人民币的订阅，可以试试，看看能不能提高下额度。也可以换成别的账号，同样有免费额度。好像7天会过期还是刷新额度。看看7天以后得变化吧。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/03/1d490be1-3c68-4dd0-97fd-3d7b145e0aa8.png" alt="每个模型有一定免费额度" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">每个模型有一定免费额度</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/03/f5373bd4-78e2-4648-8d11-327b5c4504be.png" alt="2020后的Google账号大概率不能加入Google AI plans最便宜的套餐" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">2020后的Google账号大概率不能加入Google AI plans最便宜的套餐</figcaption></figure></p>
+<p>整体来说Antigravity生成的代码确实要比codex生成的代码要完善很多。但是如果配合Skills Codex应该表现的好一些。但是我站在Google这边。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/02/1b7c8b07-2b04-49a1-b743-310a64cb2203.png" alt="小程序生成代码对比" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"><figcaption class="image-caption">小程序生成代码对比</figcaption></figure></p>
+<h5>代码依然有缺陷但是已经很棒</h5>
+<p>即使是Antigravity，生成的代码也会有些问题，整体下来，包括它解决代码bug完成也耗时了十几分钟,比如这次，出现了包安装缺失的问题，包构建不通反复n多次，字体适配问题。整体样式第一次感觉还是缺少些美感，技术我给了它好看的原型图。这块看看用设计skills能不能完善下。</p>
+<p>但是这对我来说已经足够了。因为整体下来用的skills不对，它自由发挥的空间还是有些的。</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/03/e84bf602-f47c-4a6e-afad-c2abc9eb6b5a.png?w=300" alt="字体大小不符合适配规律" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto" width="300"><figcaption class="image-caption">字体大小不符合适配规律</figcaption></figure></p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2026/02/02/436dfd2f-fd76-4eef-ab33-149d9d81fdf3.png?w=300" alt="人为少量微调后的版本" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto" width="300"><figcaption class="image-caption">人为少量微调后的版本</figcaption></figure></p>
+<h3>AI 生成的一些</h3>
+<h5>1、大多数AI都喜欢立即改代码</h5>
+<p>所以我会特意说叫他先给我方案，但是有时候，它还是会不给我方案，直接改，这块看看以后怎么优化下吧，价格skills?</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/27/43ccea8e-3b76-4abb-9d84-bcb955e1c3af.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+<h5>2、即使都是AI，但是各家的AI都有自己的擅长</h5>
+<p>gpt中的codex 改样式，相比改逻辑，要吃力一些，需要明确再明确自己的语言。
+针对一个响应式的框，我想再pc端让这个框不要这么小，改了好几次，没改好，最后，自己上手</p>
+<p><figure class="image-figure"><img src="https://images.holding-num.cn/image-upload-token/images/anon/2025/12/27/27e4127f-5c07-4a2d-8aab-b97a885fee76.png" alt="image.png" loading="lazy" decoding="async" style="display:block;margin:0 auto;max-width:100%;height:auto"></figure></p>
+    </main>
+
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2026-02-06-design-concept-and-implementation-of-rbac-system.html" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>rbac系统的设计理念与实现</p>
+      </a>
+    
+      <div></div>
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script>
+    // Enhance external links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+
+</body>
+</html>
