@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-02-09T13:44:43.398Z</lastBuildDate>
-    <pubDate>2026-02-09T13:44:43.398Z</pubDate>
+    <lastBuildDate>2026-02-12T21:54:37.109Z</lastBuildDate>
+    <pubDate>2026-02-12T21:54:37.109Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,18 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>《从内耗到心流》笔记2</title>
+      <link>https://blog.holding-num.cn/2026-02-13-notes-on-from-internal-friction-to-flow-2.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-13-notes-on-from-internal-friction-to-flow-2.html</guid>
+      <pubDate>Thu, 12 Feb 2026 21:54:32 GMT</pubDate>
+      <description>这本书的作者叫杨鸣。它应该是一位很少人听过的一位作者。我觉得这本书特别适合那些一边被牛马生活鞭打，一边有梦想又不知道怎么行动的人。作为其中一员。这是第一本让我觉得我可以去执行的一本书。因为里面有贴合的方法论，有行动指南。在之前，我看的一些心理书，大部分道理能明白，有时候甚至能够恍然大悟，但是后面总觉得哪里不对劲，它们都有一个共同的特点：道理在这，为什么这个道理？真正怎么改，什么滋味你自己去体会。</description>
+      <category>读书笔记</category>
+      <category>内耗</category>
+      <category>心流</category>
+      <category>心理学</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>AI  编程开发中的一些小感悟</title>
       <link>https://blog.holding-num.cn/2026-02-09-some-small-insights-in-ai-programming-development.html</link>
@@ -271,19 +283,6 @@
       <category>积极心理学</category>
       <category>焦虑症</category>
       <category>心理</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>[ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站</title>
-      <link>https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html</guid>
-      <pubDate>Mon, 08 Dec 2025 14:42:00 GMT</pubDate>
-      <description>很多前端朋友都不太懂部署这一块，是否能独立完成一个项目，前端、后端、部署已经越来越能体现一个人的竞争力了。其中如何给自己开发的项目进行部署是其中关键的能力之一。这是我自学部署的第一篇，最简单的开始。就是如何部署一个简单的静态网站</description>
-      <category>技术文章</category>
-      <category>最佳实践</category>
-      <category>aws</category>
-      <category>部署</category>
-      <category>网站</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>

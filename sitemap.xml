@@ -26,8 +26,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/books-notes/2026-02-13-notes-on-from-internal-friction-to-flow-2.html</loc>
+    <lastmod>2026-02-12T21:54:32.100Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html</loc>
-    <lastmod>2026-02-09T13:44:40.404Z</lastmod>
+    <lastmod>2026-02-09T13:44:57.549Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
