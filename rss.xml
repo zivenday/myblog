@@ -6,11 +6,11 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-02-21T17:15:42.213Z</lastBuildDate>
-    <pubDate>2026-02-21T17:15:42.213Z</pubDate>
+    <lastBuildDate>2026-02-21T19:15:53.555Z</lastBuildDate>
+    <pubDate>2026-02-21T19:15:53.555Z</pubDate>
     <ttl>60</ttl>
-    <webMaster>拿着号码牌徘徊</webMaster>
-    <managingEditor>拿着号码牌徘徊</managingEditor>
+    <webMaster>zhongziven@gmail.com</webMaster>
+    <managingEditor>zhongziven@gmail.comå</managingEditor>
     <copyright>© 2026 徘徊俱乐部. All rights reserved.</copyright>
         <category>技术</category>
     <category>学习</category>
@@ -28,7 +28,7 @@
       <category>博客优化</category>
       <category>seo</category>
       <category>sitemaps</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>《从内耗到心流》笔记3</title>
@@ -43,7 +43,7 @@
       <category>内耗</category>
       <category>心流</category>
       <category>读书笔记</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>《从内耗到心流》笔记2</title>
@@ -55,7 +55,7 @@
       <category>内耗</category>
       <category>心流</category>
       <category>心理学</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>AI  编程开发中的一些小感悟</title>
@@ -69,7 +69,7 @@
       <category>claude code</category>
       <category>google</category>
       <category>agent</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>rbac系统的设计理念与实现</title>
@@ -81,7 +81,7 @@
       <category>rbac</category>
       <category>nestjs</category>
       <category>后端开发</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>说到Nestjs，递归式的回答，你会因为它想到什么?</title>
@@ -95,7 +95,7 @@
       <category>最佳实践</category>
       <category>技术文档</category>
       <category>AI</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>2026-1-看心情月刊【第一期】</title>
@@ -107,7 +107,7 @@
       <category>积极心理学</category>
       <category>看心情</category>
       <category>月刊</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>做好app，需要哪些文档准备？</title>
@@ -120,7 +120,7 @@
       <category>需求文档</category>
       <category>流程图</category>
       <category>技术文档</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>小程序的AI功能开发实践</title>
@@ -133,7 +133,7 @@
       <category>相亲小程序</category>
       <category>JavaScript</category>
       <category>AI</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>《从内耗到心流》读书笔记</title>
@@ -145,7 +145,7 @@
       <category>笔记</category>
       <category>内耗</category>
       <category>心流</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>uni-app 定位插件使用</title>
@@ -155,7 +155,7 @@
       <description>最近兼职做一个交友的小程序开发，里面需要定位获取的地址功能。这里做一个记录。</description>
       <category>技术文章</category>
       <category>小程序</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>我对博客折腾了一波</title>
@@ -166,7 +166,7 @@
       <category>技术文章</category>
       <category>博客</category>
       <category>建站</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>2026-1-第一周-看心情周刊【第二期】</title>
@@ -177,7 +177,7 @@
       <category>分享</category>
       <category>积极心理学</category>
       <category>周刊</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>小程序端实现一个通用的人际关系图表</title>
@@ -191,7 +191,7 @@
       <category>相亲小程序</category>
       <category>Vue</category>
       <category>vibecode</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>小程序自定义画人际关系图表</title>
@@ -208,7 +208,7 @@
       <category>TypeScript</category>
       <category>echarts</category>
       <category>Taro</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>2025-12-第四周-看心情周刊【第一期】</title>
@@ -219,7 +219,7 @@
       <category>看心情周刊</category>
       <category>积极心理学</category>
       <category>日记</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>解决小程序端的图表实现的实践</title>
@@ -236,7 +236,7 @@
       <category>Taro</category>
       <category>echarts</category>
       <category>vibecode</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>想聊聊刘晓庆，庆奶</title>
@@ -250,7 +250,7 @@
       <category>积极心理学</category>
       <category>心理</category>
       <category>心态</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>怎么在obsidian上随心所欲地记笔记（二）</title>
@@ -266,7 +266,7 @@
       <category>cloudflare</category>
       <category>image auto upload</category>
       <category>Node.js</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
     <item>
       <title>使用 Git Actions 给 Supabase 项目做“保活”</title>
@@ -280,7 +280,7 @@
       <category>Git Actions</category>
       <category>Supabase</category>
       <category>Supabase 保活</category>
-      <author>拿着号码牌徘徊</author>
+      <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
 </rss>
