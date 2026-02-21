@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>徘徊俱乐部</title>
+    <description>记录我想记录的快乐,分享大家喜欢的技术与体验</description>
+    <link>https://blog.holding-num.cn/</link>
+    <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>2026-02-21T17:15:42.213Z</lastBuildDate>
+    <pubDate>2026-02-21T17:15:42.213Z</pubDate>
+    <ttl>60</ttl>
+    <webMaster>拿着号码牌徘徊</webMaster>
+    <managingEditor>拿着号码牌徘徊</managingEditor>
+    <copyright>© 2026 徘徊俱乐部. All rights reserved.</copyright>
+        <category>技术</category>
+    <category>学习</category>
+    <category>生活</category>
+    <category>思考</category>
+    <generator>徘徊俱乐部博客系统</generator>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>我对博客的第二波优化清单</title>
+      <link>https://blog.holding-num.cn/2026-02-21-my-second-wave-optimization-checklist-for-my-blog.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-21-my-second-wave-optimization-checklist-for-my-blog.html</guid>
+      <pubDate>Sat, 21 Feb 2026 15:41:00 GMT</pubDate>
+      <description>这一波优化主要针对的页面重定向和sitemap问题，特别是有关google search 收录的问题。结合AI进行优化。</description>
+      <category>技术文章</category>
+      <category>博客优化</category>
+      <category>seo</category>
+      <category>sitemaps</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>《从内耗到心流》笔记3</title>
+      <link>https://blog.holding-num.cn/2026-02-17-notes-on-from-internal-friction-to-flow-3.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-17-notes-on-from-internal-friction-to-flow-3.html</guid>
+      <pubDate>Tue, 17 Feb 2026 04:20:00 GMT</pubDate>
+      <description>我觉得这本书特别适合那些一边被牛马生活鞭打，一边有梦想又不知道怎么行动的人。作为其中一员。这是第一本让我觉得我可以去执行的一本书。因为里面有贴合的方法论，有行动指南。在之前，我看的一些心理书，大部分道理能明白，有时候甚至能够恍然大悟，但是后面总觉得哪里不对劲，它们都有一个共同的特点：道理在这，为什么这个道理？真正怎么改，什么滋味你自己去体会。</description>
+      <category>读书笔记</category>
+      <category>心理学</category>
+      <category>积极心理学</category>
+      <category>心理</category>
+      <category>内耗</category>
+      <category>心流</category>
+      <category>读书笔记</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>《从内耗到心流》笔记2</title>
+      <link>https://blog.holding-num.cn/2026-02-13-notes-on-from-internal-friction-to-flow-2.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-13-notes-on-from-internal-friction-to-flow-2.html</guid>
+      <pubDate>Thu, 12 Feb 2026 21:54:00 GMT</pubDate>
+      <description>这本书的作者叫杨鸣。它应该是一位很少人听过的一位作者。我觉得这本书特别适合那些一边被牛马生活鞭打，一边有梦想又不知道怎么行动的人。作为其中一员。这是第一本让我觉得我可以去执行的一本书。因为里面有贴合的方法论，有行动指南。在之前，我看的一些心理书，大部分道理能明白，有时候甚至能够恍然大悟，但是后面总觉得哪里不对劲，它们都有一个共同的特点：道理在这，为什么这个道理？真正怎么改，什么滋味你自己去体会。</description>
+      <category>读书笔记</category>
+      <category>内耗</category>
+      <category>心流</category>
+      <category>心理学</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>AI  编程开发中的一些小感悟</title>
+      <link>https://blog.holding-num.cn/2026-02-09-some-small-insights-in-ai-programming-development.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-09-some-small-insights-in-ai-programming-development.html</guid>
+      <pubDate>Mon, 09 Feb 2026 13:44:40 GMT</pubDate>
+      <description>使用AI编程已经有一阵子了，大概超过半年。这半年，AI从辅助的角色，到现在AI已经变成了主导的角色，我的角色从主角变成了幕后主导。这一年真的是AI突飞猛进很深刻的一年。目前我用过的模型都是国外的模型。所以积累了一定地使用经验。</description>
+      <category>技术文章</category>
+      <category>AI</category>
+      <category>codex</category>
+      <category>claude code</category>
+      <category>google</category>
+      <category>agent</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>rbac系统的设计理念与实现</title>
+      <link>https://blog.holding-num.cn/2026-02-06-design-concept-and-implementation-of-rbac-system.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-06-design-concept-and-implementation-of-rbac-system.html</guid>
+      <pubDate>Fri, 06 Feb 2026 16:39:48 GMT</pubDate>
+      <description>AI用多了，针对不同的业务需求，随着时间推移，系统会变的难以维护。都是AI生成的代码的项目，同样会变乱，这里有时间的因素，上下文的因素。其实即使是人，也会随着时间推移，代码越来越臃肿。但是有个变量更容易使人焦虑，和以前不同，人可能忽视或者完全忘记AI这些代码的细节，因为自己写出来才是刻骨铭心，捡起来也容易。那如何不让一次次代码不变乱？还得靠人，人还是要懂代码，而且要以上帝视角去懂代码，懂代码的设计，除了懂需求，还要懂需求和代码语言逻辑，特别是顶层的需求和顶层视角下逻辑关系，一次次审视代码，尽量不让代码生成到天边去。</description>
+      <category>技术文章</category>
+      <category>rbac</category>
+      <category>nestjs</category>
+      <category>后端开发</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>说到Nestjs，递归式的回答，你会因为它想到什么?</title>
+      <link>https://blog.holding-num.cn/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html</guid>
+      <pubDate>Mon, 02 Feb 2026 15:19:00 GMT</pubDate>
+      <description>前阵子拼劲消失，也许是有目标，但是目标不反感也没太大激情去冲。是大部分的中年人的自然规律。脑子就是这么运作的。就像瓜熟了，自然果肉就会变甜一样。我问AI,为什么人这种状态怎么办。AI回答说，首先要允许这种状态，你就是想停下来摆着的状态，就是会这样。第二就是完全靠感觉，不要太重视目标的唯一性。好像没有了准确的目标就会死一样。太重视就陷入了焦虑，有时候这种焦虑还是慢性的，不注意一直在想为什么。所谓感觉，就是做点什么，看看哪些是自己能莫名其妙的专注，哪些能莫名其妙的热情，哪些能莫名其妙的干下去。</description>
+      <category>技术文章</category>
+      <category>nestjs</category>
+      <category>服务</category>
+      <category>最佳实践</category>
+      <category>技术文档</category>
+      <category>AI</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>2026-1-看心情月刊【第一期】</title>
+      <link>https://blog.holding-num.cn/2026-01-30-2026-1-read-mood-monthly-issue-1.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-30-2026-1-read-mood-monthly-issue-1.html</guid>
+      <pubDate>Fri, 30 Jan 2026 14:07:41 GMT</pubDate>
+      <description>这个月月底发生了很多事情，不小心把自己当保安的照片发到了别的群里，错愕。母亲催回去过年，而我不愿意，内耗升起。回到类似职场的环境，相似配方，百感交集。</description>
+      <category>月刊</category>
+      <category>积极心理学</category>
+      <category>看心情</category>
+      <category>月刊</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>做好app，需要哪些文档准备？</title>
+      <link>https://blog.holding-num.cn/2026-01-26-what-documents-are-needed-to-prepare-an-app.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-26-what-documents-are-needed-to-prepare-an-app.html</guid>
+      <pubDate>Sun, 25 Jan 2026 23:06:00 GMT</pubDate>
+      <description>现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。</description>
+      <category>技术文章</category>
+      <category>AI</category>
+      <category>需求文档</category>
+      <category>流程图</category>
+      <category>技术文档</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>小程序的AI功能开发实践</title>
+      <link>https://blog.holding-num.cn/2026-01-23-practice-of-ai-function-development-for-mini-programs.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-23-practice-of-ai-function-development-for-mini-programs.html</guid>
+      <pubDate>Thu, 22 Jan 2026 16:36:00 GMT</pubDate>
+      <description>现在大家都在用AI，让我感觉它无处不在。2024年，也就是去年，11月30日，中国互联网络信息中心（CNNIC）对外发布《生成式人工智能应用发展报告（2024）》。这份《报告》显示，截至今年也就是2024年6月，中国生成式人工智能产品的用户规模达2.3亿人，占整体人口的16.4%。我看了欧美国家媒体的报道他们的情况，他们差不多也是这个数，多的也应该是到了20%。 这还是有点出乎意料的，我感觉至少要来个50%吧。</description>
+      <category>技术文章</category>
+      <category>最佳实践</category>
+      <category>相亲小程序</category>
+      <category>JavaScript</category>
+      <category>AI</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>《从内耗到心流》读书笔记</title>
+      <link>https://blog.holding-num.cn/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html</guid>
+      <pubDate>Sun, 18 Jan 2026 23:09:00 GMT</pubDate>
+      <description>这本书的作者叫杨鸣。它应该是一位很少人听过的一位作者。我觉得这本书特别适合那些一边被牛马生活鞭打，一边有梦想又不知道怎么行动的人。作为其中一员。这是第一本让我觉得我可以去执行的一本书。因为里面有贴合的方法论，有行动指南。在之前，我看的一些心理书，大部分道理能明白，有时候甚至能够恍然大悟，但是后面总觉得哪里不对劲，它们都有一个共同的特点：道理在这，为什么这个道理？真正怎么改，什么滋味你自己去体会。</description>
+      <category>读书笔记</category>
+      <category>笔记</category>
+      <category>内耗</category>
+      <category>心流</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>uni-app 定位插件使用</title>
+      <link>https://blog.holding-num.cn/2026-01-16-use-of-uni-app-positioning-plugin.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-16-use-of-uni-app-positioning-plugin.html</guid>
+      <pubDate>Fri, 16 Jan 2026 15:58:43 GMT</pubDate>
+      <description>最近兼职做一个交友的小程序开发，里面需要定位获取的地址功能。这里做一个记录。</description>
+      <category>技术文章</category>
+      <category>小程序</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>我对博客折腾了一波</title>
+      <link>https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</guid>
+      <pubDate>Mon, 12 Jan 2026 14:47:00 GMT</pubDate>
+      <description>博客自从建立起来后，除了主要的功能，主流程完成后。怎么用的顺手是个很大的问题。如果用的顺，用的爽。潜意识写文章动力会更多一些。为此做了不少优化和bug修复。罗列了一些主要优化清单，可以让博客发布过程，用的爽一些。</description>
+      <category>技术文章</category>
+      <category>博客</category>
+      <category>建站</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>2026-1-第一周-看心情周刊【第二期】</title>
+      <link>https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</guid>
+      <pubDate>Fri, 09 Jan 2026 15:02:00 GMT</pubDate>
+      <description>最近看到篇文章，中文版可以在这里看到，主人公是名技术人员，我读了之后，感觉主人公的一些看法和我不谋而合，当然，这并不重要，只是我自己有一种被认可的感觉（我是多没被认可呀！？）。</description>
+      <category>分享</category>
+      <category>积极心理学</category>
+      <category>周刊</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>小程序端实现一个通用的人际关系图表</title>
+      <link>https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</guid>
+      <pubDate>Tue, 06 Jan 2026 11:45:00 GMT</pubDate>
+      <description>前面两篇文章是这篇文章的前置内容。详细说了，小程序端，如何从echarts转到原生cavans实现一个人际关系图表。但是这不太够，现在的图表组件，不能复用，所以这节就对它进行改造下，让它。</description>
+      <category>技术文章</category>
+      <category>echarts</category>
+      <category>人脉图</category>
+      <category>相亲小程序</category>
+      <category>Vue</category>
+      <category>vibecode</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>小程序自定义画人际关系图表</title>
+      <link>https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</guid>
+      <pubDate>Fri, 02 Jan 2026 11:30:00 GMT</pubDate>
+      <description>讲述了如何一步步走到自己来画人际关系组件的。所以这篇文章将详细阐述这个组件的实现，最终的目的是一个通用的人际关系组件。这个通用是相对的，类似相同需求的可以套一套，不能说万事皆可用。当然如果你觉得这个组件值得去扩展，可以评论区告诉我。</description>
+      <category>技术文章</category>
+      <category>最佳实践</category>
+      <category>相亲小程序</category>
+      <category>人脉图</category>
+      <category>小程序</category>
+      <category>Vue</category>
+      <category>TypeScript</category>
+      <category>echarts</category>
+      <category>Taro</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>2025-12-第四周-看心情周刊【第一期】</title>
+      <link>https://blog.holding-num.cn/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html</guid>
+      <pubDate>Tue, 30 Dec 2025 13:37:00 GMT</pubDate>
+      <description>似乎对程序员这个身份有某种执念，现在35岁，还想着未来能完成之前没有完成的事。</description>
+      <category>看心情周刊</category>
+      <category>积极心理学</category>
+      <category>日记</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>解决小程序端的图表实现的实践</title>
+      <link>https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</guid>
+      <pubDate>Fri, 26 Dec 2025 09:23:00 GMT</pubDate>
+      <description>写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。</description>
+      <category>技术文章</category>
+      <category>相亲小程序</category>
+      <category>小程序</category>
+      <category>人脉图</category>
+      <category>Vue</category>
+      <category>TypeScript</category>
+      <category>Taro</category>
+      <category>echarts</category>
+      <category>vibecode</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>想聊聊刘晓庆，庆奶</title>
+      <link>https://blog.holding-num.cn/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html</guid>
+      <pubDate>Tue, 23 Dec 2025 15:33:58 GMT</pubDate>
+      <description>最近追这档节目，《一路繁花2》。截止到现在已经是第九集了。不是在给它打广告，最近一年也很少看综艺的。因为我追这个节目的原因是，里面发现个宝藏人物--刘晓庆。</description>
+      <category>有感而发</category>
+      <category>刘晓庆</category>
+      <category>一路繁花</category>
+      <category>积极心理学</category>
+      <category>心理</category>
+      <category>心态</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>怎么在obsidian上随心所欲地记笔记（二）</title>
+      <link>https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html</guid>
+      <pubDate>Sat, 20 Dec 2025 09:57:00 GMT</pubDate>
+      <description>前一篇解决了三端同步文档的功能，是使用cloudflare+remotely Save的方式，这种方式有稳定加免费的优势。前一篇还带出了图片自动上传的问题，但是只是解决了如何在电脑端实现。</description>
+      <category>技术文章</category>
+      <category>最佳实践</category>
+      <category>实战项目</category>
+      <category>obsidian</category>
+      <category>三端同步</category>
+      <category>cloudflare</category>
+      <category>image auto upload</category>
+      <category>Node.js</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+    <item>
+      <title>使用 Git Actions 给 Supabase 项目做“保活”</title>
+      <link>https://blog.holding-num.cn/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html</guid>
+      <pubDate>Wed, 17 Dec 2025 15:00:00 GMT</pubDate>
+      <description>我的博客系统后台的数据库的项目是放在supabase，但是supabase免费版本，如果你很久没写博客，或者这个项目属于处在静默状态，那么supabase就会回收这个项目的资源，大概是一周左右，整个项目就会失去active状态，甚至是永久性的回收。所以如何最低限度地做保活就很重要了。</description>
+      <category>技术文章</category>
+      <category>日更挑战</category>
+      <category>最佳实践</category>
+      <category>Git Actions</category>
+      <category>Supabase</category>
+      <category>Supabase 保活</category>
+      <author>拿着号码牌徘徊</author>
+    </item>
+  </channel>
+</rss>

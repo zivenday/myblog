@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <link rel="canonical" href="https://blog.holding-num.cn/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="关于我">
+  <meta property="og:description" content="关于我">
+  <meta property="og:url" content="https://blog.holding-num.cn/about.html">
+  <meta property="og:site_name" content="徘徊俱乐部">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="关于我">
+  <meta property="twitter:description" content="关于我">
+  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "关于我",
+    "description": "关于我",
+    "url": "https://blog.holding-num.cn/about.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "徘徊俱乐部",
+      "url": "https://blog.holding-num.cn"
+    }
+  }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我</title>
+  <meta name="description" content="关于我">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #222; min-height: 100vh; display: flex; flex-direction: column; }
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    .hero { text-align: center; padding: 7rem 0 4rem 0; background: #7c4dff; color: white; }
+    .hero h1 { font-size: 3rem; font-weight: 300; letter-spacing: 0.2rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem; width: 100%; }
+    .content { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .content :is(h1,h2,h3) { color: #2c2c2c; margin: 1.2rem 0 0.8rem; }
+    .content p { margin: 1rem 0; color: #444; }
+    .content a { color: #7c4dff; text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    /* Inline code */
+    .content code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 0.92em; }
+    /* Pretty Code (Shiki) */
+    .content [data-rehype-pretty-code-fragment] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .content [data-rehype-pretty-code-title] { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); font-size:12px; color:#6b7280; font-weight:600; letter-spacing:.04em; }
+    .content [data-rehype-pretty-code-fragment] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background:transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size:13px; line-height:1.6; }
+    .content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .content [data-rehype-pretty-code-fragment] .line { display:block; min-height:1.25rem; }
+    .content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Toolbar */
+    .content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .content .code-copy:hover { background:#f3f4f6; }
+    /* Line numbers */
+    .content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+    /* Images */
+    .content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+    .content img { display: block; margin: 1rem auto; max-width: 100%; border-radius: 8px; height: auto; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 6rem 0 3rem 0; }
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 1rem; }
+      .content { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  <header class="hero">
+    <div class="container">
+      <h1>关于我</h1>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <article class="content"><h1>关于我</h1>
+<p>感谢打开这个页面，这个页面是关于我个人的基本介绍，所有内容都是真实的,阐述开这个博客的原因,我会在这个博客写哪些内容。</p>
+<p>我会一直维护这个博客网站，因为现在觉得，这是对自己进行记录，是向宇宙表达。</p>
+<h3>生涯</h3>
+<p>截止2025年，在两年前我是一名程序员，写了7年的代码，7年的职业生涯里，换过大概三家公司，大大小小的事情，基本都经历过。进入社会，没过多久我越来越焦虑，无果。特别是最后几年，焦虑到整个人都病了。所以裸辞了。裸辞后，进了一次工厂，目前当过两次保安。我不知道有多少人像我一样。反正这两年的过程，可以说，心态变化特别大。</p>
+<p>看到了，感受了，掂量过了，对社会的运作的理解就更多了。不过让我吃惊的是，对自己的了解好像比了解世界还难！</p>
+<h3>这个博客有什么</h3>
+<h4>1、技术</h4>
+<p>这里我会记录有关程序开发的内容，因为我的本职之前是程序员，现在，我是一位独立开发者，应该是全栈吧，我会记录自己感兴趣的技术开发研究过程，输出高质量的技术文章。</p>
+<h4>2、读书笔记</h4>
+<p>看书，特别是自我成长的书，我当在看的时候，能量就会维持在高我的状态。这很有趣，不是吗？我想，写笔记的话，可以加深我对读的书的理解。一些喜欢看书的朋友可以有借鉴之用。</p>
+<h4>3、心得体会</h4>
+<p>受困于原生家庭好像是绝大部分中国孩子的宿命。中国宝宝每次心灵上的成长好像都要脱一层皮一样。作为其中一员，我想把从原生家庭走出来的所有感受，经历，写出来。这个部分，是记录自己，也希望是很多同感的人或者说受困于此的人有个对照，没有说好和不好，就是给你看看，我就是这样过来的。出厂设计改变不了，但是后天，我总能改变的吧。</p>
+<p>记录也包括对社会的观察感悟</p>
+<h4>4、看心情月刊</h4>
+<p>原来是看心情周刊，但是发现每周需要发的东西并没有我要的那么多，就改成月刊。月刊会记录，一个月以来我遇到心态上的问题，可能也不叫问题吧，可以说是感悟吧，我看到什么风景，遇到什么故事等等，一些琐碎的事情，整理成册。</p>
+<h4>5、语言学习</h4>
+<p>分享语言学习心得，不是说我会很多语言，我觉得能说很多语言和别人沟通不是很爽吗，我学其他语言的时候 我都在感觉学这个国家或者的地区的历史，通过历史我能更能掌握这门对应的语言。说到历史，是我感兴趣的。也会总结一些语言学习的知识，忘记了，我也可以马上捡起来。</p>
+<h4>5、翻译文</h4>
+<p>基于语言学习，翻译一些技术文章，主要是英语。</p>
+<p>如果你对我有什么建议，想对我说点什么可以在<a href="https://blog.holding-num.cn/guestbook.html">这里留言</a>。</p>
+<h3>当然也会有其他的内容，交给以后吧。</h3></article>
+    </div>
+  </main>
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click',function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+</body>
+</html>

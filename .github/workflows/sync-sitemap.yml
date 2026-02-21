@@ -1,0 +1,43 @@
+name: Sync sitemap to holding-num
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'sitemap.xml'
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          repository: zivenday/holding-num
+          ref: master
+          token: ${{ secrets.SYNC_SITEMAP_SECRET }}
+          path: target
+
+      - name: Overwrite sitemap and push
+        run: |
+          cd target
+          git fetch origin master
+          git reset --hard origin/master
+
+          cp -f ../sitemap.xml sitemap.xml
+
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+
+          git add sitemap.xml
+          git -c user.name="github-actions" -c user.email="actions@github.com" commit -m "chore: sync sitemap"
+          git push origin master

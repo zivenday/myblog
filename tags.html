@@ -1,0 +1,3264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta property="og:url" content="https://blog.holding-num.cn/tags.html">
+  <meta property="og:site_name" content="徘徊俱乐部">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "标签 - 徘徊俱乐部",
+    "description": "徘徊俱乐部博客标签云，按标签查看所有文章",
+    "url": "https://blog.holding-num.cn/tags.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "徘徊俱乐部",
+      "url": "https://blog.holding-num.cn"
+    }
+  }
+  </script>
+  <link rel="canonical" href="https://blog.holding-num.cn/tags.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>标签 - 徘徊俱乐部</title>
+  <meta name="description" content="徘徊俱乐部博客标签云，按标签查看所有文章">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="标签 - 徘徊俱乐部">
+  <meta property="og:description" content="徘徊俱乐部博客标签云，按标签查看所有文章">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="标签 - 徘徊俱乐部">
+  <meta property="twitter:description" content="徘徊俱乐部博客标签云，按标签查看所有文章">
+
+  <style>
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #7c4dff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    /* 页面标题区域 */
+    .page-header {
+      text-align: center;
+      padding: 8rem 0 4rem 0;
+      color: white;
+      background: transparent;
+    }
+
+    .page-title {
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* 主要内容区域 */
+    .tags-content {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      margin: 2rem auto 4rem;
+      max-width: 1200px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 3rem;
+    }
+
+    /* 标签云样式 */
+    .tag-cloud-section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.1);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .tag-item {
+      background: white;
+      color: #7c4dff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(124, 77, 255, 0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag-item:hover {
+      background: #7c4dff;
+      color: white;
+      border-color: #7c4dff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(124, 77, 255, 0.3);
+    }
+
+    .tag-count {
+      background: rgba(124, 77, 255, 0.1);
+      color: #7c4dff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .tag-item:hover .tag-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    /* 标签文章样式 */
+    .tag-articles {
+      display: none;
+      margin-top: 3rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tag-articles.active {
+      display: block;
+    }
+
+    .tag-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid rgba(124, 77, 255, 0.1);
+    }
+
+    .tag-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #7c4dff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .back-to-cloud {
+      background: rgba(124, 77, 255, 0.1);
+      color: #7c4dff;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-cloud:hover {
+      background: #7c4dff;
+      color: white;
+    }
+
+    /* 文章网格 */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(124, 77, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(124, 77, 255, 0.15);
+      border-color: rgba(124, 77, 255, 0.3);
+    }
+
+    .article-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .article-link {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .article-link:hover {
+      color: #7c4dff;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .article-date {
+      background: rgba(124, 77, 255, 0.05);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* 热门标签 */
+    .popular-tags {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .popular-tag {
+      background: rgba(124, 77, 255, 0.08);
+      color: #7c4dff;
+      padding: 0.4rem 1rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(124, 77, 255, 0.1);
+    }
+
+    .popular-tag:hover {
+      background: #7c4dff;
+      color: white;
+      border-color: #7c4dff;
+    }
+
+    /* 动画效果 */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.1rem;
+      }
+      
+      .page-subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+      
+      .tags-content {
+        margin: 1rem;
+        border-radius: 15px;
+        padding: 2rem 1.5rem;
+      }
+      
+      .tag-cloud {
+        gap: 0.75rem;
+      }
+      
+      .tag-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .tag-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      
+      .tag-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* 空状态样式 */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #666;
+    }
+
+    .empty-state h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #7c4dff;
+      font-weight: 300;
+    }
+
+    .empty-state p {
+      font-size: 1.1rem;
+      color: #888;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+
+  <!-- 页面标题区域 -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">🏷️ 标签云</h1>
+      <p class="page-subtitle">按标签浏览文章，快速找到感兴趣的内容</p>
+    </div>
+  </header>
+
+  <!-- 主要内容区域 -->
+  <main class="tags-content">
+    <!-- 标签云部分 -->
+    <div class="tag-cloud-section" id="tagCloud">
+      <h2 style="font-size: 1.8rem; color: #7c4dff; text-align: center; margin-bottom: 1rem;">所有标签</h2>
+      
+        <div class="tag-cloud">
+          
+            <a href="#tag-tag-18" class="tag-item" onclick="showTagArticles('tag-18')">
+              最佳实践
+              <span class="tag-count">7</span>
+            </a>
+          
+            <a href="#tag-tag-4" class="tag-item" onclick="showTagArticles('tag-4')">
+              积极心理学
+              <span class="tag-count">6</span>
+            </a>
+          
+            <a href="#tag-tag-9" class="tag-item" onclick="showTagArticles('tag-9')">
+              AI
+              <span class="tag-count">4</span>
+            </a>
+          
+            <a href="#tag-tag-24" class="tag-item" onclick="showTagArticles('tag-24')">
+              相亲小程序
+              <span class="tag-count">4</span>
+            </a>
+          
+            <a href="#tag-tag-3" class="tag-item" onclick="showTagArticles('tag-3')">
+              心理学
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-5" class="tag-item" onclick="showTagArticles('tag-5')">
+              心理
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-6" class="tag-item" onclick="showTagArticles('tag-6')">
+              内耗
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-7" class="tag-item" onclick="showTagArticles('tag-7')">
+              心流
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-27" class="tag-item" onclick="showTagArticles('tag-27')">
+              小程序
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-31" class="tag-item" onclick="showTagArticles('tag-31')">
+              echarts
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-32" class="tag-item" onclick="showTagArticles('tag-32')">
+              人脉图
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-33" class="tag-item" onclick="showTagArticles('tag-33')">
+              Vue
+              <span class="tag-count">3</span>
+            </a>
+          
+            <a href="#tag-tag-15" class="tag-item" onclick="showTagArticles('tag-15')">
+              nestjs
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-19" class="tag-item" onclick="showTagArticles('tag-19')">
+              技术文档
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-26" class="tag-item" onclick="showTagArticles('tag-26')">
+              笔记
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-34" class="tag-item" onclick="showTagArticles('tag-34')">
+              vibecode
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-35" class="tag-item" onclick="showTagArticles('tag-35')">
+              TypeScript
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-36" class="tag-item" onclick="showTagArticles('tag-36')">
+              Taro
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-42" class="tag-item" onclick="showTagArticles('tag-42')">
+              obsidian
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-43" class="tag-item" onclick="showTagArticles('tag-43')">
+              三端同步
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-45" class="tag-item" onclick="showTagArticles('tag-45')">
+              image auto upload
+              <span class="tag-count">2</span>
+            </a>
+          
+            <a href="#tag-tag-0" class="tag-item" onclick="showTagArticles('tag-0')">
+              博客优化
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-1" class="tag-item" onclick="showTagArticles('tag-1')">
+              seo
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-2" class="tag-item" onclick="showTagArticles('tag-2')">
+              sitemaps
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-8" class="tag-item" onclick="showTagArticles('tag-8')">
+              读书笔记
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-10" class="tag-item" onclick="showTagArticles('tag-10')">
+              codex
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-11" class="tag-item" onclick="showTagArticles('tag-11')">
+              claude code
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-12" class="tag-item" onclick="showTagArticles('tag-12')">
+              google
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-13" class="tag-item" onclick="showTagArticles('tag-13')">
+              agent
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-14" class="tag-item" onclick="showTagArticles('tag-14')">
+              rbac
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-16" class="tag-item" onclick="showTagArticles('tag-16')">
+              后端开发
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-17" class="tag-item" onclick="showTagArticles('tag-17')">
+              服务
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-20" class="tag-item" onclick="showTagArticles('tag-20')">
+              看心情
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-21" class="tag-item" onclick="showTagArticles('tag-21')">
+              月刊
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-22" class="tag-item" onclick="showTagArticles('tag-22')">
+              需求文档
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-23" class="tag-item" onclick="showTagArticles('tag-23')">
+              流程图
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-25" class="tag-item" onclick="showTagArticles('tag-25')">
+              JavaScript
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-28" class="tag-item" onclick="showTagArticles('tag-28')">
+              博客
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-29" class="tag-item" onclick="showTagArticles('tag-29')">
+              建站
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-30" class="tag-item" onclick="showTagArticles('tag-30')">
+              周刊
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-37" class="tag-item" onclick="showTagArticles('tag-37')">
+              日记
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-38" class="tag-item" onclick="showTagArticles('tag-38')">
+              刘晓庆
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-39" class="tag-item" onclick="showTagArticles('tag-39')">
+              一路繁花
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-40" class="tag-item" onclick="showTagArticles('tag-40')">
+              心态
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-41" class="tag-item" onclick="showTagArticles('tag-41')">
+              实战项目
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-44" class="tag-item" onclick="showTagArticles('tag-44')">
+              cloudflare
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-46" class="tag-item" onclick="showTagArticles('tag-46')">
+              Node.js
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-47" class="tag-item" onclick="showTagArticles('tag-47')">
+              日更挑战
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-48" class="tag-item" onclick="showTagArticles('tag-48')">
+              Git Actions
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-49" class="tag-item" onclick="showTagArticles('tag-49')">
+              Supabase
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-50" class="tag-item" onclick="showTagArticles('tag-50')">
+              Supabase 保活
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-51" class="tag-item" onclick="showTagArticles('tag-51')">
+              效率
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-52" class="tag-item" onclick="showTagArticles('tag-52')">
+              chat
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-53" class="tag-item" onclick="showTagArticles('tag-53')">
+              随机对谈
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-54" class="tag-item" onclick="showTagArticles('tag-54')">
+              焦虑症
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-55" class="tag-item" onclick="showTagArticles('tag-55')">
+              aws
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-56" class="tag-item" onclick="showTagArticles('tag-56')">
+              部署
+              <span class="tag-count">1</span>
+            </a>
+          
+            <a href="#tag-tag-57" class="tag-item" onclick="showTagArticles('tag-57')">
+              网站
+              <span class="tag-count">1</span>
+            </a>
+          
+        </div>
+        
+        <div class="popular-tags">
+          <span style="color: #888; font-size: 0.9rem; margin-right: 1rem;">热门标签:</span>
+          
+            <a href="#tag-tag-18" class="popular-tag" onclick="showTagArticles('tag-18')">
+              最佳实践 (7)
+            </a>
+          
+            <a href="#tag-tag-4" class="popular-tag" onclick="showTagArticles('tag-4')">
+              积极心理学 (6)
+            </a>
+          
+            <a href="#tag-tag-9" class="popular-tag" onclick="showTagArticles('tag-9')">
+              AI (4)
+            </a>
+          
+            <a href="#tag-tag-24" class="popular-tag" onclick="showTagArticles('tag-24')">
+              相亲小程序 (4)
+            </a>
+          
+            <a href="#tag-tag-3" class="popular-tag" onclick="showTagArticles('tag-3')">
+              心理学 (3)
+            </a>
+          
+        </div>
+      
+    </div>
+
+    <!-- 标签文章展示区域 -->
+    <div id="tagArticlesContainer">
+      
+        <div class="tag-articles" id="tag-tag-18">
+          <div class="tag-header">
+            <h2 class="tag-title">#最佳实践</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html" class="article-link">
+                    说到Nestjs，递归式的回答，你会因为它想到什么?
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html" class="article-link">
+                    小程序的AI功能开发实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link">
+                    使用 Git Actions 给 Supabase 项目做“保活”
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link">
+                    [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/8</span>
+                  <span style="color: #888;">•</span>
+                  <span>7 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-4">
+          <div class="tag-header">
+            <h2 class="tag-title">#积极心理学</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/monthly/2026-01-30-2026-1-read-mood-monthly-issue-1.html" class="article-link">
+                    2026-1-看心情月刊【第一期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/30</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html" class="article-link">
+                    2026-1-第一周-看心情周刊【第二期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/weekly-mood/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html" class="article-link">
+                    2025-12-第四周-看心情周刊【第一期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/30</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link">
+                    想聊聊刘晓庆，庆奶
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>6 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-9">
+          <div class="tag-header">
+            <h2 class="tag-title">#AI</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html" class="article-link">
+                    AI  编程开发中的一些小感悟
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html" class="article-link">
+                    说到Nestjs，递归式的回答，你会因为它想到什么?
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html" class="article-link">
+                    做好app，需要哪些文档准备？
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html" class="article-link">
+                    小程序的AI功能开发实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-24">
+          <div class="tag-header">
+            <h2 class="tag-title">#相亲小程序</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html" class="article-link">
+                    小程序的AI功能开发实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html" class="article-link">
+                    小程序端实现一个通用的人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/6</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>4 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-3">
+          <div class="tag-header">
+            <h2 class="tag-title">#心理学</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-13-notes-on-from-internal-friction-to-flow-2.html" class="article-link">
+                    《从内耗到心流》笔记2
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/13</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-5">
+          <div class="tag-header">
+            <h2 class="tag-title">#心理</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link">
+                    想聊聊刘晓庆，庆奶
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-6">
+          <div class="tag-header">
+            <h2 class="tag-title">#内耗</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-13-notes-on-from-internal-friction-to-flow-2.html" class="article-link">
+                    《从内耗到心流》笔记2
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/13</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html" class="article-link">
+                    《从内耗到心流》读书笔记
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/19</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-7">
+          <div class="tag-header">
+            <h2 class="tag-title">#心流</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-13-notes-on-from-internal-friction-to-flow-2.html" class="article-link">
+                    《从内耗到心流》笔记2
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/13</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html" class="article-link">
+                    《从内耗到心流》读书笔记
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/19</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-27">
+          <div class="tag-header">
+            <h2 class="tag-title">#小程序</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-16-use-of-uni-app-positioning-plugin.html" class="article-link">
+                    uni-app 定位插件使用
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/16</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-31">
+          <div class="tag-header">
+            <h2 class="tag-title">#echarts</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html" class="article-link">
+                    小程序端实现一个通用的人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/6</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-32">
+          <div class="tag-header">
+            <h2 class="tag-title">#人脉图</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html" class="article-link">
+                    小程序端实现一个通用的人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/6</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-33">
+          <div class="tag-header">
+            <h2 class="tag-title">#Vue</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html" class="article-link">
+                    小程序端实现一个通用的人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/6</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>3 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-15">
+          <div class="tag-header">
+            <h2 class="tag-title">#nestjs</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-06-design-concept-and-implementation-of-rbac-system.html" class="article-link">
+                    rbac系统的设计理念与实现
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/7</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html" class="article-link">
+                    说到Nestjs，递归式的回答，你会因为它想到什么?
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-19">
+          <div class="tag-header">
+            <h2 class="tag-title">#技术文档</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html" class="article-link">
+                    说到Nestjs，递归式的回答，你会因为它想到什么?
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html" class="article-link">
+                    做好app，需要哪些文档准备？
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-26">
+          <div class="tag-header">
+            <h2 class="tag-title">#笔记</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-01-19-reading-notes-on-from-internal-friction-to-flow.html" class="article-link">
+                    《从内耗到心流》读书笔记
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/19</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-34">
+          <div class="tag-header">
+            <h2 class="tag-title">#vibecode</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html" class="article-link">
+                    小程序端实现一个通用的人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/6</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-35">
+          <div class="tag-header">
+            <h2 class="tag-title">#TypeScript</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-36">
+          <div class="tag-header">
+            <h2 class="tag-title">#Taro</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html" class="article-link">
+                    小程序自定义画人际关系图表
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-26-practice-of-implementing-charts-on-mini-programs.html" class="article-link">
+                    解决小程序端的图表实现的实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-42">
+          <div class="tag-header">
+            <h2 class="tag-title">#obsidian</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-43">
+          <div class="tag-header">
+            <h2 class="tag-title">#三端同步</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-45">
+          <div class="tag-header">
+            <h2 class="tag-title">#image auto upload</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>2 篇相关文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-0">
+          <div class="tag-header">
+            <h2 class="tag-title">#博客优化</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-21-my-second-wave-optimization-checklist-for-my-blog.html" class="article-link">
+                    我对博客的第二波优化清单
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/21</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-1">
+          <div class="tag-header">
+            <h2 class="tag-title">#seo</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-21-my-second-wave-optimization-checklist-for-my-blog.html" class="article-link">
+                    我对博客的第二波优化清单
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/21</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-2">
+          <div class="tag-header">
+            <h2 class="tag-title">#sitemaps</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-21-my-second-wave-optimization-checklist-for-my-blog.html" class="article-link">
+                    我对博客的第二波优化清单
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/21</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-8">
+          <div class="tag-header">
+            <h2 class="tag-title">#读书笔记</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/books-notes/2026-02-17-notes-on-from-internal-friction-to-flow-3.html" class="article-link">
+                    《从内耗到心流》笔记3
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-10">
+          <div class="tag-header">
+            <h2 class="tag-title">#codex</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html" class="article-link">
+                    AI  编程开发中的一些小感悟
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-11">
+          <div class="tag-header">
+            <h2 class="tag-title">#claude code</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html" class="article-link">
+                    AI  编程开发中的一些小感悟
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-12">
+          <div class="tag-header">
+            <h2 class="tag-title">#google</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html" class="article-link">
+                    AI  编程开发中的一些小感悟
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-13">
+          <div class="tag-header">
+            <h2 class="tag-title">#agent</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-09-some-small-insights-in-ai-programming-development.html" class="article-link">
+                    AI  编程开发中的一些小感悟
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-14">
+          <div class="tag-header">
+            <h2 class="tag-title">#rbac</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-06-design-concept-and-implementation-of-rbac-system.html" class="article-link">
+                    rbac系统的设计理念与实现
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/7</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-16">
+          <div class="tag-header">
+            <h2 class="tag-title">#后端开发</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-06-design-concept-and-implementation-of-rbac-system.html" class="article-link">
+                    rbac系统的设计理念与实现
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/7</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-17">
+          <div class="tag-header">
+            <h2 class="tag-title">#服务</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html" class="article-link">
+                    说到Nestjs，递归式的回答，你会因为它想到什么?
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">2/2</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-20">
+          <div class="tag-header">
+            <h2 class="tag-title">#看心情</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/monthly/2026-01-30-2026-1-read-mood-monthly-issue-1.html" class="article-link">
+                    2026-1-看心情月刊【第一期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/30</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-21">
+          <div class="tag-header">
+            <h2 class="tag-title">#月刊</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/monthly/2026-01-30-2026-1-read-mood-monthly-issue-1.html" class="article-link">
+                    2026-1-看心情月刊【第一期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/30</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-22">
+          <div class="tag-header">
+            <h2 class="tag-title">#需求文档</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html" class="article-link">
+                    做好app，需要哪些文档准备？
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-23">
+          <div class="tag-header">
+            <h2 class="tag-title">#流程图</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html" class="article-link">
+                    做好app，需要哪些文档准备？
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/26</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-25">
+          <div class="tag-header">
+            <h2 class="tag-title">#JavaScript</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html" class="article-link">
+                    小程序的AI功能开发实践
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-28">
+          <div class="tag-header">
+            <h2 class="tag-title">#博客</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html" class="article-link">
+                    我对博客折腾了一波
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-29">
+          <div class="tag-header">
+            <h2 class="tag-title">#建站</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html" class="article-link">
+                    我对博客折腾了一波
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-30">
+          <div class="tag-header">
+            <h2 class="tag-title">#周刊</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html" class="article-link">
+                    2026-1-第一周-看心情周刊【第二期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">1/9</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-37">
+          <div class="tag-header">
+            <h2 class="tag-title">#日记</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/weekly-mood/2025-12-30-december-2025-fourth-week-read-mood-weekly-issue-1.html" class="article-link">
+                    2025-12-第四周-看心情周刊【第一期】
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/30</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-38">
+          <div class="tag-header">
+            <h2 class="tag-title">#刘晓庆</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link">
+                    想聊聊刘晓庆，庆奶
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-39">
+          <div class="tag-header">
+            <h2 class="tag-title">#一路繁花</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link">
+                    想聊聊刘晓庆，庆奶
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-40">
+          <div class="tag-header">
+            <h2 class="tag-title">#心态</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-23-i-want-to-talk-about-liu-xiaoqing-and-qingnai.html" class="article-link">
+                    想聊聊刘晓庆，庆奶
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/23</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-41">
+          <div class="tag-header">
+            <h2 class="tag-title">#实战项目</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-44">
+          <div class="tag-header">
+            <h2 class="tag-title">#cloudflare</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-46">
+          <div class="tag-header">
+            <h2 class="tag-title">#Node.js</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html" class="article-link">
+                    怎么在obsidian上随心所欲地记笔记（二）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/20</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-47">
+          <div class="tag-header">
+            <h2 class="tag-title">#日更挑战</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link">
+                    使用 Git Actions 给 Supabase 项目做“保活”
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-48">
+          <div class="tag-header">
+            <h2 class="tag-title">#Git Actions</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link">
+                    使用 Git Actions 给 Supabase 项目做“保活”
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-49">
+          <div class="tag-header">
+            <h2 class="tag-title">#Supabase</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link">
+                    使用 Git Actions 给 Supabase 项目做“保活”
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-50">
+          <div class="tag-header">
+            <h2 class="tag-title">#Supabase 保活</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-17-use-git-actions-to-keep-alive-supabase-project.html" class="article-link">
+                    使用 Git Actions 给 Supabase 项目做“保活”
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/17</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-51">
+          <div class="tag-header">
+            <h2 class="tag-title">#效率</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-14-how-does-he-take-notes-freely-on-obsidian-part-1.html" class="article-link">
+                    他怎么在obsidian上随心所欲地记录笔记（一）
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/14</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-52">
+          <div class="tag-header">
+            <h2 class="tag-title">#chat</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-53">
+          <div class="tag-header">
+            <h2 class="tag-title">#随机对谈</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-54">
+          <div class="tag-header">
+            <h2 class="tag-title">#焦虑症</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-11-record-a-coffee-chat-with-taiwanese-friends.html" class="article-link">
+                    和台湾的朋友，记录一次Coffee Chat
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/12</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-55">
+          <div class="tag-header">
+            <h2 class="tag-title">#aws</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link">
+                    [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/8</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-56">
+          <div class="tag-header">
+            <h2 class="tag-title">#部署</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link">
+                    [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/8</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="tag-articles" id="tag-tag-57">
+          <div class="tag-header">
+            <h2 class="tag-title">#网站</h2>
+            <a href="#tagCloud" class="back-to-cloud">← 返回标签云</a>
+          </div>
+          
+          <div class="articles-grid">
+            
+              <div class="article-card">
+                <h3 class="article-title">
+                  <a href="https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html" class="article-link">
+                    [ 前端学部署 ]  第1篇： 几块人民币部署一个有域名的静态网站
+                  </a>
+                </h3>
+                <div class="article-meta">
+                  <span class="article-date">12/8</span>
+                  <span style="color: #888;">•</span>
+                  <span>1 篇文章</span>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </main>
+
+  <script>
+    // 显示标签文章
+    function showTagArticles(tagId) {
+      // 隐藏标签云
+      const tagCloud = document.getElementById('tagCloud');
+      if (tagCloud) {
+        tagCloud.style.display = 'none';
+      }
+      
+      // 隐藏所有标签文章
+      document.querySelectorAll('.tag-articles').forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      // 显示选中的标签文章
+      const targetSection = document.getElementById('tag-' + tagId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    
+    // 返回标签云
+    document.querySelectorAll('.back-to-cloud').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // 显示标签云
+        const tagCloud = document.getElementById('tagCloud');
+        if (tagCloud) {
+          tagCloud.style.display = 'block';
+          tagCloud.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // 隐藏所有标签文章
+        document.querySelectorAll('.tag-articles').forEach(section => {
+          section.classList.remove('active');
+        });
+      });
+    });
+    
+    // 如果URL包含锚点，直接显示对应的标签文章
+    if (window.location.hash && window.location.hash.startsWith('#tag-')) {
+      const tagId = window.location.hash.substring(1); // 移除#号
+      setTimeout(() => {
+        showTagArticles(tagId);
+      }, 100);
+    }
+  </script>
+  <script>
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+  </script>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+</body>
+</html>

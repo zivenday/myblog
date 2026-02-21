@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta property="og:url" content="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html">
+  <meta property="og:site_name" content="徘徊俱乐部">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <link rel="canonical" href="https://blog.holding-num.cn/posts/2026-01-26-what-documents-are-needed-to-prepare-an-app.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>做好app，需要哪些文档准备？ - 徘徊俱乐部</title>
+  <meta name="description" content="现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？
+
+这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。">
+  <meta name="author" content="拿着号码牌徘徊">
+  <meta name="keywords" content="AI, 需求文档, 流程图, 技术文档">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="做好app，需要哪些文档准备？">
+  <meta property="og:description" content="现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？
+
+这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。">
+  <meta property="og:article:author" content="拿着号码牌徘徊">
+  <meta property="og:article:published_time" content="2026-01-25T23:06:00+00:00">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="做好app，需要哪些文档准备？">
+  <meta property="twitter:description" content="现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？
+
+这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "做好app，需要哪些文档准备？",
+    "description": "现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？
+
+这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。",
+    "author": {
+      "@type": "Person",
+      "name": "拿着号码牌徘徊"
+    },
+    "datePublished": "2026-01-25T23:06:00+00:00",
+    "keywords": "AI, 需求文档, 流程图, 技术文档"
+  }
+  </script>
+  
+  <style>
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    html {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    
+    /* 导航栏样式 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: #7c4dff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar-sticky {
+      background: rgba(124, 77, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+    }
+
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .brand-link {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+    
+    .brand-logo {
+      height: 40px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .brand-link:hover .brand-logo {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* 桌面端导航 */
+    .desktop-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .navbar-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-1px);
+    }
+
+    /* RSS链接特殊样式 */
+    .rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rss-icon {
+      fill: currentColor;
+    }
+
+    /* 搜索图标链接样式 */
+    .search-link { display: inline-flex; align-items: center; justify-content: center; padding: 0.5rem; }
+    .search-icon { width: 18px; height: 18px; fill: currentColor; }
+    
+    /* 移动端汉堡菜单按钮 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+    
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* 汉堡菜单激活动画 */
+    .mobile-menu-btn-active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .mobile-menu-btn-active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-menu-btn-active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* 移动端菜单 */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #7c4dff;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .mobile-menu-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 移动端RSS链接特殊样式 */
+    .mobile-menu-link.rss-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .mobile-menu-link:last-child {
+      border-bottom: none;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .navbar-content {
+        padding: 0 1rem;
+      }
+      
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+      
+      .brand-logo {
+        height: 32px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .navbar-content {
+        padding: 0 0.8rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 28px;
+      }
+    }
+    
+    /* 大屏适配 */
+    @media (min-width: 1200px) {
+      .navbar-content {
+        max-width: 1400px;
+        padding: 0 3rem;
+      }
+      
+      .navbar-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      
+      .brand-logo {
+        height: 44px;
+      }
+    }
+    
+    @media (min-width: 1600px) {
+      .navbar-content {
+        max-width: 1600px;
+        padding: 0 4rem;
+      }
+      
+      .brand-logo {
+        height: 48px;
+      }
+    }
+  
+    
+    /* 页脚样式 */
+    .footer {
+      background: #2c2c2c;
+      color: #ffffff;
+      margin-top: auto;
+      border-top: 4px solid #7c4dff;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      color: #7c4dff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      color: #cccccc;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    /* 社交媒体链接 */
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link.github:hover {
+      background: #333;
+      border-color: #333;
+    }
+
+    .social-link.zhihu:hover {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+
+    .social-link.juejin:hover {
+      background: #1e80ff;
+      border-color: #1e80ff;
+    }
+
+    .social-link.jianshu:hover {
+      background: #ea6f5a;
+      border-color: #ea6f5a;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* 页脚底部 */
+    .footer-bottom {
+      background: #1a1a1a;
+      padding: 1.5rem 0;
+    }
+
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      color: #999999;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .copyright a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .copyright a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .footer-bottom-content {
+        padding: 0 1rem;
+      }
+      
+      .copyright {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-icon {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  
+
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+      max-width: 100%;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-all;
+      white-space: normal;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
+    /* Inline code */
+    .article-content code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
+    }
+
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    /* Also support figure container */
+    .article-content [data-rehype-pretty-code-figure] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .article-content [data-rehype-pretty-code-figure] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background: transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code','Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 13px; line-height: 1.6; }
+    .article-content [data-rehype-pretty-code-figure] code { color: var(--shiki-foreground); }
+    /* Substring theme tokens mapping */
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme*='light'] code span[style*='--shiki-light'],
+    .article-content [data-rehype-pretty-code-figure]   pre[data-theme*='light'] code span[style*='--shiki-light'] { color: var(--shiki-light); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content li {
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content * {
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .article-content table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
+      color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-comments {
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: hidden;
+    }
+
+    .article-comments iframe,
+    .giscus,
+    .giscus-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 5.5rem 15px 1.5rem;
+      }
+
+      .article-content [data-rehype-pretty-code-fragment],
+      .article-content [data-rehype-pretty-code-figure] {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .article-content [data-rehype-pretty-code-fragment] pre,
+      .article-content [data-rehype-pretty-code-figure] pre {
+        white-space: pre !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+      
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">做好app，需要哪些文档准备？</h1>
+      <div class="article-meta">
+        <span>📅 2026/1/26</span>
+        <span>✍️ 字数：5069</span>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">AI</span><span class="tag">需求文档</span><span class="tag">流程图</span><span class="tag">技术文档</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h3>前言</h3>
+<p>睡醒的时候想到这个话题。同时在睡醒前还做了一些梦，现在已经记不清楚是讲什么了，好像也是解决一个什么问题。</p>
+<p>这可能就是人类和机器人的不同吧，人类有灵感这个东西，灵感现在能通过ai实现吗？</p>
+<p>扯远了，想说的是，现在ai完成可以代替人去写代码了，当然现在人还是要零星地介入下，防止走歪的情况。 但是要完成一个mvp，怎么样让ai可以尽善尽美的去实现我心目中的梦中情APP无误差呢？能不能固定下来几个文档呢？</p>
+<p>这里提出9大文档是必须要的。还有一些其他辅助类的文档，也可以用，可以投喂给ai，让他生成代码更高效，更好，更完善。</p>
+<h3>最小MVP</h3>
+<p>要完成最小mvp，我觉得要有以下四种类型的文档</p>
+<h5>A 类：<strong>目标与范围文档（Why / What）</strong></h5>
+<p>解决：<em>做什么 &#x26; 不做什么</em></p>
+<h5>B 类：<strong>业务与规则文档（Business Truth）</strong></h5>
+<p>解决：<em>业务逻辑是否正确</em></p>
+<h5>C 类：<strong>工程与架构文档（How / Constraints）</strong></h5>
+<p>解决：<em>系统如何实现、不能怎么实现</em></p>
+<h5>D 类：<strong>执行与交付文档（Run / Operate）</strong></h5>
+<p>解决：<em>如何落地、如何运行</em></p>
+<h3>PRD文档</h3>
+<p>它是属性A类。</p>
+<p>这是毋庸置疑的，它是所有app的原点，没有它就不行。一份合格的需求文档，本质上是把“做什么、不做什么、怎么判断做没做对”说清楚。</p>
+<p>比如说我要做一个「个人任务管理（Task App）」工程级 MVP。最好有如下内容</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="md" data-theme="github-light github-dark"><code data-language="md" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold"># 产品需求文档（PRD）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 1. 产品背景与目标（Why）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 背景 / 问题</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">个人用户在日常工作和生活中需要记录并完成任务，但现有任务管理工具普遍存在以下问题：</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 功能复杂，学习成本高</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 创建任务步骤多，不够快速</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 对轻量、临时使用场景不友好</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 产品目标</span></span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">构建一个极简、低学习成本的个人任务管理工具，帮助用户快速记录并完成任务。</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### MVP 阶段核心目标</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户可以在 1 分钟内完成首次任务创建</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 验证用户是否愿意在连续几天内重复使用该产品</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 2. 目标用户与使用场景（Who / When）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 目标用户</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 个人用户（单一角色）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 以知识工作者、学生、自由职业者为主</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 使用场景</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 每天开始工作前，快速记录当天需要完成的事项</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 在工作过程中，查看并标记已完成的任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 通过桌面或移动浏览器随时访问</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 3. 核心用户需求（What）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">用户希望能够：</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 创建任务，记录需要完成的事项</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 查看自己创建的任务列表</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 将任务标记为已完成</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">4.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 在登录后跨设备访问自己的任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">5.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 确保任务数据仅对自己可见</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 4. MVP 范围定义（Scope）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### Must Have（必须实现）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户注册与登录</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 创建任务（任务标题为必填）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 查看任务列表</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 标记任务为完成</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 登录态校验（未登录不可访问任务页面）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### Won’t Have（明确不做）------------------------------可以不写，没写的就不做</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 多人协作或任务共享</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 任务分类、标签、优先级</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 通知提醒（邮件、推送等）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 离线使用</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 数据导入与导出</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 5. 关键用户流程概览（User Flow Summary）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 流程一：首次使用</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户打开应用</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 注册或登录账号</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 登录成功后进入任务列表页面</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 流程二：创建任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户在任务列表页点击“新建任务”</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 输入任务标题（可选描述）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 提交后返回任务列表，显示新任务</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 流程三：完成任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户在任务列表中点击任务完成按钮</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 任务状态变为已完成</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 页面即时更新显示结果</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 6. 成功指标与验收标准（Success Criteria）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### MVP 成功的最低标准</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 不少于 70% 的新用户可以成功创建至少 1 个任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 登录后用户可以看到自己创建的任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 标记任务完成后，任务状态即时更新</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 页面在正常网络环境下可顺畅使用</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 功能验收标准（示例）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 未登录用户无法访问任务页面</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户只能查看和操作自己的任务</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 创建任务时未填写标题会被拒绝</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 7. 假设、风险与约束（Assumptions / Constraints）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 关键假设</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户愿意注册并登录后使用该产品</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户对极简任务管理工具存在真实需求</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 已知风险</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 功能过于简单，难以形成长期使用习惯</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 与成熟任务管理产品差异有限</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">### 现实约束</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> MVP 阶段仅支持单用户模式</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 不考虑高并发和大规模数据</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 优先支持 Web 浏览器，不针对原生 App 做优化</span></span>
+<span data-line=""> </span>
+<span data-line=""> </span></code></pre></figure>
+<p>往往，会把流程图分开。这里把他放到了需求文档里面</p>
+<h3>数据模型</h3>
+<p>针对业务逻辑，需要三个文档：</p>
+<p>1、DomainModel / 数据模型文档   → 实体、字段、关系、状态</p>
+<p>2、专业术语词汇表  →  消除名词/状态歧义</p>
+<p>3、业务逻辑公式手册  →  业务判断、状态流转、规则约束</p>
+<p>如果专业术语不多，业务逻辑不复杂我觉得，有 1 就可以了，也可以先问问AI，三个内容分别是什么，反正不需要你去生成。</p>
+<p>它关系到数据库的建立。</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="md" data-theme="github-light github-dark"><code data-language="md" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold"># 实体定义</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 用户（User）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> id：字符串</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> email：邮箱（唯一）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> passwordHash：密码哈希</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> createdAt：创建时间</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold">## 任务（Task）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> id：字符串</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> userId：所属用户 ID</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> title：任务标题</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> description：任务描述</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> status：状态（todo / completed）</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> createdAt：创建时间</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> completedAt：完成时间（可为空）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold"># 实体关系</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 一个用户可以拥有多个任务（1 对多）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold"># 所有权与访问控制</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 任务只属于创建它的用户</span></span>
+<span data-line=""><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 用户只能访问自己的任务</span></span>
+<span data-line=""> </span></code></pre></figure>
+<h3>工程实现</h3>
+<p>1、系统架构分析文档  → 系统边界、模块划分、关键决策</p>
+<p>2、 APIContract / 接口契约  → 前后端对齐的唯一依据</p>
+<p>3、开发实践指南  →技术栈、 代码结构、错误处理、约定</p>
+<p>4、Deployment / 运行与部署说明  → 环境、配置、启动方式</p>
+<p>这里必须要的是<strong>开发事件指南</strong>  当然更常听到的名字叫<strong>技术文档</strong></p>
+<p><strong>系统架构文档</strong>对于大项目是必须的，小项目，结构已经很清晰了就再说了。</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span># 系统架构分析文档</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 1. 系统目标</span></span>
+<span data-line=""><span>本系统用于支持个人用户进行任务的创建、查看和完成操作，目标是实现一个结构清晰、可快速迭代的工程级 MVP。</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 2. 系统边界</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 系统内（In Scope）</span></span>
+<span data-line=""><span>- 用户认证与登录</span></span>
+<span data-line=""><span>- 任务的创建、查询、更新</span></span>
+<span data-line=""><span>- 任务状态管理</span></span>
+<span data-line=""><span>- 基础权限校验（用户只能访问自己的数据）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 系统外（Out of Scope）</span></span>
+<span data-line=""><span>- 多人协作</span></span>
+<span data-line=""><span>- 通知系统</span></span>
+<span data-line=""><span>- 第三方集成</span></span>
+<span data-line=""><span>- 高并发和分布式架构</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 3. 架构风格</span></span>
+<span data-line=""><span>- 前后端分离架构</span></span>
+<span data-line=""><span>- 前端通过 HTTP 调用后端 REST API</span></span>
+<span data-line=""><span>- 后端为单体应用</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 4. 模块划分</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 前端模块</span></span>
+<span data-line=""><span>- Auth：登录与鉴权状态管理</span></span>
+<span data-line=""><span>- Task UI：任务列表与任务操作页面</span></span>
+<span data-line=""><span>- Global State：用户信息与全局状态</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 后端模块</span></span>
+<span data-line=""><span>- Auth Module：用户认证与鉴权</span></span>
+<span data-line=""><span>- Task Module：任务核心业务逻辑</span></span>
+<span data-line=""><span>- User Module：用户信息管理</span></span>
+<span data-line=""><span>- Infrastructure：数据库访问、日志、配置</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 5. 数据流概览</span></span>
+<span data-line=""><span>1. 前端发起请求</span></span>
+<span data-line=""><span>2. 后端进行身份校验</span></span>
+<span data-line=""><span>3. 进入业务模块处理</span></span>
+<span data-line=""><span>4. 访问数据层</span></span>
+<span data-line=""><span>5. 返回标准化响应</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 6. 关键架构决策</span></span>
+<span data-line=""><span>- 采用单体架构以降低复杂度</span></span>
+<span data-line=""><span>- 不引入消息队列或异步任务</span></span>
+<span data-line=""><span>- 业务逻辑集中在 service 层</span></span>
+<span data-line=""><span>- 使用统一错误返回结构</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 7. 非目标</span></span>
+<span data-line=""><span>- 本阶段不考虑微服务拆分</span></span>
+<span data-line=""><span>- 不优化极端性能场景</span></span>
+<span data-line=""> </span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span># API 接口契约</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 统一约定</span></span>
+<span data-line=""><span>- 所有接口使用 JSON</span></span>
+<span data-line=""><span>- 所有需要登录的接口必须携带认证信息</span></span>
+<span data-line=""><span>- 所有返回结构保持一致</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>统一返回格式：</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "code": "SUCCESS",</span></span>
+<span data-line=""><span>  "message": "ok",</span></span>
+<span data-line=""><span>  "data": {}</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 1. 用户登录</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 接口</span></span>
+<span data-line=""><span>POST /api/auth/login</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 请求</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "email": "user@example.com",</span></span>
+<span data-line=""><span>  "password": "password123"</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 返回</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "code": "SUCCESS",</span></span>
+<span data-line=""><span>  "message": "ok",</span></span>
+<span data-line=""><span>  "data": {</span></span>
+<span data-line=""><span>    "token": "jwt-token",</span></span>
+<span data-line=""><span>    "user": {</span></span>
+<span data-line=""><span>      "id": "u1",</span></span>
+<span data-line=""><span>      "email": "user@example.com"</span></span>
+<span data-line=""><span>    }</span></span>
+<span data-line=""><span>  }</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 错误</span></span>
+<span data-line=""><span>- 401：账号或密码错误</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 2. 获取任务列表</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 接口</span></span>
+<span data-line=""><span>GET /api/tasks</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 返回</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "code": "SUCCESS",</span></span>
+<span data-line=""><span>  "message": "ok",</span></span>
+<span data-line=""><span>  "data": [</span></span>
+<span data-line=""><span>    {</span></span>
+<span data-line=""><span>      "id": "t1",</span></span>
+<span data-line=""><span>      "title": "完成周报",</span></span>
+<span data-line=""><span>      "status": "todo"</span></span>
+<span data-line=""><span>    }</span></span>
+<span data-line=""><span>  ]</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 3. 创建任务</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 接口</span></span>
+<span data-line=""><span>POST /api/tasks</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 请求</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "title": "买牛奶",</span></span>
+<span data-line=""><span>  "description": "两瓶"</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 返回</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "code": "SUCCESS",</span></span>
+<span data-line=""><span>  "message": "ok",</span></span>
+<span data-line=""><span>  "data": {</span></span>
+<span data-line=""><span>    "id": "t2",</span></span>
+<span data-line=""><span>    "title": "买牛奶",</span></span>
+<span data-line=""><span>    "status": "todo"</span></span>
+<span data-line=""><span>  }</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 错误</span></span>
+<span data-line=""><span>- 422：标题为空</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 4. 完成任务</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 接口</span></span>
+<span data-line=""><span>PATCH /api/tasks/{id}/complete</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 返回</span></span>
+<span data-line=""><span>{</span></span>
+<span data-line=""><span>  "code": "SUCCESS",</span></span>
+<span data-line=""><span>  "message": "ok",</span></span>
+<span data-line=""><span>  "data": {</span></span>
+<span data-line=""><span>    "id": "t2",</span></span>
+<span data-line=""><span>    "status": "completed"</span></span>
+<span data-line=""><span>  }</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""> </span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span># 开发实践指南</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 1. 代码分层约定</span></span>
+<span data-line=""><span>- Controller：只处理请求和响应</span></span>
+<span data-line=""><span>- Service：包含业务逻辑</span></span>
+<span data-line=""><span>- Repository：只负责数据访问</span></span>
+<span data-line=""><span>- 禁止跨层调用</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 2. 命名规范</span></span>
+<span data-line=""><span>- 文件名：kebab-case</span></span>
+<span data-line=""><span>- 类名：PascalCase</span></span>
+<span data-line=""><span>- 方法名：camelCase</span></span>
+<span data-line=""><span>- 常量：UPPER_SNAKE_CASE</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 3. 错误处理规范</span></span>
+<span data-line=""><span>- 不允许直接抛出原始异常</span></span>
+<span data-line=""><span>- 所有错误必须映射为业务错误码</span></span>
+<span data-line=""><span>- Controller 层不写 try-catch 业务逻辑</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 4. API 返回规范</span></span>
+<span data-line=""><span>- 必须返回 code / message / data</span></span>
+<span data-line=""><span>- 错误场景不得返回 200 + 空数据</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 5. 日志规范</span></span>
+<span data-line=""><span>- 关键操作必须记录日志</span></span>
+<span data-line=""><span>- 日志需包含 requestId 和 userId</span></span>
+<span data-line=""><span>- 不记录敏感信息（如密码）</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 6. 禁止事项</span></span>
+<span data-line=""><span>- 禁止在 Controller 中写业务判断</span></span>
+<span data-line=""><span>- 禁止前端硬编码权限逻辑</span></span>
+<span data-line=""><span>- 禁止直接操作数据库对象</span></span>
+<span data-line=""> </span></code></pre></figure>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display: grid;"><span data-line=""><span># 运行与部署说明</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 1. 环境划分</span></span>
+<span data-line=""><span>- dev：本地开发环境</span></span>
+<span data-line=""><span>- prod：生产环境</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 2. 环境变量配置</span></span>
+<span data-line=""><span>- PORT：服务端口</span></span>
+<span data-line=""><span>- DATABASE_URL：数据库连接地址</span></span>
+<span data-line=""><span>- JWT_SECRET：鉴权密钥</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 3. 本地运行</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 后端</span></span>
+<span data-line=""><span>1. 安装依赖</span></span>
+<span data-line=""><span>   npm install</span></span>
+<span data-line=""><span>2. 启动服务</span></span>
+<span data-line=""><span>   npm run dev</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>### 前端</span></span>
+<span data-line=""><span>1. 安装依赖</span></span>
+<span data-line=""><span>   npm install</span></span>
+<span data-line=""><span>2. 启动开发服务器</span></span>
+<span data-line=""><span>   npm start</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 4. 构建与部署</span></span>
+<span data-line=""><span>- 使用 Docker 构建镜像</span></span>
+<span data-line=""><span>- 通过环境变量注入配置</span></span>
+<span data-line=""><span>- 单实例运行</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>---</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>## 5. 部署约定</span></span>
+<span data-line=""><span>- 所有配置不得写死在代码中</span></span>
+<span data-line=""><span>- 生产环境必须关闭调试模式</span></span>
+<span data-line=""><span>- 部署失败需可快速回滚</span></span>
+<span data-line=""> </span></code></pre></figure>
+<p>有了这些你心里有数了。在这个基础上和ai battle 这些内容，比如你有个性化的一些内容对这些文档进行修改。所有事情妥了之后，把它喂给ai，生成代码，一气呵成。</p>
+    </main>
+
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2026-01-23-practice-of-ai-function-development-for-mini-programs.html" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>小程序的AI功能开发实践</p>
+      </a>
+    
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/monthly/2026-01-30-2026-1-read-mood-monthly-issue-1.html" target="_blank" rel="noopener noreferrer">
+        <span>→ 下一篇</span>
+        <p>2026-1-看心情月刊【第一期】</p>
+      </a>
+    
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script>
+    // Enhance external links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+
+</body>
+</html>
