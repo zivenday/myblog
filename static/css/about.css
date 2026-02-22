@@ -1,0 +1,45 @@
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #222; min-height: 100vh; display: flex; flex-direction: column; }
+
+    .hero { text-align: center; padding: 7rem 0 4rem 0; background: #7c4dff; color: white; }
+    .hero h1 { font-size: 3rem; font-weight: 300; letter-spacing: 0.2rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem; width: 100%; }
+    .content { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .content :is(h1,h2,h3) { color: #2c2c2c; margin: 1.2rem 0 0.8rem; }
+    .content p { margin: 1rem 0; color: #444; }
+    .content a { color: #7c4dff; text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    /* Inline code */
+    .content code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 0.92em; }
+    /* Pretty Code (Shiki) */
+    .content [data-rehype-pretty-code-fragment] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .content [data-rehype-pretty-code-title] { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); font-size:12px; color:#6b7280; font-weight:600; letter-spacing:.04em; }
+    .content [data-rehype-pretty-code-fragment] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background:transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size:13px; line-height:1.6; }
+    .content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .content [data-rehype-pretty-code-fragment] .line { display:block; min-height:1.25rem; }
+    .content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Toolbar */
+    .content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .content .code-copy:hover { background:#f3f4f6; }
+    /* Line numbers */
+    .content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+    /* Images */
+    .content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+    .content img { display: block; margin: 1rem auto; max-width: 100%; border-radius: 8px; height: auto; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 6rem 0 3rem 0; }
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 1rem; }
+      .content { padding: 1.2rem; }
+    }
+

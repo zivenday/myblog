@@ -1,0 +1,365 @@
+    /* 基础样式重置 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    html {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+
+    /* 文章容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 6rem 20px 2rem;
+    }
+
+    /* 文章头部 */
+    .article-header {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #2c2c2c;
+      line-height: 1.3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: #7c4dff;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    /* 文章内容 */
+    .article-content {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+    }
+
+    .article-header {
+      max-width: 100%;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content h4,
+    .article-content h5,
+    .article-content h6 {
+      color: black;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      padding-left: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: #555;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content a {
+      color: #7c4dff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(124, 77, 255, 0.3);
+      transition: all 0.3s ease;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-all;
+      white-space: normal;
+    }
+
+    .article-content a:hover {
+      color: #5e35b1;
+      border-bottom-color: #5e35b1;
+    }
+
+    /* Images */
+    .article-content figure.image-figure { margin: 1.5rem auto; text-align: center; }
+    .article-content figure.image-figure img { display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 8px; }
+    .article-content figure.image-figure .image-caption { margin-top: 0.5rem; color: #777; font-size: 0.92rem; }
+
+    /* Inline code */
+    .article-content code {
+      background: #f4f4f4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace;
+      font-size: 0.92em;
+    }
+
+    /* Pretty Code (Shiki) */
+    .article-content [data-rehype-pretty-code-fragment] {
+      margin: 1.25rem 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f6f7f9;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+    .article-content [data-rehype-pretty-code-title] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: rgba(244,244,245,0.7);
+      font-size: 12px; color: #6b7280; font-weight: 600; letter-spacing: .04em;
+    }
+    .article-content [data-rehype-pretty-code-fragment] pre {
+      margin: 0; padding: 0.9rem 1rem; overflow-x: auto; background: transparent;
+      font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', 'Segoe UI Mono',
+        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono',
+        'Droid Sans Mono', 'Courier New', monospace; font-size: 13px; line-height: 1.6;
+    }
+    .article-content [data-rehype-pretty-code-fragment] code { color: var(--shiki-foreground); }
+    /* Also support figure container */
+    .article-content [data-rehype-pretty-code-figure] { margin: 1.25rem 0; border: 1px solid #e5e7eb; border-radius: 10px; background: #f6f7f9; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    .article-content [data-rehype-pretty-code-figure] pre { margin:0; padding:0.9rem 1rem; overflow-x:auto; background: transparent; font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code','Segoe UI Mono','Roboto Mono','Oxygen Mono','Ubuntu Monospace','Source Code Pro','Fira Mono','Droid Sans Mono','Courier New', monospace; font-size: 13px; line-height: 1.6; }
+    .article-content [data-rehype-pretty-code-figure] code { color: var(--shiki-foreground); }
+    /* Substring theme tokens mapping */
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme*='light'] code span[style*='--shiki-light'],
+    .article-content [data-rehype-pretty-code-figure]   pre[data-theme*='light'] code span[style*='--shiki-light'] { color: var(--shiki-light); }
+    .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] pre[data-theme='light'] span[style*="--shiki-light"] { color: var(--shiki-light); }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="dark"] { display: block; }
+    html.dark .article-content [data-rehype-pretty-code-fragment] [data-theme="light"] { display: none; }
+    .article-content [data-rehype-pretty-code-fragment] .line { display:block; min-height: 1.25rem; }
+    .article-content [data-rehype-pretty-code-fragment] .line.is-highlighted { background: rgba(124,77,255,0.08); border-left: 3px solid #7c4dff; }
+    /* Line numbers */
+    .article-content [data-line-numbers] .line { position: relative; padding-left: 2.5rem; }
+    .article-content [data-line-numbers] .line::before { counter-increment: line; content: counter(line); position: absolute; left: 0; width: 2rem; text-align: right; color: #9aa4af; opacity: 0.7; padding-right: 0.5rem; }
+
+    /* Toolbar injected by script */
+    .article-content .code-toolbar { display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; border-bottom:1px solid #e5e7eb; background:rgba(244,244,245,0.7); }
+    .article-content .code-lang { font-size:11px; font-weight:600; letter-spacing:.04em; color:#6b7280; }
+    .article-content .code-copy { font-size:12px; padding:0.25rem 0.5rem; border-radius:6px; border:1px solid #e5e7eb; background:#fff; color:#111827; cursor:pointer; }
+    .article-content .code-copy:hover { background:#f3f4f6; }
+
+    .article-content blockquote {
+      border-left: 4px solid #7c4dff;
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+      background: rgba(124, 77, 255, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content li {
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-content * {
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .article-content table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    /* 文章底部 */
+    .article-footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      background: #7c4dff;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .article-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .nav-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      transition: all 0.2s ease;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .nav-card:hover {
+      border-color: #7c4dff;
+      background: rgba(124, 77, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .nav-card span {
+      font-weight: 600;
+      color: #7c4dff;
+      font-size: 0.95rem;
+    }
+
+    .nav-card p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .article-comments {
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: hidden;
+    }
+
+    .article-comments iframe,
+    .giscus,
+    .giscus-frame {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      .container {
+        padding: 5.5rem 15px 1.5rem;
+      }
+
+      .article-content [data-rehype-pretty-code-fragment],
+      .article-content [data-rehype-pretty-code-figure] {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .article-content [data-rehype-pretty-code-fragment] pre,
+      .article-content [data-rehype-pretty-code-figure] pre {
+        white-space: pre !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+      }
+      
+      .article-header,
+      .article-content {
+        padding: 2rem 1.5rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .article-nav {
+        grid-template-columns: 1fr;
+      }
+      
+      .tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+
