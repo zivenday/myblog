@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta property="og:url" content="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html">
-  <meta property="og:site_name" content="徘徊俱乐部">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
-  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
   <link rel="canonical" href="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html">
-  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/core.css">
-  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/navbar.css">
-  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/footer.css">
-  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/article.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>说到Nestjs，递归式的回答，你会因为它想到什么? - 徘徊俱乐部</title>
@@ -19,17 +10,28 @@
   <meta name="keywords" content="nestjs, 服务, 最佳实践, 技术文档, AI">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-<!-- Open Graph / Facebook -->
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/core.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/navbar.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/footer.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/article.css">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="说到Nestjs，递归式的回答，你会因为它想到什么?">
   <meta property="og:description" content="前阵子拼劲消失，也许是有目标，但是目标不反感也没太大激情去冲。是大部分的中年人的自然规律。脑子就是这么运作的。就像瓜熟了，自然果肉就会变甜一样。我问AI,为什么人这种状态怎么办。AI回答说，首先要允许这种状态，你就是想停下来摆着的状态，就是会这样。第二就是完全靠感觉，不要太重视目标的唯一性。好像没有了准确的目标就会死一样。太重视就陷入了焦虑，有时候这种焦虑还是慢性的，不注意一直在想为什么。所谓感觉，就是做点什么，看看哪些是自己能莫名其妙的专注，哪些能莫名其妙的热情，哪些能莫名其妙的干下去。">
+  <meta property="og:url" content="https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html">
+  <meta property="og:site_name" content="徘徊俱乐部">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
   <meta property="og:article:author" content="拿着号码牌徘徊">
   <meta property="og:article:published_time" content="2026-02-02T15:19:00+00:00">
+  <meta property="og:article:modified_time" content="2026-02-24T04:38:33.011794+00:00">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="说到Nestjs，递归式的回答，你会因为它想到什么?">
   <meta property="twitter:description" content="前阵子拼劲消失，也许是有目标，但是目标不反感也没太大激情去冲。是大部分的中年人的自然规律。脑子就是这么运作的。就像瓜熟了，自然果肉就会变甜一样。我问AI,为什么人这种状态怎么办。AI回答说，首先要允许这种状态，你就是想停下来摆着的状态，就是会这样。第二就是完全靠感觉，不要太重视目标的唯一性。好像没有了准确的目标就会死一样。太重视就陷入了焦虑，有时候这种焦虑还是慢性的，不注意一直在想为什么。所谓感觉，就是做点什么，看看哪些是自己能莫名其妙的专注，哪些能莫名其妙的热情，哪些能莫名其妙的干下去。">
+  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
      crossorigin="anonymous"></script>
@@ -46,12 +48,13 @@
       "name": "拿着号码牌徘徊"
     },
     "datePublished": "2026-02-02T15:19:00+00:00",
+    "dateModified": "2026-02-24T04:38:33.011794+00:00",
+    "mainEntityOfPage": "https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html",
+    "url": "https://blog.holding-num.cn/posts/2026-02-02-when-it-comes-to-nestjs-what-do-you-think-of-when-it-comes.html",
+    "image": "https://blog.holding-num.cn/logo.jpeg",
     "keywords": "nestjs, 服务, 最佳实践, 技术文档, AI"
   }
   </script>
-  
-  
-
 </head>
 <body class="page-article">
   
@@ -412,7 +415,7 @@
     
     <section class="article-nav">
       
-      <a class="nav-card" href="https://blog.holding-num.cn/monthly/2026-01-30-2026-1-read-mood-monthly-issue-1.html" target="_blank" rel="noopener noreferrer">
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2026-01-30-2026-1-read-mood-monthly-issue-1.html" target="_blank" rel="noopener noreferrer">
         <span>← 上一篇</span>
         <p>2026-1-看心情月刊【第一期】</p>
       </a>
