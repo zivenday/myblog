@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-02-24T16:05:32.587Z</lastBuildDate>
-    <pubDate>2026-02-24T16:05:32.587Z</pubDate>
+    <lastBuildDate>2026-02-28T23:19:04.163Z</lastBuildDate>
+    <pubDate>2026-02-28T23:19:04.163Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,16 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>2026-2-看心情月刊 [第三期]</title>
+      <link>https://blog.holding-num.cn/2026-02-28-2026-2-read-mood-monthly-issue-3.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-02-28-2026-2-read-mood-monthly-issue-3.html</guid>
+      <pubDate>Sat, 28 Feb 2026 23:19:00 GMT</pubDate>
+      <description>探索内心波动与情绪管理，分析钩子瞬间、赞美与否定的反应，以及持续性无兴趣的原因。</description>
+      <category>月刊</category>
+      <category>看心情月刊</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>《从内耗到心流》看完后感</title>
       <link>https://blog.holding-num.cn/2026-02-24-reflections-after-watching-from-internal-friction-to-flow.html</link>
@@ -264,22 +274,6 @@
       <category>积极心理学</category>
       <category>心理</category>
       <category>心态</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>怎么在obsidian上随心所欲地记笔记（二）</title>
-      <link>https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-20-how-to-take-notes-freely-on-obsidian-part-2.html</guid>
-      <pubDate>Sat, 20 Dec 2025 09:57:00 GMT</pubDate>
-      <description>前一篇解决了三端同步文档的功能，是使用cloudflare+remotely Save的方式，这种方式有稳定加免费的优势。前一篇还带出了图片自动上传的问题，但是只是解决了如何在电脑端实现。</description>
-      <category>技术文章</category>
-      <category>最佳实践</category>
-      <category>实战项目</category>
-      <category>obsidian</category>
-      <category>三端同步</category>
-      <category>cloudflare</category>
-      <category>image auto upload</category>
-      <category>Node.js</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
