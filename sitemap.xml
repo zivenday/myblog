@@ -2,23 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.holding-num.cn/index.html</loc>
-    <lastmod>2026-02-28T23:22:43.319Z</lastmod>
+    <lastmod>2026-03-05T01:20:37.463Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/archive.html</loc>
-    <lastmod>2026-02-28T23:22:44.746Z</lastmod>
+    <lastmod>2026-03-05T01:20:38.803Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/tags.html</loc>
-    <lastmod>2026-02-28T23:22:43.656Z</lastmod>
+    <lastmod>2026-03-05T01:20:37.734Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/search.html</loc>
-    <lastmod>2026-02-28T23:22:44.750Z</lastmod>
+    <lastmod>2026-03-05T01:20:38.813Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/about.html</loc>
     <lastmod>2026-02-22T11:19:10.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html</loc>
+    <lastmod>2026-03-05T01:20:35.656Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-03-01-2026-2-read-mood-monthly-issue-2.html</loc>
@@ -78,7 +82,7 @@
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</loc>
-    <lastmod>2026-02-28T23:24:15.721Z</lastmod>
+    <lastmod>2026-02-28T23:24:28.032Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</loc>
@@ -119,6 +123,10 @@
   <url>
     <loc>https://blog.holding-num.cn/posts/2025-12-08-front-end-learning-deployment-article-1-deploying-a-static.html</loc>
     <lastmod>2026-02-24T04:38:33.011Z</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.holding-num.cn/system-design/index.html</loc>
+    <lastmod>2026-03-05T01:20:38.540Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/index.html</loc>

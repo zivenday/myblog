@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <link rel="canonical" href="https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系统设计面试--[总体框架] - 徘徊俱乐部</title>
+  <meta name="description" content="系统设计面试总体框架解析，包括提问、画图和讨论步骤，帮助面试者理清思路，提升应对能力。">
+  <meta name="author" content="拿着号码牌徘徊">
+  <meta name="keywords" content="系统设计面试, 总体框架, 提问框架, 高层级设计图, 非功能需求, 用户规模, 数据存储, AI时代系统设计">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/core.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/navbar.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/footer.css">
+  <link rel="stylesheet" href="https://blog.holding-num.cn/static/css/article.css">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="系统设计面试--[总体框架]">
+  <meta property="og:description" content="系统设计面试总体框架解析，包括提问、画图和讨论步骤，帮助面试者理清思路，提升应对能力。">
+  <meta property="og:url" content="https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html">
+  <meta property="og:site_name" content="徘徊俱乐部">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://blog.holding-num.cn/logo.jpeg">
+  <meta property="og:article:author" content="拿着号码牌徘徊">
+  <meta property="og:article:published_time" content="2026-03-05T01:20:35.656721+00:00">
+  <meta property="og:article:modified_time" content="2026-03-05T01:20:35.656721+00:00">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="系统设计面试--[总体框架]">
+  <meta property="twitter:description" content="系统设计面试总体框架解析，包括提问、画图和讨论步骤，帮助面试者理清思路，提升应对能力。">
+  <meta property="twitter:image" content="https://blog.holding-num.cn/logo.jpeg">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5704129027897711"
+     crossorigin="anonymous"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "系统设计面试--[总体框架]",
+    "description": "系统设计面试总体框架解析，包括提问、画图和讨论步骤，帮助面试者理清思路，提升应对能力。",
+    "author": {
+      "@type": "Person",
+      "name": "拿着号码牌徘徊"
+    },
+    "datePublished": "2026-03-05T01:20:35.656721+00:00",
+    "dateModified": "2026-03-05T01:20:35.656721+00:00",
+    "mainEntityOfPage": "https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html",
+    "url": "https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html",
+    "image": "https://blog.holding-num.cn/logo.jpeg",
+    "keywords": "系统设计面试, 总体框架, 提问框架, 高层级设计图, 非功能需求, 用户规模, 数据存储, AI时代系统设计"
+  }
+  </script>
+</head>
+<body class="page-article">
+  
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+      <div class="navbar-brand">
+        <a href="https://blog.holding-num.cn/index.html" class="brand-link" target="_blank" rel="noopener noreferrer">
+          <img src="/logo.jpeg" alt="徘徊俱乐部" class="brand-logo">
+        </a>
+      </div>
+      
+      <!-- 桌面端导航链接 -->
+      <div class="navbar-links desktop-nav">
+        <a href="https://blog.holding-num.cn/index.html" class="navbar-link" target="_blank" rel="noopener noreferrer">首页</a>
+        <a href="https://blog.holding-num.cn/directory.html" class="navbar-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+        <a href="https://blog.holding-num.cn/tags.html" class="navbar-link" target="_blank" rel="noopener noreferrer">标签</a>
+        <a href="https://blog.holding-num.cn/archive.html" class="navbar-link" target="_blank" rel="noopener noreferrer">归档</a>
+        <a href="https://blog.holding-num.cn/guestbook.html" class="navbar-link" target="_blank" rel="noopener noreferrer">留言</a>
+        <a href="https://blog.holding-num.cn/about.html" class="navbar-link" target="_blank" rel="noopener noreferrer">关于</a>
+        <a href="https://blog.holding-num.cn/rss.xml" class="navbar-link rss-link" target="_blank" rel="noopener noreferrer">
+          <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+          </svg>
+          RSS
+        </a>
+        <a href="https://blog.holding-num.cn/search.html" class="navbar-link search-link" target="_blank" rel="noopener noreferrer" aria-label="站内搜索">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://blog.holding-num.cn/index.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">首页</a>
+      <a href="https://blog.holding-num.cn/search.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">搜索</a>
+      <a href="https://blog.holding-num.cn/directory.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">网站导航</a>
+      <a href="https://blog.holding-num.cn/tags.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">标签</a>
+      <a href="https://blog.holding-num.cn/archive.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">归档</a>
+      <a href="https://blog.holding-num.cn/guestbook.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">留言</a>
+      <a href="https://blog.holding-num.cn/about.html" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">关于</a>
+      <a href="https://blog.holding-num.cn/rss.xml" class="mobile-menu-link rss-link" target="_blank" rel="noopener noreferrer">
+        <svg class="rss-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.29-3.293 3.29C1.479 24 0 22.523 0 20.71s1.479-3.295 3.291-3.295zM12.935 24c0-6.627-5.373-12-12-12v-2.286c7.882 0 14.285 6.403 14.285 14.286h-2.285z"/>
+        </svg>
+        RSS 订阅
+      </a>
+    </div>
+  </nav>
+  
+  <script>
+    // 导航栏吸顶效果
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-sticky');
+      } else {
+        navbar.classList.remove('navbar-sticky');
+      }
+    });
+    
+    // 移动端菜单切换
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn?.addEventListener('click', function() {
+      mobileMenu?.classList.toggle('mobile-menu-active');
+      mobileMenuBtn?.classList.toggle('mobile-menu-btn-active');
+    });
+    
+    // 点击菜单项关闭移动端菜单
+    document.querySelectorAll('.mobile-menu-link').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        mobileMenuBtn?.classList.remove('mobile-menu-btn-active');
+      });
+    });
+  </script>
+  
+  
+  <div class="container">
+    <header class="article-header">
+      <h1 class="article-title">系统设计面试--[总体框架]</h1>
+      <div class="article-meta">
+        <span>📅 2026/3/5</span>
+        <span>✍️ 字数：2955</span>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">系统设计</span><span class="tag">面试</span>
+      </div>
+      
+    </header>
+    
+    <main class="article-content">
+      <h5>题外话</h5>
+<p>发现长久以来，自从准备考研之后，学习就变的不是那么哇塞（开心）了。算起来就差不多有个10几年了，好像不会学了一样，即使在一个绝对安静的环境，时长发生看着看着学习资料，去看别的东西去了。到今天为止，我觉得就是，学习目标激不起持续性的专注，激不起的原因就是学着不知道为了什么。学语言，学技术，干嘛呢？想来想去，后面有了个答案，就是为了钱。学语言，就是个敲门砖，可以接触国外的工作。像今天的系统设计是为了，我对技术面试有更多的把握，心里低。这些工作都是为了一个字，钱！，拜托现在底层奴工，工资只能糊口的状态。好像只有钱，可以增加学习的自我效果感。</p>
+<p>有时候啊，在想，人生都在学习，多没劲啊，每天都在写代码，每天都在奋斗的路上，这样的人生都是我要的吗？心里的回答肯定不是！那我要怎么做才开心。想着就是不报任何期待，努力做就行，去日本就是试试学号语言找找看能找到什么工作。学英语，学技术，看看自己能走到哪里，看看能不能找到远程的，好价钱的工作，仅此而已。</p>
+<p>总而言之，学习的路途上，应该是带着自己的爱，带着自己的喜欢才是长久之路。</p>
+<h5>前言</h5>
+<p>很多程序员的都会掉了一种模糊陷阱，特别是前端。总觉得自己缺什么，有时候甚至知道自己缺什么，不知道具体怎么补。我觉得这里面有低行动力的原因，还有对缺的东西带有恐惧而却步的原因也有。</p>
+<p>我以前对系统设计这一块真的迷茫。没有系统的学过。当了这么多年的程序员，好像还是门外汉的感觉。这种感觉很可怕，久而久之，成为了我的无助来源，无限自我否定。所以打算给自己开个专栏学写系统设计50篇，加上自己做的项目列在线上，包装下自己，去面试看看效果如何，到时候，再缺什么补什么。</p>
+<h5>AI时代下的系统设计</h5>
+<p>现在AI发达的可以提供整个系统的设计方案了，所以学还有什么作用呢？有了openClaw，甚至整个平台都可以被AI接管，无需人操作。但是所实话，现在是2026年3月份，截止这个时间点，AI还是没有高效到没有任何缺点，依然存在不符合实际情况的问题，即使是专门领域的AI也有这种问题，这就引申出一个问题，需要人去审核，让AI做成符合实际场景的事情。这里就需要专业的人能够从顶端审视我们的代码，系统，现状。</p>
+<p>目前大部分公司其实使用全自动的AI去应用到自己实际业务中，依然存在成本问题，除了上面说的和实际契合度的问题。小企业可能根本不需要太多这种AI完全自动化，如何出现问题的时候管理AI能力，它们可能不想花太多力量在这里。</p>
+<p>当然使用AI递归式学习系统设计，是很有意思，你会发现，可以快速扩展自己的知识面，AI是个不知疲倦的老师，无所不包，无所不答。非常时候一个人无边界，无顾忌的去学习。然而自己去总结，再输出。</p>
+<h6>系统面试的总体框架是什么？</h6>
+<p>1、系统面试没有标准答案</p>
+<p>这点有点缓解焦虑的效果了，因为很多时候一听到，设计一个某某系统的时候，就感觉特别大，或者听都没听过，不知道怎么回答，马上心跳加速，脸色尴尬，整个面试就完全不在状态。其实总觉得要一个标准答案，就是在自虐。要做到尽善尽美完全不可能，因为一讲一大堆，面试的时间很有限。所有放轻松，结合正常范式和当下节奏，自己的知识面有答完就可以了。</p>
+<p>2、你的系统面试提问框架。</p>
+<p>当面试抛出设计某某系统的时候，一开始要做的。就是要搞清楚范围。这个范围总结起来有这么几项。</p>
+<ol>
+<li>
+<p>这个系统是做什么，或者说核心功能有哪些，也可以自己列出核心功能，让面试官确认一下。</p>
+<p>面试的时候，其实只要回答的就是核心功能的设计了。在这个范围内取考虑。</p>
+</li>
+<li>
+<p>这个系统用户规模？比如月活这些比较场景，总的用户量等等</p>
+<p>不同的用户规模要考虑对系统设计不同的扩展，这些扩展也是考虑到设计之中的</p>
+</li>
+<li>
+<p>这个系统的数据是什么样的？</p>
+<p>系统的不同数据就要考虑用什么数据库，用什么服务器，用什么存储媒介回好点了。</p>
+</li>
+<li>
+<p>这个系统的其他非功能需求和限制</p>
+<p>有些系统除了功能需求还有别的需求，比如数据一致性、数据实时性等等，预算有限制，哪怕是技术栈可能有限制。那这也要考虑到设计之中。</p>
+</li>
+</ol>
+<p>以上呢就是具体的问清楚框架。</p>
+<p>3、画高层级图的框架</p>
+<p>高层级别的组件总结起来一般就是这么几个，不同系统肯定有加有减。</p>
+<ol>
+<li><strong>Actors/Clients</strong>：人/客户端/外部系统</li>
+<li><strong>Edge/Entry</strong>：DNS（可选）、CDN（按需）、LB/API Gateway（常见必画）</li>
+<li><strong>Core Services（盒子）</strong>：按职责拆分的业务服务</li>
+<li><strong>Data Stores</strong>：DB / Index / Object Storage（至少标清主数据落点）</li>
+<li><strong>Cache（按需）</strong>：降低延迟、扛读</li>
+</ol>
+<p>这几个是必须的。涉及到其他常见的比如消息队列啥的等，需要特意提出来的。</p>
+<p>现在看到这里你可能还是有些懵，到底不同的高层级别图，具体要怎么画，这里是比较场景的几个组件，但是具体画感觉还是吃力。先不着急，因为内容还有很多，怎么画，其实还涉及到经验积累，也许很难一蹴而就。如果看了几章还是不懂，再回过头来。以免立刻就陷入很复杂，太揪心的局面。</p>
+<p>4、总体框架</p>
+<p>前面提到，第一步是提问题，先不着急回答。提问题，按照核心功能是什么，数据量，用户量，数据类型，非功能需求和限制 这几个面向去问。有些系统有自己特殊的因素，也需要提问题去问。</p>
+<p>第二步，就是把高层级草图画出来。这一块首先是自己画，上面也提到到了基本的几个组件，入口，负载均衡，核心服务，数据存储 这几个都是要的。</p>
+<p>第三步，就是和面试官讨论，这个图怎么样，从面试官那里获得了对高层设计的反馈。面试官可能会在这个图上再深入提问题，不能排查会问很细节的问题，不对往深里问。但是理想的面试官会问，如何扩展这个图，也就是如何扩展这个系统，或者遇到问题的时候，如何改变系统的某一部分适合实际的需求等。</p>
+<h5>写在最后</h5>
+<p>作者在最后总结了一份该做和不该做清单</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="txt" data-theme="github-light github-dark"><code data-language="txt" data-theme="github-light github-dark" style="display: grid;"><span data-line=""> </span>
+<span data-line=""><span>- **  </span></span>
+<span data-line=""><span>    该做**</span></span>
+<span data-line=""><span>    </span></span>
+<span data-line=""><span>    - 要问清楚。不要认为你的假设是正确的。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 了解问题的要求。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 既没有正确的答案，也没有最好的答案。为解决年轻创业公司的问题而设计的解决方案与拥有数百万用户的老牌公司的解决方案不同。确保你理解了要求。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 让面试官知道你在想什么。与你的面试官沟通。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 如果可能的话，提出多种方法。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 一旦你与你的面试官就蓝图达成一致，就对每个组件进行详细说明。先设计最关键的部分。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 向面试官反映想法。一个好的面试官会把你当作一个团队伙伴和你一起合作。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 永不言弃。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    </span></span>
+<span data-line=""><span>- **不该做**</span></span>
+<span data-line=""><span>    </span></span>
+<span data-line=""><span>    - 不要对典型的面试问题没有任何准备。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 在没有弄清需求和假设的情况下，不要贸然提出解决方案。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 在开始的时候，不要对一个单一的组件进行太多细节的研究。首先给出高层次的设计，然后再深入探讨。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 如果你被卡住了，不要犹豫，请求提示。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 再次强调，要进行沟通。不要默默思考。</span></span>
+<span data-line=""><span>        </span></span>
+<span data-line=""><span>    - 不要认为一旦你给出设计方案，你的面试就结束了。直到你的面试官说你完成了，你才算完成。尽早并经常要求反馈。</span></span>
+<span data-line=""><span>      </span></span>
+<span data-line=""><span>      </span></span></code></pre></figure>
+<p>这一篇我们划定了一个系统面试的基本框架，这个框架到了两层。第一层是总体框架。第二层。包括提问框架，画高级设计图的框架，讨论框架。后面都是在这个基础上去丰富。</p>
+<p>系统设计还是得多看，即使没有实际操作。看的多了，在真的遇到了，会发现，你才能更胸有成竹的感觉。真的是相见恨晚啊</p>
+<h5>参考链接：</h5>
+<p><a href="https://learning-guide.gitbook.io/system-design-interview/xi-tong-she-ji-mian-shi-nei-mu-zhi-nan-di-yi-juan/chapter-03-a-framework-for-system-design-interviews">系统设计面试指南</a></p>
+    </main>
+
+    
+    <section class="article-nav">
+      
+      <a class="nav-card" href="https://blog.holding-num.cn/posts/2026-03-01-2026-2-read-mood-monthly-issue-2.html" target="_blank" rel="noopener noreferrer">
+        <span>← 上一篇</span>
+        <p>2026-2-看心情月刊 [第二期]</p>
+      </a>
+    
+      <div></div>
+    </section>
+    
+    
+    <footer class="article-footer">
+      <a href="https://blog.holding-num.cn/index.html" class="back-link" target="_blank" rel="noopener noreferrer">← 返回首页</a>
+    </footer>
+    
+    
+    <section class="article-comments" id="comments">
+      <script src="https://giscus.app/client.js"
+        data-repo="zivenday/myblog"
+        data-repo-id="R_kgDOPXso0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPXso0M4Cz7_6"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
+  </div>
+  
+  
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">关于徘徊俱乐部</h3>
+        <p class="footer-description">
+          分享技术思考，记录学习历程，探索编程世界的无限可能。
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">快速链接</h3>
+        <ul class="footer-links">
+          <li><a href="https://blog.holding-num.cn/index.html" target="_blank" rel="noopener noreferrer">首页</a></li>
+          <li><a href="https://blog.holding-num.cn/directory.html" target="_blank" rel="noopener noreferrer">网站导航</a></li>
+          <li><a href="https://blog.holding-num.cn/tags.html" target="_blank" rel="noopener noreferrer">标签</a></li>
+          <li><a href="https://blog.holding-num.cn/archive.html" target="_blank" rel="noopener noreferrer">归档</a></li>
+          <li><a href="https://blog.holding-num.cn/about.html" target="_blank" rel="noopener noreferrer">关于</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3 class="footer-title">关注我</h3>
+        <div class="social-links">
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.zhihu.com/people/ziven-78" target="_blank" rel="noopener noreferrer" class="social-link zhihu" title="知乎">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.444 15.736c0-1.023-.716-1.655-1.976-1.655l-3.31.003c-.062 0-.1.037-.1.1v3.28c0 .297-.237.537-.529.537h-.8c-.292 0-.53-.24-.53-.537v-3.28c0-.063-.038-.1-.1-.1h-3.31c-1.26 0-1.976.632-1.976 1.655v4.084c0 1.023.716 1.655 1.976 1.655h3.31c.062 0 .1.037.1.1v1.28c0 .297.238.537.53.537h.8c.292 0 .529-.24.529-.537v-1.28c0-.063.038-.1.1-.1h3.31c1.26 0 1.976-.632 1.976-1.655v-4.084zm-10.889 0c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084zm10.889 0v4.084c0 .34-.27.615-.6.615h-3.31c-.33 0-.6-.275-.6-.615v-4.084c0-.34.27-.615.6-.615h3.31c.33 0 .6.275.6.615z"/>
+              <path d="M5.536 6.978c1.023 0 1.855-.832 1.855-1.855s-.832-1.855-1.855-1.855-1.855.832-1.855 1.855.832 1.855 1.855 1.855zm9.714 4.427c.434 0 .834-.12 1.179-.326.344.206.745.326 1.179.326 1.26 0 2.282-1.022 2.282-2.282s-1.022-2.282-2.282-2.282c-.434 0-.834.12-1.179.326-.344-.206-.745-.326-1.179-.326-1.26 0-2.282 1.022-2.282 2.282s1.022 2.282 2.282 2.282zm0-3.564c.709 0 1.282.573 1.282 1.282s-.573 1.282-1.282 1.282-1.282-.573-1.282-1.282.573-1.282 1.282-1.282z"/>
+            </svg>
+          </a>
+          <a href="https://juejin.cn/user/3034307822632680" target="_blank" rel="noopener noreferrer" class="social-link juejin" title="掘金">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </a>
+          <a href="https://www.jianshu.com/u/f7d20e00bc2b" target="_blank" rel="noopener noreferrer" class="social-link jianshu" title="简书">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+              <path d="M8 11h8v2H8z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          © 2025 徘徊俱乐部. All rights reserved. | 
+          <a href="https://github.com/zivenday" target="_blank" rel="noopener noreferrer">Built with ❤️ by Ziven</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script>
+    // Enhance external links
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href') || ''
+      if (href.startsWith('#')) return
+      if (!a.getAttribute('target')) a.setAttribute('target', '_blank')
+      const rel = a.getAttribute('rel') || ''
+      if (!rel.includes('noopener')) {
+        a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener noreferrer')
+      }
+    })
+    // Code block toolbar + copy for Pretty Code (prefer title bar if present)
+    ;(function(){
+      function addToolbar(fig){
+        var pre=fig.querySelector('pre'); if(!pre) return;
+        var lang=pre.getAttribute('data-language')||'';
+        var title=fig.querySelector('[data-rehype-pretty-code-title]');
+        var host=title||null;
+        if(!host){ var bar=document.createElement('div'); bar.className='code-toolbar'; var left=document.createElement('span'); left.className='code-lang'; left.textContent=(lang||'TEXT').toUpperCase(); bar.appendChild(left); fig.insertBefore(bar, pre); host=bar; }
+        var btn=document.createElement('button'); btn.type='button'; btn.className='code-copy'; btn.textContent='复制'; host.appendChild(btn);
+        btn.addEventListener('click', function(){ try{ var text=pre.innerText||''; navigator.clipboard.writeText(text).then(function(){ btn.textContent='已复制'; setTimeout(function(){btn.textContent='复制'},1200) }) }catch(e){} });
+      }
+      function enhance(){ document.querySelectorAll('.article-content [data-rehype-pretty-code-fragment]').forEach(addToolbar); }
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhance); else enhance();
+    })();
+  </script>
+
+</body>
+</html>
