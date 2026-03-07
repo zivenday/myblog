@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-03-05T01:20:39.117Z</lastBuildDate>
-    <pubDate>2026-03-05T01:20:39.117Z</pubDate>
+    <lastBuildDate>2026-03-07T06:56:12.532Z</lastBuildDate>
+    <pubDate>2026-03-07T06:56:12.532Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,19 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>《少有人走的路》读书笔记</title>
+      <link>https://blog.holding-num.cn/2026-03-07-reading-notes-on-the-road-less-traveled.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-03-07-reading-notes-on-the-road-less-traveled.html</guid>
+      <pubDate>Sat, 07 Mar 2026 06:56:08 GMT</pubDate>
+      <description>这本书可以说很有名，至少我听过很多人介绍这本书。目前我看到了200页，总共600页左右。目前来说这是一本说道理比较多的书，很多道理对于我来说，已经知道不少。所以很多认知，我都会跳过，并没有太多惊喜。我觉得这适合认知提升相对初入门槛的朋友比较适合读这本书。</description>
+      <category>读书笔记</category>
+      <category>笔记</category>
+      <category>积极心理学</category>
+      <category>内耗</category>
+      <category>少有人走的路</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>系统设计面试--[总体框架]</title>
       <link>https://blog.holding-num.cn/2026-03-03-system-design-interview-overall-framework.html</link>
@@ -261,23 +274,6 @@
       <category>看心情周刊</category>
       <category>积极心理学</category>
       <category>日记</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>解决小程序端的图表实现的实践</title>
-      <link>https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2025-12-26-practice-of-implementing-charts-on-mini-programs.html</guid>
-      <pubDate>Fri, 26 Dec 2025 09:23:00 GMT</pubDate>
-      <description>写代码写了这么多年，有一种难受的感觉，遇到很难解决的的难题的时候，心态很急。急着去解决，急着下结论。但是我又是那种刨根问底的个性。难题之所以难题，就是花时间比较多，花精力去克服，所以我就非得把他解决不可。又急又专，再加上又感觉解决不了。心态不炸裂都难。</description>
-      <category>技术文章</category>
-      <category>相亲小程序</category>
-      <category>小程序</category>
-      <category>人脉图</category>
-      <category>Vue</category>
-      <category>TypeScript</category>
-      <category>Taro</category>
-      <category>echarts</category>
-      <category>vibecode</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>

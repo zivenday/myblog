@@ -2,27 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.holding-num.cn/index.html</loc>
-    <lastmod>2026-03-05T01:20:37.463Z</lastmod>
+    <lastmod>2026-03-07T06:56:10.693Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/archive.html</loc>
-    <lastmod>2026-03-05T01:20:38.803Z</lastmod>
+    <lastmod>2026-03-07T06:56:12.223Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/tags.html</loc>
-    <lastmod>2026-03-05T01:20:37.734Z</lastmod>
+    <lastmod>2026-03-07T06:56:11.094Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/search.html</loc>
-    <lastmod>2026-03-05T01:20:38.813Z</lastmod>
+    <lastmod>2026-03-07T06:56:12.228Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/about.html</loc>
     <lastmod>2026-02-22T11:19:10.272Z</lastmod>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/books-notes/2026-03-07-reading-notes-on-the-road-less-traveled.html</loc>
+    <lastmod>2026-03-07T06:56:08.510Z</lastmod>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/system-design/2026-03-03-system-design-interview-overall-framework.html</loc>
-    <lastmod>2026-03-05T01:20:35.656Z</lastmod>
+    <lastmod>2026-03-05T01:20:54.676Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-03-01-2026-2-read-mood-monthly-issue-2.html</loc>
@@ -125,16 +129,16 @@
     <lastmod>2026-02-24T04:38:33.011Z</lastmod>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
+    <lastmod>2026-03-07T06:56:11.959Z</lastmod>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/system-design/index.html</loc>
     <lastmod>2026-03-05T01:20:38.540Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/index.html</loc>
     <lastmod>2026-02-28T23:22:44.446Z</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
-    <lastmod>2026-02-24T16:05:30.872Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/weekly-mood/index.html</loc>
