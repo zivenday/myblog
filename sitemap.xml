@@ -2,27 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.holding-num.cn/index.html</loc>
-    <lastmod>2026-03-07T07:05:26.195Z</lastmod>
+    <lastmod>2026-03-12T06:06:10.642Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/archive.html</loc>
-    <lastmod>2026-03-07T07:05:27.440Z</lastmod>
+    <lastmod>2026-03-12T06:06:13.213Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/tags.html</loc>
-    <lastmod>2026-03-07T07:05:26.465Z</lastmod>
+    <lastmod>2026-03-12T06:06:11.386Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/search.html</loc>
-    <lastmod>2026-03-07T07:05:27.451Z</lastmod>
+    <lastmod>2026-03-12T06:06:13.218Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/about.html</loc>
     <lastmod>2026-02-22T11:19:10.272Z</lastmod>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/books-notes/2026-03-10-reading-notes-on-flow-optimal-experience-psychology.html</loc>
+    <lastmod>2026-03-12T06:06:07.526Z</lastmod>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/posts/2026-03-07-reading-notes-on-the-road-less-traveled.html</loc>
-    <lastmod>2026-03-07T07:05:24.723Z</lastmod>
+    <lastmod>2026-03-07T07:05:41.722Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/2026-03-03-system-design-interview-overall-framework.html</loc>
@@ -129,12 +133,12 @@
     <lastmod>2026-02-24T04:38:33.011Z</lastmod>
   </url>
   <url>
-    <loc>https://blog.holding-num.cn/posts/index.html</loc>
-    <lastmod>2026-03-07T07:05:27.175Z</lastmod>
+    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
+    <lastmod>2026-03-12T06:06:12.815Z</lastmod>
   </url>
   <url>
-    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
-    <lastmod>2026-03-07T07:05:27.172Z</lastmod>
+    <loc>https://blog.holding-num.cn/posts/index.html</loc>
+    <lastmod>2026-03-07T07:05:27.175Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/weekly-mood/index.html</loc>
