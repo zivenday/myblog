@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-03-12T06:06:14.041Z</lastBuildDate>
-    <pubDate>2026-03-12T06:06:14.041Z</pubDate>
+    <lastBuildDate>2026-03-29T06:59:00.681Z</lastBuildDate>
+    <pubDate>2026-03-29T06:59:00.681Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>笔记：日语动词的变形(て型)</title>
+      <link>https://blog.holding-num.cn/2026-03-14-note-variation-of-japanese-verbs-type.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-03-14-note-variation-of-japanese-verbs-type.html</guid>
+      <pubDate>Sun, 29 Mar 2026 06:58:58 GMT</pubDate>
+      <description>日语动词て型详解，包括动作顺序、并列、原因，以及作为各种表达入口的作用。还介绍变形规则和常见用法。</description>
+      <category>学习笔记</category>
+      <category>日语</category>
+      <category>日语学习</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>《心流：最优体验心理学 》读书笔记</title>
       <link>https://blog.holding-num.cn/2026-03-10-reading-notes-on-flow-optimal-experience-psychology.html</link>
@@ -259,23 +270,6 @@
       <category>相亲小程序</category>
       <category>Vue</category>
       <category>vibecode</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>小程序自定义画人际关系图表</title>
-      <link>https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-02-custom-drawing-of-interpersonal-relationship-charts-in-mini.html</guid>
-      <pubDate>Fri, 02 Jan 2026 11:30:00 GMT</pubDate>
-      <description>讲述了如何一步步走到自己来画人际关系组件的。所以这篇文章将详细阐述这个组件的实现，最终的目的是一个通用的人际关系组件。这个通用是相对的，类似相同需求的可以套一套，不能说万事皆可用。当然如果你觉得这个组件值得去扩展，可以评论区告诉我。</description>
-      <category>技术文章</category>
-      <category>最佳实践</category>
-      <category>相亲小程序</category>
-      <category>人脉图</category>
-      <category>小程序</category>
-      <category>Vue</category>
-      <category>TypeScript</category>
-      <category>echarts</category>
-      <category>Taro</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
