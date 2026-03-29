@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-03-29T07:00:54.042Z</lastBuildDate>
-    <pubDate>2026-03-29T07:00:54.042Z</pubDate>
+    <lastBuildDate>2026-03-29T07:37:07.626Z</lastBuildDate>
+    <pubDate>2026-03-29T07:37:07.626Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,16 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>日语动词分类（为什么说段又说类）</title>
+      <link>https://blog.holding-num.cn/2026-03-18-japanese-verb-classification-why-do-you-say-paragraph-and.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-03-18-japanese-verb-classification-why-do-you-say-paragraph-and.html</guid>
+      <pubDate>Sun, 29 Mar 2026 07:37:05 GMT</pubDate>
+      <description>日语动词て形的用法与分类，包括动作顺序、并列、原因，以及作为各种表达入口的作用。</description>
+      <category>日语学习</category>
+      <category>日语学习</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>笔记：日语动词的变形(て型)</title>
       <link>https://blog.holding-num.cn/2026-03-14-note-variation-of-japanese-verbs-type.html</link>
@@ -256,20 +266,6 @@
       <category>分享</category>
       <category>积极心理学</category>
       <category>周刊</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>小程序端实现一个通用的人际关系图表</title>
-      <link>https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-06-implement-a-universal-interpersonal-relationship-chart-on.html</guid>
-      <pubDate>Tue, 06 Jan 2026 11:45:00 GMT</pubDate>
-      <description>前面两篇文章是这篇文章的前置内容。详细说了，小程序端，如何从echarts转到原生cavans实现一个人际关系图表。但是这不太够，现在的图表组件，不能复用，所以这节就对它进行改造下，让它。</description>
-      <category>技术文章</category>
-      <category>echarts</category>
-      <category>人脉图</category>
-      <category>相亲小程序</category>
-      <category>Vue</category>
-      <category>vibecode</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
