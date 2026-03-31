@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-03-29T07:39:41.750Z</lastBuildDate>
-    <pubDate>2026-03-29T07:39:41.750Z</pubDate>
+    <lastBuildDate>2026-03-31T23:00:26.594Z</lastBuildDate>
+    <pubDate>2026-03-31T23:00:26.594Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,16 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>笔记：日语形容词和它的时态</title>
+      <link>https://blog.holding-num.cn/2026-03-22-notes-japanese-adjectives-and-their-tenses.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-03-22-notes-japanese-adjectives-and-their-tenses.html</guid>
+      <pubDate>Tue, 31 Mar 2026 23:00:24 GMT</pubDate>
+      <description>日语形容词分类及变化规则详解，包括一类和二类形容词的时态变化与否定形式。</description>
+      <category>日语学习</category>
+      <category>日语学习</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>日语动词分类（为什么说段又说类）</title>
       <link>https://blog.holding-num.cn/2026-03-18-japanese-verb-classification-why-do-you-say-paragraph-and.html</link>
@@ -255,17 +265,6 @@
       <category>技术文章</category>
       <category>博客</category>
       <category>建站</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>2026-1-第一周-看心情周刊【第二期】</title>
-      <link>https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-09-2026-1-week-1-read-mood-weekly-issue-2.html</guid>
-      <pubDate>Fri, 09 Jan 2026 15:02:00 GMT</pubDate>
-      <description>最近看到篇文章，中文版可以在这里看到，主人公是名技术人员，我读了之后，感觉主人公的一些看法和我不谋而合，当然，这并不重要，只是我自己有一种被认可的感觉（我是多没被认可呀！？）。</description>
-      <category>分享</category>
-      <category>积极心理学</category>
-      <category>周刊</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
