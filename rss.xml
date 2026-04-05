@@ -6,8 +6,8 @@
     <link>https://blog.holding-num.cn/</link>
     <atom:link href="https://blog.holding-num.cn/rss.xml" rel="self" type="application/rss+xml" />
     <language>zh-CN</language>
-    <lastBuildDate>2026-03-31T23:00:26.594Z</lastBuildDate>
-    <pubDate>2026-03-31T23:00:26.594Z</pubDate>
+    <lastBuildDate>2026-04-05T16:45:37.278Z</lastBuildDate>
+    <pubDate>2026-04-05T16:45:37.278Z</pubDate>
     <ttl>60</ttl>
     <webMaster>zhongziven@gmail.com</webMaster>
     <managingEditor>zhongziven@gmail.comå</managingEditor>
@@ -18,6 +18,17 @@
     <category>思考</category>
     <generator>徘徊俱乐部博客系统</generator>
     <docs>https://www.rssboard.org/rss-specification</docs>
+    <item>
+      <title>街头日语学习记录</title>
+      <link>https://blog.holding-num.cn/2026-03-26-street-japanese-learning-record.html</link>
+      <guid isPermaLink="true">https://blog.holding-num.cn/2026-03-26-street-japanese-learning-record.html</guid>
+      <pubDate>Sun, 05 Apr 2026 16:45:34 GMT</pubDate>
+      <description>在日本生活和街头遇到的日语问题，自问自答</description>
+      <category>日语学习</category>
+      <category>语言学习</category>
+      <category>日语</category>
+      <author>zhongziven@gmail.comå</author>
+    </item>
     <item>
       <title>笔记：日语形容词和它的时态</title>
       <link>https://blog.holding-num.cn/2026-03-22-notes-japanese-adjectives-and-their-tenses.html</link>
@@ -254,17 +265,6 @@
       <description>最近兼职做一个交友的小程序开发，里面需要定位获取的地址功能。这里做一个记录。</description>
       <category>技术文章</category>
       <category>小程序</category>
-      <author>zhongziven@gmail.comå</author>
-    </item>
-    <item>
-      <title>我对博客折腾了一波</title>
-      <link>https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</link>
-      <guid isPermaLink="true">https://blog.holding-num.cn/2026-01-12-ive-been-tinkering-with-my-blog-for-a-while.html</guid>
-      <pubDate>Mon, 12 Jan 2026 14:47:00 GMT</pubDate>
-      <description>博客自从建立起来后，除了主要的功能，主流程完成后。怎么用的顺手是个很大的问题。如果用的顺，用的爽。潜意识写文章动力会更多一些。为此做了不少优化和bug修复。罗列了一些主要优化清单，可以让博客发布过程，用的爽一些。</description>
-      <category>技术文章</category>
-      <category>博客</category>
-      <category>建站</category>
       <author>zhongziven@gmail.comå</author>
     </item>
   </channel>
