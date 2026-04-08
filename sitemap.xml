@@ -2,27 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.holding-num.cn/index.html</loc>
-    <lastmod>2026-04-05T16:49:44.902Z</lastmod>
+    <lastmod>2026-04-08T09:41:39.652Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/archive.html</loc>
-    <lastmod>2026-04-05T16:49:45.613Z</lastmod>
+    <lastmod>2026-04-08T09:41:40.734Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/tags.html</loc>
-    <lastmod>2026-04-05T16:49:45.053Z</lastmod>
+    <lastmod>2026-04-08T09:41:39.828Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/search.html</loc>
-    <lastmod>2026-04-05T16:49:45.617Z</lastmod>
+    <lastmod>2026-04-08T09:41:40.742Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/about.html</loc>
     <lastmod>2026-02-22T11:19:10.272Z</lastmod>
   </url>
   <url>
+    <loc>https://blog.holding-num.cn/books-notes/2026-03-30-reading-notes-on-anti-vulnerability.html</loc>
+    <lastmod>2026-04-08T09:41:38.137Z</lastmod>
+  </url>
+  <url>
     <loc>https://blog.holding-num.cn/japanese/2026-03-26-street-japanese-learning-record.html</loc>
-    <lastmod>2026-04-05T16:49:43.954Z</lastmod>
+    <lastmod>2026-04-05T16:50:01.728Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/japanese/2026-03-22-notes-japanese-adjectives-and-their-tenses.html</loc>
@@ -149,12 +153,12 @@
     <lastmod>2026-02-24T04:38:33.011Z</lastmod>
   </url>
   <url>
-    <loc>https://blog.holding-num.cn/japanese/index.html</loc>
-    <lastmod>2026-04-05T16:49:45.464Z</lastmod>
+    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
+    <lastmod>2026-04-08T09:41:40.460Z</lastmod>
   </url>
   <url>
-    <loc>https://blog.holding-num.cn/books-notes/index.html</loc>
-    <lastmod>2026-03-12T06:06:12.815Z</lastmod>
+    <loc>https://blog.holding-num.cn/japanese/index.html</loc>
+    <lastmod>2026-04-05T16:49:45.464Z</lastmod>
   </url>
   <url>
     <loc>https://blog.holding-num.cn/posts/index.html</loc>
